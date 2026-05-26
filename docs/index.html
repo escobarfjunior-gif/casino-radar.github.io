@@ -505,6 +505,86 @@
             box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
         }
 
+        /* Info Sections */
+        .info-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.5) 0%, rgba(37, 45, 71, 0.3) 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .info-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .info-section > .container > p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .guides-grid, .about-content, .responsible-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .guide-card, .about-item, .responsible-item {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 24px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .guide-card:hover, .about-item:hover, .responsible-item:hover {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .guide-card h3, .about-item h3 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .responsible-item h3 {
+            color: var(--accent-purple);
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .guide-card p, .about-item p, .responsible-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .responsible-gaming {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+
+        .responsible-item {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(212, 175, 55, 0.1) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .responsible-item:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(212, 175, 55, 0.15) 100%);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(0, 0, 0, 0.8) 100%);
@@ -639,6 +719,76 @@
                 <div class="casinos-grid" id="casinosGrid"></div>
 
                 <div class="pagination" id="pagination"></div>
+            </div>
+        </section>
+
+        <!-- Seção de Guias -->
+        <section id="guias" class="info-section">
+            <div class="container">
+                <h2>📚 Guias Educativos</h2>
+                <p>Conheça nossos guias completos sobre cassinos, bônus, estratégias e jogo responsável.</p>
+                <div class="guides-grid">
+                    <div class="guide-card">
+                        <h3>Como Escolher um Cassino Seguro</h3>
+                        <p>Aprenda os critérios essenciais para escolher um cassino confiável e seguro.</p>
+                    </div>
+                    <div class="guide-card">
+                        <h3>Cassinos com Pix</h3>
+                        <p>Guia completo sobre depósitos e saques via Pix em cassinos online.</p>
+                    </div>
+                    <div class="guide-card">
+                        <h3>Bônus e Rollover</h3>
+                        <p>Entenda como funcionam os bônus, rollover e armadilhas comuns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre -->
+        <section id="sobre" class="info-section">
+            <div class="container">
+                <h2>ℹ️ Sobre o CasinoRadar</h2>
+                <p>O CasinoRadar é uma plataforma educativa que reúne análises completas de cassinos online, guias sobre jogo responsável e informações sobre bônus e estratégias.</p>
+                <div class="about-content">
+                    <div class="about-item">
+                        <h3>🎯 Nossa Missão</h3>
+                        <p>Fornecer informações claras e confiáveis para que adultos possam tomar decisões informadas sobre cassinos online.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>✅ Conteúdo Verificado</h3>
+                        <p>Todo o conteúdo é original, atualizado diariamente e baseado em pesquisa aprofundada.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>🛡️ Segurança</h3>
+                        <p>Analisamos cada cassino quanto à segurança, licenças e conformidade regulatória.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Jogo Responsável -->
+        <section id="responsavel" class="info-section responsible-gaming">
+            <div class="container">
+                <h2>🎮 Jogo Responsável</h2>
+                <p>O jogo deve ser uma forma de entretenimento. Jogue com responsabilidade e estabeleça limites.</p>
+                <div class="responsible-content">
+                    <div class="responsible-item">
+                        <h3>⏰ Estabeleça Limites de Tempo</h3>
+                        <p>Defina quanto tempo você vai dedicar ao jogo e respeite esse limite.</p>
+                    </div>
+                    <div class="responsible-item">
+                        <h3>💰 Controle Financeiro</h3>
+                        <p>Jogue apenas com dinheiro que pode perder. Nunca use dinheiro destinado a necessidades essenciais.</p>
+                    </div>
+                    <div class="responsible-item">
+                        <h3>🚫 Sinais de Alerta</h3>
+                        <p>Se o jogo está afetando sua vida, relacionamentos ou saúde mental, procure ajuda.</p>
+                    </div>
+                    <div class="responsible-item">
+                        <h3>📞 Recursos de Ajuda</h3>
+                        <p>Existem organizações que podem ajudar com problemas de jogo compulsivo.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
