@@ -1,0 +1,42 @@
+# Robots.txt para CasinoRadar
+# Permite que todos os bots de busca rastreiem o site
+
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /blog/
+Allow: /cassinos/
+
+# Desabilita rastreamento de URLs dinâmicas desnecessárias
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Especifica o sitemap
+Sitemap: https://casino-radar.github.io/sitemap.xml
+
+# Crawl-delay para não sobrecarregar o servidor
+Crawl-delay: 1
+
+# Regras específicas para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Regras específicas para Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloqueia bots maliciosos
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

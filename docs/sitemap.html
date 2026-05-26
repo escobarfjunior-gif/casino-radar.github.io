@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa do Site - CasinoRadar</title>
+    <meta name="description" content="Mapa completo do site CasinoRadar com todas as páginas e categorias de cassinos.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #d4af37;
+            --primary-light: #e8c547;
+            --dark-bg: #0a0e27;
+            --dark-secondary: #1a1f3a;
+            --dark-tertiary: #252d47;
+            --text-primary: #f5f7fa;
+            --text-secondary: #b0b8c1;
+            --accent: #00d4ff;
+            --accent-purple: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1629 50%, var(--dark-secondary) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 31, 58, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .sitemap-section {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(37, 45, 71, 0.6) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sitemap-section h2 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .links-grid a {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid var(--primary);
+            font-size: 14px;
+        }
+
+        .links-grid a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        footer {
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">♠ CasinoRadar</a>
+                <nav>
+                    <a href="/">Início</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="/" class="back-link">← Voltar para o início</a>
+
+            <h1>Mapa do Site</h1>
+            <p class="subtitle">Navegue por todas as páginas e categorias do CasinoRadar</p>
+
+            <!-- Páginas Principais -->
+            <div class="sitemap-section">
+                <h2>📍 Páginas Principais</h2>
+                <div class="links-grid">
+                    <a href="/">Página Inicial</a>
+                    <a href="/sobre.html">Sobre o CasinoRadar</a>
+                    <a href="/metodologia.html">Nossa Metodologia</a>
+                    <a href="/jogo-responsavel.html">Jogo Responsável</a>
+                    <a href="/contato.html">Contato</a>
+                </div>
+            </div>
+
+            <!-- Políticas e Informações Legais -->
+            <div class="sitemap-section">
+                <h2>⚖️ Políticas e Informações Legais</h2>
+                <div class="links-grid">
+                    <a href="/politica-de-privacidade.html">Política de Privacidade</a>
+                    <a href="/termos-de-uso.html">Termos de Uso</a>
+                    <a href="/sitemap.html">Mapa do Site</a>
+                </div>
+            </div>
+
+            <!-- Guias e Conteúdo -->
+            <div class="sitemap-section">
+                <h2>📚 Guias e Conteúdo Educativo</h2>
+                <div class="links-grid">
+                    <a href="/blog/como-escolher-um-cassino-online-seguro-no-brasil-em-2026.html">Como Escolher um Cassino Seguro</a>
+                    <a href="/blog/cassinos-com-pix-como-depositar-sacar-e-conferir-taxas-ocultas.html">Cassinos com Pix</a>
+                    <a href="/blog/bonus-de-cassino-online-rollover-validade-e-armadilhas-comuns.html">Bônus e Rollover</a>
+                    <a href="/blog/guia-completo-de-bonus-de-boas-vindas.html">Guia de Bônus de Boas-Vindas</a>
+                    <a href="/blog/estrategias-para-roleta-online.html">Estratégias para Roleta</a>
+                    <a href="/blog/blackjack-online-regras-contagem-de-cartas-e-variantes.html">Blackjack Online</a>
+                    <a href="/blog/a-ascensao-dos-cassinos-moveis.html">Cassinos Móveis</a>
+                    <a href="/blog/cassino-ao-vivo-experiencia-imersiva.html">Cassino ao Vivo</a>
+                    <a href="/blog/slots-online-como-funcionam-rtp-e-volatilidade.html">Slots Online</a>
+                    <a href="/blog/poker-online-estrategias-e-dicas-para-vencer.html">Poker Online</a>
+                    <a href="/blog/bingo-online-regras-e-como-jogar.html">Bingo Online</a>
+                    <a href="/blog/apostas-esportivas-online-guia-completo.html">Apostas Esportivas</a>
+                    <a href="/blog/cassino-e-impostos-organizacao-financeira-e-registros-de-movimentacoes.html">Cassino e Impostos</a>
+                    <a href="/blog/sinais-de-golpes-em-cassinos-online-promessas-clones-e-bonus-impossiveis.html">Sinais de Golpes</a>
+                    <a href="/blog/checklist-final-antes-de-jogar-30-pontos-para-avaliar-qualquer-cassino.html">Checklist Antes de Jogar</a>
+                    <a href="/blog/cassinos-para-iniciantes-passo-a-passo-antes-do-primeiro-deposito.html">Cassinos para Iniciantes</a>
+                </div>
+            </div>
+
+            <!-- Cassinos por Categoria -->
+            <div class="sitemap-section">
+                <h2>🎰 Cassinos por Categoria</h2>
+                <div class="links-grid">
+                    <a href="/cassinos/melhor-bonus.html">Melhor Bônus</a>
+                    <a href="/cassinos/cassinos-com-pix.html">Cassinos com Pix</a>
+                    <a href="/cassinos/saque-rapido.html">Saque Rápido</a>
+                    <a href="/cassinos/deposito-baixo.html">Depósito Baixo</a>
+                    <a href="/cassinos/slots.html">Slots</a>
+                    <a href="/cassinos/live-casino.html">Live Casino</a>
+                    <a href="/cassinos/jackpots.html">Jackpots</a>
+                    <a href="/cassinos/premium.html">Premium</a>
+                    <a href="/cassinos/vip.html">VIP</a>
+                    <a href="/cassinos/poker.html">Poker</a>
+                    <a href="/cassinos/bingo.html">Bingo</a>
+                    <a href="/cassinos/esportes.html">Esportes</a>
+                </div>
+            </div>
+
+            <!-- Informações SEO -->
+            <div class="sitemap-section">
+                <h2>🔍 Informações para Mecanismos de Busca</h2>
+                <div class="links-grid">
+                    <a href="/sitemap.xml">Sitemap XML</a>
+                    <a href="/robots.txt">Robots.txt</a>
+                </div>
+            </div>
+
+            <a href="/" class="back-link" style="margin-top: 40px;">← Voltar para o início</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CasinoRadar. Conteúdo educativo sobre cassinos. Jogue com responsabilidade.</p>
+    </footer>
+</body>
+</html>
