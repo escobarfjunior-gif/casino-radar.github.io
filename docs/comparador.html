@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Cassinos - CasinoRadar</title>
+    <meta name="description" content="Compare cassinos online lado a lado. Analise bônus, depósito mínimo, tempo de saque e muito mais.">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #d4af37;
+            --primary-light: #e5c158;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --bg-darker: #0a0e18;
+        }
+        body {
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #1a1f3a 100%);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        header {
+            background: rgba(26, 31, 58, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            margin-bottom: 40px;
+        }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        h1 { font-size: 32px; margin-bottom: 12px; color: var(--primary); }
+        .subtitle { color: var(--text-secondary); margin-bottom: 30px; }
+        .selector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .casino-selector {
+            background: rgba(26, 31, 58, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            backdrop-filter: blur(10px);
+        }
+        .casino-selector label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .casino-selector select {
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--primary);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .comparison-table {
+            background: rgba(26, 31, 58, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            margin-bottom: 40px;
+        }
+        .table-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+        .table-header-cell {
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            border-right: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .table-header-cell:last-child { border-right: none; }
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .table-row:last-child { border-bottom: none; }
+        .table-cell {
+            padding: 16px 20px;
+            border-right: 1px solid rgba(212, 175, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .table-cell:last-child { border-right: none; }
+        .table-label {
+            background: rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: left;
+            grid-column: 1 / -1;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .value-positive { color: #34d399; font-weight: 700; }
+        .value-neutral { color: var(--primary); font-weight: 700; }
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #000;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">♠ CasinoRadar</a>
+        </div>
+    </header>
+    <main class="container">
+        <h1>🔄 Comparador de Cassinos</h1>
+        <p class="subtitle">Selecione até 3 cassinos e compare características lado a lado</p>
+        <div class="selector-grid">
+            <div class="casino-selector">
+                <label>Cassino 1</label>
+                <select id="casino1" onchange="updateComparison()">
+                    <option value="betano">Betano</option>
+                    <option value="blaze">Blaze</option>
+                    <option value="sportingbet">Sportingbet</option>
+                    <option value="stake">Stake</option>
+                    <option value="kto">KTO</option>
+                </select>
+            </div>
+            <div class="casino-selector">
+                <label>Cassino 2</label>
+                <select id="casino2" onchange="updateComparison()">
+                    <option value="">-- Selecione --</option>
+                    <option value="betano">Betano</option>
+                    <option value="blaze" selected>Blaze</option>
+                    <option value="sportingbet">Sportingbet</option>
+                    <option value="stake">Stake</option>
+                    <option value="kto">KTO</option>
+                </select>
+            </div>
+            <div class="casino-selector">
+                <label>Cassino 3</label>
+                <select id="casino3" onchange="updateComparison()">
+                    <option value="">-- Selecione --</option>
+                    <option value="betano">Betano</option>
+                    <option value="blaze">Blaze</option>
+                    <option value="sportingbet" selected>Sportingbet</option>
+                    <option value="stake">Stake</option>
+                    <option value="kto">KTO</option>
+                </select>
+            </div>
+        </div>
+        <div class="comparison-table" id="comparisonTable"></div>
+    </main>
+    <script>
+        const cassinosData = {
+            betano: { nome: 'Betano', rating: 4.9, bonus: '100% até R$ 500', deposito: 'R$ 20', saque: '1-2 dias', jogos: '3.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://betano.com.br' },
+            blaze: { nome: 'Blaze', rating: 4.7, bonus: '100% até R$ 1.000 + 40 RG', deposito: 'R$ 1', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://blaze.com' },
+            sportingbet: { nome: 'Sportingbet', rating: 4.7, bonus: '100% até R$ 750', deposito: 'R$ 10', saque: '2-3 dias', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://sportingbet.com.br' },
+            stake: { nome: 'Stake', rating: 4.8, bonus: 'Rakeback 24/7', deposito: 'R$ 1', saque: 'Imediato', jogos: '4.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://stake.com' },
+            kto: { nome: 'KTO', rating: 4.9, bonus: 'Bônus sem rollover', deposito: 'R$ 20', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://kto.com' }
+        };
+        function updateComparison() {
+            const c1 = document.getElementById('casino1').value;
+            const c2 = document.getElementById('casino2').value;
+            const c3 = document.getElementById('casino3').value;
+            const casinos = [c1, c2, c3].filter(c => c);
+            const data = casinos.map(id => cassinosData[id]);
+            let html = '<div class="table-header"><div class="table-header-cell">Característica</div>';
+            data.forEach(casino => html += `<div class="table-header-cell">${casino.nome}</div>`);
+            html += '</div>';
+            const fields = [
+                { label: 'Avaliação', key: 'rating', type: 'rating' },
+                { label: 'Bônus', key: 'bonus', type: 'text' },
+                { label: 'Depósito Mín.', key: 'deposito', type: 'deposit' },
+                { label: 'Tempo de Saque', key: 'saque', type: 'withdrawal' },
+                { label: 'Número de Jogos', key: 'jogos', type: 'text' },
+                { label: 'Licença', key: 'licenca', type: 'text' },
+                { label: 'Suporta Pix', key: 'pix', type: 'text' },
+                { label: 'Suporte', key: 'suporte', type: 'text' }
+            ];
+            fields.forEach(field => {
+                html += `<div class="table-label">${field.label}</div><div class="table-row">`;
+                data.forEach(casino => {
+                    let value = casino[field.key];
+                    let className = 'value-neutral';
+                    if (field.type === 'rating') { className = value >= 4.8 ? 'value-positive' : 'value-neutral'; value = `⭐ ${value}`; }
+                    else if (field.type === 'deposit') { className = value === 'R$ 1' ? 'value-positive' : 'value-neutral'; }
+                    else if (field.type === 'withdrawal') { className = value === 'Imediato' ? 'value-positive' : 'value-neutral'; }
+                    html += `<div class="table-cell"><span class="${className}">${value}</span></div>`;
+                });
+                html += '</div>';
+            });
+            html += '<div class="table-label">Ação</div><div class="table-row">';
+            data.forEach(casino => html += `<div class="table-cell"><button class="cta-btn" onclick="window.open('${casino.url}', '_blank')">Acessar</button></div>`);
+            html += '</div>';
+            document.getElementById('comparisonTable').innerHTML = html;
+        }
+        updateComparison();
+        if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(() => {}); }
+    </script>
+</body>
+</html>

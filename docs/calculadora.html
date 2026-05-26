@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rollover - CasinoRadar</title>
+    <meta name="description" content="Calcule quanto você precisa apostar para liberar seu bônus de cassino. Ferramenta gratuita e fácil de usar.">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #d4af37;
+            --primary-light: #e5c158;
+            --accent: #00d4ff;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --bg-darker: #0a0e18;
+        }
+        body {
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #1a1f3a 100%);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; width: 100%; }
+        header {
+            background: rgba(26, 31, 58, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            margin-bottom: 40px;
+        }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        h1 { font-size: 28px; margin-bottom: 12px; color: var(--primary); }
+        .subtitle { color: var(--text-secondary); margin-bottom: 30px; }
+        .calculator-box {
+            background: rgba(26, 31, 58, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--primary);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .form-group input::placeholder {
+            color: rgba(212, 175, 55, 0.5);
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        .btn-calculate {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        .result-box.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 3px solid #34d399;
+        }
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+        .result-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .result-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #34d399;
+        }
+        .info-box {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 30px;
+        }
+        .info-box h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .info-box p + p {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">♠ CasinoRadar</a>
+        </div>
+    </header>
+    <main class="container">
+        <h1>🧮 Calculadora de Rollover</h1>
+        <p class="subtitle">Descubra quanto você precisa apostar para liberar seu bônus</p>
+        
+        <div class="info-box">
+            <h3>💡 O que é Rollover?</h3>
+            <p>Rollover é o valor total que você precisa apostar para poder sacar o bônus recebido. Por exemplo, um bônus de R$ 100 com rollover de 35x significa que você precisa apostar R$ 3.500 antes de sacar.</p>
+        </div>
+
+        <div class="calculator-box">
+            <div class="form-group">
+                <label>Valor do Bônus (R$)</label>
+                <input type="number" id="bonusValue" placeholder="Ex: 100" step="0.01">
+            </div>
+            <div class="form-group">
+                <label>Multiplicador de Rollover</label>
+                <input type="number" id="rolloverMultiplier" placeholder="Ex: 35" step="0.1">
+            </div>
+            <button class="btn-calculate" onclick="calculateRollover()">Calcular</button>
+        </div>
+
+        <div class="result-box" id="resultBox">
+            <div class="result-item">
+                <div class="result-label">Valor do Bônus</div>
+                <div class="result-value" id="resultBonus">R$ 0,00</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Multiplicador</div>
+                <div class="result-value" id="resultMultiplier">35x</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Total a Apostar</div>
+                <div class="result-value" id="resultTotal">R$ 0,00</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Dica</div>
+                <div style="color: #34d399; font-size: 13px; margin-top: 8px;" id="resultTip"></div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📊 Exemplos Práticos</h3>
+            <p><strong>Exemplo 1:</strong> Bônus de R$ 100 com rollover 35x = Você precisa apostar R$ 3.500</p>
+            <p><strong>Exemplo 2:</strong> Bônus de R$ 500 com rollover 20x = Você precisa apostar R$ 10.000</p>
+            <p><strong>Dica:</strong> Cassinos com rollover menor são mais fáceis de cumprir. Procure por bônus com rollover de 20x ou menos!</p>
+        </div>
+    </main>
+
+    <script>
+        function calculateRollover() {
+            const bonusValue = parseFloat(document.getElementById('bonusValue').value);
+            const rolloverMultiplier = parseFloat(document.getElementById('rolloverMultiplier').value);
+
+            if (!bonusValue || !rolloverMultiplier || bonusValue <= 0 || rolloverMultiplier <= 0) {
+                alert('Por favor, preencha todos os campos com valores válidos!');
+                return;
+            }
+
+            const totalToWager = bonusValue * rolloverMultiplier;
+            
+            document.getElementById('resultBonus').textContent = `R$ ${bonusValue.toFixed(2).replace('.', ',')}`;
+            document.getElementById('resultMultiplier').textContent = `${rolloverMultiplier}x`;
+            document.getElementById('resultTotal').textContent = `R$ ${totalToWager.toFixed(2).replace('.', ',')}`;
+            
+            let tip = '';
+            if (rolloverMultiplier <= 20) {
+                tip = '✅ Rollover baixo! Este é um bônus fácil de cumprir.';
+            } else if (rolloverMultiplier <= 35) {
+                tip = '⚠️ Rollover moderado. Será necessário apostar bastante para liberar o bônus.';
+            } else {
+                tip = '❌ Rollover alto. Considere comparar com outros cassinos antes de aceitar.';
+            }
+            document.getElementById('resultTip').textContent = tip;
+
+            document.getElementById('resultBox').classList.add('show');
+        }
+
+        // Permitir Enter para calcular
+        document.getElementById('rolloverMultiplier').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') calculateRollover();
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>
