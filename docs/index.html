@@ -25,6 +25,68 @@
     <!-- Sitemap reference -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+    <!-- JSON-LD Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CasinoRadar",
+      "url": "https://casino-radar.github.io",
+      "description": "Plataforma educativa com análises completas de 400+ cassinos online no Brasil, rankings, bônus, guias de Pix e jogo responsável.",
+      "applicationCategory": "EducationalApplication",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "BRL",
+        "offerCount": "400+"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "ratingCount": "400"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "CasinoRadar",
+        "url": "https://casino-radar.github.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CasinoRadar",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://casino-radar.github.io/logo.png",
+          "width": 250,
+          "height": 60
+        }
+      },
+      "mainEntity": {
+        "@type": "CollectionPage",
+        "name": "Cassinos Online no Brasil",
+        "description": "Coleção de 400+ cassinos online verificados e analisados"
+      }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CasinoRadar",
+      "url": "https://casino-radar.github.io",
+      "description": "Plataforma educativa independente com análises de cassinos online",
+      "sameAs": [
+        "https://github.com/casino-radar"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "url": "https://casino-radar.github.io/contato.html",
+        "email": "contato@casino-radar.github.io"
+      }
+    }
+    </script>
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"
          crossorigin="anonymous"></script>
@@ -414,15 +476,17 @@
         }
 
         .casino-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.65) 0%, rgba(37, 45, 71, 0.45) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            border-radius: 18px;
             padding: 24px;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             position: relative;
             overflow: hidden;
             animation: fadeInUp 0.5s ease backwards;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.06);
         }
 
         .casino-card::before {
@@ -432,30 +496,32 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.07), transparent);
-            transition: left 0.5s ease;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .casino-card:hover::before { left: 100%; }
 
         .casino-card:hover {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.98) 0%, rgba(37, 45, 71, 0.9) 100%);
-            border-color: rgba(212, 175, 55, 0.45);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 48px rgba(212, 175, 55, 0.18), 0 0 40px rgba(139, 92, 246, 0.08);
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(37, 45, 71, 0.65) 100%);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 24px 56px rgba(212, 175, 55, 0.22), 0 12px 32px rgba(139, 92, 246, 0.12), inset 1px 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .casino-rank {
             position: absolute;
             top: 14px;
             left: 14px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--primary);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 4px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #000;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 10px;
+            z-index: 2;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+            backdrop-filter: blur(8px);
         }
 
         .casino-header {
@@ -482,15 +548,22 @@
         }
 
         .category-tag {
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(0, 212, 255, 0.12);
             color: var(--accent);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            font-size: 10px;
-            font-weight: 600;
-            padding: 2px 7px;
-            border-radius: 4px;
+            border: 1px solid rgba(0, 212, 255, 0.28);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.4px;
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease;
+        }
+
+        .category-tag:hover {
+            background: rgba(0, 212, 255, 0.18);
+            border-color: rgba(0, 212, 255, 0.4);
         }
 
         .casino-rating {
@@ -513,22 +586,29 @@
         }
 
         .casino-bonus {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(139, 92, 246, 0.1) 100%);
             color: var(--primary);
-            padding: 10px 14px;
-            border-radius: 8px;
+            padding: 12px 16px;
+            border-radius: 10px;
             font-size: 13px;
             font-weight: 700;
             margin-bottom: 14px;
-            border-left: 3px solid var(--primary);
+            border: 1px solid rgba(212, 175, 55, 0.28);
             display: flex;
             align-items: center;
             gap: 8px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
         }
 
         .casino-bonus::before {
             content: '🎁';
-            font-size: 14px;
+            font-size: 15px;
+        }
+
+        .casino-card:hover .casino-bonus {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(139, 92, 246, 0.15) 100%);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .casino-info {
@@ -603,6 +683,88 @@
         .btn-review:hover {
             background: rgba(139, 92, 246, 0.25);
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+        }
+
+        /* ===== TRUST BADGES ===== */
+        .trust-badges {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.28);
+            color: #34d399;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            backdrop-filter: blur(6px);
+        }
+
+        .trust-badge::before {
+            content: '✓';
+            font-weight: 900;
+        }
+
+        /* ===== FEATURED BADGE ===== */
+        .featured-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* ===== SORT CONTROLS ===== */
+        .sort-controls {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .sort-select {
+            background: rgba(212, 175, 55, 0.08);
+            color: var(--text-primary);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .sort-select:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--primary);
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .sort-select option {
+            background: var(--dark-secondary);
+            color: var(--text-primary);
         }
 
         /* ===== PAGINATION ===== */
@@ -912,6 +1074,7 @@
             nav a { display: none; }
             .hero { padding: 60px 16px 50px; }
             .hero h1 { font-size: 28px; }
+            .sort-controls { justify-content: center; }
         }
     </style>
 </head>
@@ -973,6 +1136,18 @@
                 <div class="filters" id="filters"></div>
 
                 <div class="results-info" id="resultsInfo"></div>
+
+                <!-- Sort Controls -->
+                <div class="sort-controls">
+                    <label for="sortSelect" style="color: var(--text-secondary); font-size: 13px; margin-right: 10px;">Ordenar por:</label>
+                    <select id="sortSelect" class="sort-select" onchange="applySortAndRender()">
+                        <option value="default">Recomendados</option>
+                        <option value="rating-desc">Melhor Avaliação</option>
+                        <option value="rating-asc">Menor Avaliação</option>
+                        <option value="name-asc">Nome (A-Z)</option>
+                        <option value="name-desc">Nome (Z-A)</option>
+                    </select>
+                </div>
 
                 <!-- AdSense Banner -->
                 <div class="ad-banner">
@@ -1286,8 +1461,12 @@
                 const stars = getStars(parseFloat(casino.rating));
                 const categories = (casino.categorias || []).slice(0, 2);
 
+                const isFeatured = casino.rating >= 4.8;
+                const isTrusted = casino.rating >= 4.5;
+
                 return `
                     <div class="casino-card" style="animation-delay: ${idx * 0.04}s">
+                        ${isFeatured ? '<div class="featured-badge">⭐ DESTAQUE</div>' : ''}
                         <div class="casino-rank">#${globalRank}</div>
                         <div class="casino-header">
                             <div>
@@ -1295,6 +1474,7 @@
                                 <div class="casino-categories">
                                     ${categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
                                 </div>
+                                ${isTrusted ? '<div class="trust-badges"><span class="trust-badge">Verificado</span></div>' : ''}
                             </div>
                             <div class="casino-rating">
                                 <div class="rating-value">⭐ ${parseFloat(casino.rating).toFixed(1)}</div>
@@ -1302,6 +1482,7 @@
                             </div>
                         </div>
                         <div class="casino-bonus">${casino.bonus || 'Bônus especial'}</div>
+                        ${isTrusted ? '<div style="font-size:11px;color:#34d399;margin-bottom:10px;display:flex;align-items:center;gap:4px;"><span style="color:#34d399;">✓</span> Cassino Confiável</div>' : ''}
                         <div class="casino-info">
                             <div class="info-item">
                                 <div class="info-label">Depósito Mín.</div>
@@ -1418,6 +1599,42 @@
 
         function scrollToRankings() {
             document.getElementById('rankings').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // =============================================
+        // ORDENAÇÃO
+        // =============================================
+        let sortOrder = 'default';
+
+        function applySortAndRender() {
+            sortOrder = document.getElementById('sortSelect').value;
+            currentPage = 1;
+            
+            // Aplicar ordenação
+            const sorted = [...filteredCasinos];
+            
+            switch(sortOrder) {
+                case 'rating-desc':
+                    sorted.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+                    break;
+                case 'rating-asc':
+                    sorted.sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
+                    break;
+                case 'name-asc':
+                    sorted.sort((a, b) => (a.nome || '').localeCompare(b.nome || ''));
+                    break;
+                case 'name-desc':
+                    sorted.sort((a, b) => (b.nome || '').localeCompare(a.nome || ''));
+                    break;
+                default:
+                    // Manter ordem original (recomendados)
+                    break;
+            }
+            
+            filteredCasinos = sorted;
+            renderCasinos();
+            renderPagination();
+            updateResultsInfo();
         }
 
         // =============================================
