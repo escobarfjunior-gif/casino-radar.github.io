@@ -1513,10 +1513,10 @@
 
                 <!-- Destaque de Filtros Populares -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px;">
-                    <button onclick="filterByCategory('Saque Rápido')" style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%); color: white; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(52, 211, 153, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">⚡ Saque Rápido</button>
-                    <button onclick="filterByCategory('Pix')" style="background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%); color: white; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(0, 212, 255, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">💳 Com Pix</button>
-                    <button onclick="filterByCategory('Depósito Baixo')" style="background: linear-gradient(135deg, #d4af37 0%, #e5c158 100%); color: #000; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(212, 175, 55, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">💰 Depósito Baixo</button>
-                    <button onclick="filterByCategory('Confiável')" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); color: white; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(139, 92, 246, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">✅ Confiável</button>
+                    <button class="quick-filter-btn" data-category="Saque Rápido" style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%); color: white; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(52, 211, 153, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">⚡ Saque Rápido</button>
+                    <button class="quick-filter-btn" data-category="Pix" style="background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%); color: white; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(0, 212, 255, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">💳 Com Pix</button>
+                    <button class="quick-filter-btn" data-category="Depósito Baixo" style="background: linear-gradient(135deg, #d4af37 0%, #e5c158 100%); color: #000; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(212, 175, 55, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">💰 Depósito Baixo</button>
+                    <button class="quick-filter-btn" data-category="Confiável" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); color: white; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(139, 92, 246, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">✅ Confiável</button>
                 </div>
 
                 <div class="filters" id="filters"></div>
@@ -2119,9 +2119,19 @@
         }
 
         // =============================================
-        // INICIALIZAR
+        // EVENT LISTENERS PARA BOTOES DE FILTRO RAPIDO
         // =============================================
-        document.addEventListener('DOMContentLoaded', loadCasinos);
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCasinos();
+            
+            // Adicionar event listeners aos botoes de filtro rapido
+            document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    filterByCategory(category, this);
+                });
+            });
+        });
 
         // =============================================
         // REGISTRAR SERVICE WORKER (PWA)
