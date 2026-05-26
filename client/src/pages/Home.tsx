@@ -107,6 +107,7 @@ export default function Home() {
           </div>
           <div className="hidden md:flex gap-8">
             <a href="#rankings" className="hover-glow text-sm">Rankings</a>
+            <a href="/blog" className="hover-glow text-sm">Blog</a>
             <a href="#guias" className="hover-glow text-sm">Guias</a>
             <a href="#responsavel" className="hover-glow text-sm">Jogo Responsável</a>
           </div>
