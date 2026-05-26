@@ -728,6 +728,207 @@
             animation: pulse 2s ease-in-out infinite;
         }
 
+        /* ===== CUPOM GENERATOR ===== */
+        .cupom-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(212, 175, 55, 0.04) 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .cupom-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .cupom-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .cupom-header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cupom-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .cupom-tab-btn {
+            background: rgba(212, 175, 55, 0.08);
+            color: var(--text-secondary);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .cupom-tab-btn:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .cupom-tab-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #000;
+            border-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .cupom-tab-content {
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .cupom-tab-content.active {
+            display: block;
+        }
+
+        .cupom-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .cupom-option {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.65) 0%, rgba(37, 45, 71, 0.45) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.22);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
+        }
+
+        .cupom-option:hover {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(37, 45, 71, 0.65) 100%);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(212, 175, 55, 0.2), 0 8px 20px rgba(139, 92, 246, 0.1);
+        }
+
+        .cupom-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .cupom-label {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .cupom-label-small {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .cupom-result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .cupom-box {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.85) 0%, rgba(37, 45, 71, 0.7) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 24px 56px rgba(212, 175, 55, 0.22), 0 12px 32px rgba(139, 92, 246, 0.12);
+        }
+
+        .cupom-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .cupom-code {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 2px dashed rgba(212, 175, 55, 0.4);
+            color: var(--primary);
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .btn-copy {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #000;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 16px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-copy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.4);
+        }
+
+        .cupom-info {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .btn-close {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--accent-purple);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-close:hover {
+            background: rgba(139, 92, 246, 0.25);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
         /* ===== SORT CONTROLS ===== */
         .sort-controls {
             display: flex;
@@ -1069,12 +1270,59 @@
             .footer-legal-links { justify-content: center; }
         }
 
+        @media (max-width: 768px) {
+            .cupom-header h2 { font-size: 28px; }
+            .cupom-options {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 12px;
+            }
+            .cupom-option {
+                padding: 16px 12px;
+            }
+            .cupom-icon { font-size: 28px; }
+            .cupom-label { font-size: 16px; }
+            .cupom-tabs {
+                gap: 8px;
+            }
+            .cupom-tab-btn {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+        }
+
         @media (max-width: 480px) {
             .logo { font-size: 20px; }
             nav a { display: none; }
             .hero { padding: 60px 16px 50px; }
             .hero h1 { font-size: 28px; }
             .sort-controls { justify-content: center; }
+            .cupom-section { padding: 60px 16px; }
+            .cupom-header h2 { font-size: 24px; }
+            .cupom-header p { font-size: 13px; }
+            .cupom-options {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .cupom-option {
+                padding: 14px 10px;
+            }
+            .cupom-icon { font-size: 24px; }
+            .cupom-label { font-size: 14px; }
+            .cupom-label-small { font-size: 11px; }
+            .cupom-tabs {
+                gap: 6px;
+                margin-bottom: 24px;
+            }
+            .cupom-tab-btn {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+            .cupom-box {
+                padding: 24px 16px;
+            }
+            .cupom-code {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -1118,6 +1366,128 @@
                     <div class="stat-box">
                         <div class="stat-number">24h</div>
                         <div class="stat-label">Atualização Editorial</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUPOM GENERATOR -->
+        <section id="cupom-generator" class="cupom-section">
+            <div class="container">
+                <div class="cupom-header">
+                    <h2>🎁 Gerador de Cupons Exclusivos</h2>
+                    <p>Gere cupons personalizados para suas rodadas grátis, bônus de cadastro, depósito e cashback!</p>
+                </div>
+
+                <div class="cupom-tabs">
+                    <button class="cupom-tab-btn active" onclick="switchCupomTab('rodadas')">🎰 Rodadas Grátis</button>
+                    <button class="cupom-tab-btn" onclick="switchCupomTab('cadastro')">📝 Bônus Cadastro</button>
+                    <button class="cupom-tab-btn" onclick="switchCupomTab('deposito')">💰 Bônus Depósito</button>
+                    <button class="cupom-tab-btn" onclick="switchCupomTab('cashback')">💳 Cashback</button>
+                </div>
+
+                <!-- TAB: Rodadas Grátis -->
+                <div id="tab-rodadas" class="cupom-tab-content active">
+                    <div class="cupom-options">
+                        <div class="cupom-option" onclick="generateCupom('rodadas', 10)">
+                            <div class="cupom-icon">🎰</div>
+                            <div class="cupom-label">10 Rodadas</div>
+                            <div class="cupom-label-small">Grátis</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('rodadas', 20)">
+                            <div class="cupom-icon">🎰</div>
+                            <div class="cupom-label">20 Rodadas</div>
+                            <div class="cupom-label-small">Grátis</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('rodadas', 50)">
+                            <div class="cupom-icon">🎰</div>
+                            <div class="cupom-label">50 Rodadas</div>
+                            <div class="cupom-label-small">Grátis</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('rodadas', 100)">
+                            <div class="cupom-icon">🎰</div>
+                            <div class="cupom-label">100 Rodadas</div>
+                            <div class="cupom-label-small">Grátis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: Bônus Cadastro -->
+                <div id="tab-cadastro" class="cupom-tab-content">
+                    <div class="cupom-options">
+                        <div class="cupom-option" onclick="generateCupom('cadastro', 5)">
+                            <div class="cupom-icon">💵</div>
+                            <div class="cupom-label">R$ 5</div>
+                            <div class="cupom-label-small">Sem Depósito</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('cadastro', 10)">
+                            <div class="cupom-icon">💵</div>
+                            <div class="cupom-label">R$ 10</div>
+                            <div class="cupom-label-small">Sem Depósito</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('cadastro', 20)">
+                            <div class="cupom-icon">💵</div>
+                            <div class="cupom-label">R$ 20</div>
+                            <div class="cupom-label-small">Sem Depósito</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('cadastro', 50)">
+                            <div class="cupom-icon">💵</div>
+                            <div class="cupom-label">R$ 50</div>
+                            <div class="cupom-label-small">Sem Depósito</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('cadastro', 100)">
+                            <div class="cupom-icon">💵</div>
+                            <div class="cupom-label">R$ 100</div>
+                            <div class="cupom-label-small">Sem Depósito</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: Bônus Depósito -->
+                <div id="tab-deposito" class="cupom-tab-content">
+                    <div class="cupom-options">
+                        <div class="cupom-option" onclick="generateCupom('deposito', 100)">
+                            <div class="cupom-icon">📈</div>
+                            <div class="cupom-label">100%</div>
+                            <div class="cupom-label-small">Até R$ 500</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('deposito', 200)">
+                            <div class="cupom-icon">📈</div>
+                            <div class="cupom-label">200%</div>
+                            <div class="cupom-label-small">Até R$ 1.000</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('deposito', 500)">
+                            <div class="cupom-icon">📈</div>
+                            <div class="cupom-label">500%</div>
+                            <div class="cupom-label-small">Até R$ 2.500</div>
+                        </div>
+                        <div class="cupom-option" onclick="generateCupom('deposito', 1000)">
+                            <div class="cupom-icon">📈</div>
+                            <div class="cupom-label">1000%</div>
+                            <div class="cupom-label-small">Até R$ 5.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: Cashback -->
+                <div id="tab-cashback" class="cupom-tab-content">
+                    <div class="cupom-options">
+                        <div class="cupom-option" onclick="generateCupom('cashback', 100)">
+                            <div class="cupom-icon">💳</div>
+                            <div class="cupom-label">100%</div>
+                            <div class="cupom-label-small">Cashback Garantido</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupom Gerado -->
+                <div id="cupom-result" class="cupom-result" style="display:none;">
+                    <div class="cupom-box">
+                        <div class="cupom-title">Seu Cupom foi Gerado! 🎉</div>
+                        <div class="cupom-code" id="cupom-code">CASINO2024</div>
+                        <button class="btn-copy" onclick="copyCupom()">📋 Copiar Cupom</button>
+                        <div class="cupom-info" id="cupom-info"></div>
+                        <button class="btn-close" onclick="closeCupomResult()">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -1599,6 +1969,92 @@
 
         function scrollToRankings() {
             document.getElementById('rankings').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // =============================================
+        // GERADOR DE CUPONS
+        // =============================================
+        const cupomTemplates = {
+            rodadas: {
+                10: 'SPIN10FREE',
+                20: 'SPIN20FREE',
+                50: 'SPIN50FREE',
+                100: 'SPIN100FREE'
+            },
+            cadastro: {
+                5: 'WELCOME5',
+                10: 'WELCOME10',
+                20: 'WELCOME20',
+                50: 'WELCOME50',
+                100: 'WELCOME100'
+            },
+            deposito: {
+                100: 'MATCH100',
+                200: 'MATCH200',
+                500: 'MATCH500',
+                1000: 'MATCH1000'
+            },
+            cashback: {
+                100: 'CASHBACK100'
+            }
+        };
+
+        function switchCupomTab(tabName) {
+            // Esconder todos os tabs
+            document.querySelectorAll('.cupom-tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.cupom-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Mostrar tab selecionado
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function generateCupom(type, value) {
+            let baseCode = cupomTemplates[type][value];
+            let randomSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
+            let cupomCode = `${baseCode}${randomSuffix}`;
+            let cupomInfo = '';
+
+            // Gerar informações do cupom
+            if (type === 'rodadas') {
+                cupomInfo = `🎰 ${value} Rodadas Grátis<br>✓ Válido por 30 dias<br>✓ Sem depósito necessário`;
+            } else if (type === 'cadastro') {
+                cupomInfo = `💵 R$ ${value} em Bônus<br>✓ Apenas para novo cadastro<br>✓ Sem depósito necessário`;
+            } else if (type === 'deposito') {
+                cupomInfo = `📈 Bônus de ${value}% no depósito<br>✓ Aplica-se ao primeiro depósito<br>✓ Rollover de 35x`;
+            } else if (type === 'cashback') {
+                cupomInfo = `💳 ${value}% de Cashback Garantido<br>✓ Válido em todos os jogos<br>✓ Sem limite de saque`;
+            }
+
+            // Mostrar resultado
+            document.getElementById('cupom-code').textContent = cupomCode;
+            document.getElementById('cupom-info').innerHTML = cupomInfo;
+            document.getElementById('cupom-result').style.display = 'flex';
+
+            // Scroll para o resultado
+            setTimeout(() => {
+                document.getElementById('cupom-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function copyCupom() {
+            let cupomCode = document.getElementById('cupom-code').textContent;
+            navigator.clipboard.writeText(cupomCode).then(() => {
+                let btn = document.querySelector('.btn-copy');
+                let originalText = btn.textContent;
+                btn.textContent = '✓ Copiado!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        }
+
+        function closeCupomResult() {
+            document.getElementById('cupom-result').style.display = 'none';
         }
 
         // =============================================
