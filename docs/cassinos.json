@@ -1,0 +1,5634 @@
+{
+  "cassinos": [
+    {
+      "id": 1,
+      "nome": "FireCasino",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "3993+",
+      "categorias": [
+        "Dados",
+        "Confiável",
+        "Jackpots"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 2,
+      "nome": "SlotUltra",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "5 min",
+      "jogos": "2388+",
+      "categorias": [
+        "Melhor Bônus",
+        "VIP",
+        "Depósito Baixo",
+        "Dados"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 3,
+      "nome": "MegaGames",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "1445+",
+      "categorias": [
+        "High Rollers",
+        "Novidades"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 4,
+      "nome": "ParadiseTurbo",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "1797+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Poker",
+        "Bingo"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 5,
+      "nome": "Ultra999",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "4714+",
+      "categorias": [
+        "Confiável",
+        "Bingo",
+        "Dados",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 6,
+      "nome": "PokerCasino",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "4744+",
+      "categorias": [
+        "Jackpots",
+        "Jogos de Mesa",
+        "Live Casino",
+        "VIP"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 7,
+      "nome": "JackpotRápido",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 15",
+      "saque": "1 hora",
+      "jogos": "1756+",
+      "categorias": [
+        "Depósito Baixo",
+        "Jackpots",
+        "Live Casino",
+        "Saque Rápido"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 8,
+      "nome": "WindExpress",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "3584+",
+      "categorias": [
+        "Live Casino",
+        "Jogos de Mesa",
+        "Premium"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 9,
+      "nome": "NoblePlay",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "3347+",
+      "categorias": [
+        "Depósito Baixo",
+        "Bingo"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 10,
+      "nome": "RioBet",
+      "bonus": "100% até R$ 10000",
+      "deposito_min": "R$ 15",
+      "saque": "1 hora",
+      "jogos": "4268+",
+      "categorias": [
+        "Novidades",
+        "Poker"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 11,
+      "nome": "BetRápido",
+      "bonus": "300% até R$ 2000",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "3911+",
+      "categorias": [
+        "Saque Rápido",
+        "Novidades",
+        "Poker"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 12,
+      "nome": "NobleBet",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "3737+",
+      "categorias": [
+        "Novidades",
+        "Melhor Bônus",
+        "Premium"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 13,
+      "nome": "EliteBet",
+      "bonus": "200% até R$ 10000",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "2000+",
+      "categorias": [
+        "Depósito Baixo",
+        "Cashback",
+        "Live Casino",
+        "Confiável"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 14,
+      "nome": "GrandFlash",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "3749+",
+      "categorias": [
+        "Premium",
+        "Dados",
+        "Confiável",
+        "Novidades"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 15,
+      "nome": "FortuneExpress",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 10",
+      "saque": "15 min",
+      "jogos": "3801+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Confiável",
+        "Dados",
+        "VIP"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 16,
+      "nome": "IceExpress",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "4015+",
+      "categorias": [
+        "Dados",
+        "Confiável",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 17,
+      "nome": "NobleClub",
+      "bonus": "300% até R$ 5000",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "2446+",
+      "categorias": [
+        "Slots",
+        "Bingo",
+        "Jackpots",
+        "Cashback"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 18,
+      "nome": "SlotMega",
+      "bonus": "200% até R$ 10000",
+      "deposito_min": "R$ 5",
+      "saque": "10 min",
+      "jogos": "1400+",
+      "categorias": [
+        "Dados",
+        "Poker",
+        "Novidades",
+        "Esportes"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 19,
+      "nome": "LuckSlots",
+      "bonus": "200% até R$ 2000",
+      "deposito_min": "R$ 15",
+      "saque": "5 min",
+      "jogos": "1711+",
+      "categorias": [
+        "Poker",
+        "Novidades",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 20,
+      "nome": "UltraBet",
+      "bonus": "500% até R$ 3000",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "3701+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Jackpots",
+        "High Rollers"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 21,
+      "nome": "StormGames",
+      "bonus": "300% até R$ 3000",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "2024+",
+      "categorias": [
+        "Depósito Baixo",
+        "Esportes",
+        "Saque Rápido"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 22,
+      "nome": "BonusGames",
+      "bonus": "300% até R$ 5000",
+      "deposito_min": "R$ 50",
+      "saque": "10 min",
+      "jogos": "1010+",
+      "categorias": [
+        "Esportes",
+        "Premium",
+        "High Rollers"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 23,
+      "nome": "Platinum888",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "4136+",
+      "categorias": [
+        "Melhor Bônus",
+        "Esportes"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 24,
+      "nome": "RoyalBet",
+      "bonus": "100% até R$ 3000",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "2150+",
+      "categorias": [
+        "Bingo",
+        "Novidades",
+        "VIP",
+        "Premium"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 25,
+      "nome": "GalaxyMax",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "3362+",
+      "categorias": [
+        "Dados",
+        "Jogos de Mesa",
+        "VIP"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 26,
+      "nome": "ApexBet",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "1926+",
+      "categorias": [
+        "VIP",
+        "Melhor Bônus",
+        "Live Casino",
+        "Slots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 27,
+      "nome": "UltraClub",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 5",
+      "saque": "5 min",
+      "jogos": "1425+",
+      "categorias": [
+        "Saque Rápido",
+        "Novidades",
+        "Melhor Bônus"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 28,
+      "nome": "ParadiseClub",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "3853+",
+      "categorias": [
+        "Depósito Baixo",
+        "Cashback"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 29,
+      "nome": "ParadiseMax",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "3142+",
+      "categorias": [
+        "Pix",
+        "Bingo",
+        "High Rollers"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 30,
+      "nome": "QuantumPlay",
+      "bonus": "500% até R$ 5000",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "3233+",
+      "categorias": [
+        "Pix",
+        "Saque Rápido"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 31,
+      "nome": "SambaPix",
+      "bonus": "300% até R$ 5000",
+      "deposito_min": "R$ 10",
+      "saque": "Imediato",
+      "jogos": "1326+",
+      "categorias": [
+        "Premium",
+        "Novidades",
+        "Esportes",
+        "Live Casino"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 32,
+      "nome": "QueenBet",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "2380+",
+      "categorias": [
+        "Cashback",
+        "Jogos de Mesa",
+        "High Rollers"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 33,
+      "nome": "DiamondMega",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "3902+",
+      "categorias": [
+        "VIP",
+        "Novidades",
+        "Jackpots"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 34,
+      "nome": "Samba999",
+      "bonus": "500% até R$ 2000",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "2172+",
+      "categorias": [
+        "Pix",
+        "Premium"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 35,
+      "nome": "MoonClub",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 15",
+      "saque": "24 horas",
+      "jogos": "4281+",
+      "categorias": [
+        "Poker",
+        "Live Casino",
+        "Premium",
+        "High Rollers"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 36,
+      "nome": "Poker777",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "24 horas",
+      "jogos": "4515+",
+      "categorias": [
+        "Dados",
+        "Poker"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 37,
+      "nome": "FortunePro",
+      "bonus": "200% até R$ 1000",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "3472+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Live Casino",
+        "High Rollers",
+        "Premium"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 38,
+      "nome": "InfinityPro",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "15 min",
+      "jogos": "3074+",
+      "categorias": [
+        "Cashback",
+        "Live Casino"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 39,
+      "nome": "ThunderVIP",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "Imediato",
+      "jogos": "4609+",
+      "categorias": [
+        "Confiável",
+        "Saque Rápido"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 40,
+      "nome": "SilverTurbo",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "2479+",
+      "categorias": [
+        "High Rollers",
+        "Jogos de Mesa",
+        "Dados"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 41,
+      "nome": "WindBet",
+      "bonus": "300% até R$ 3000",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "2162+",
+      "categorias": [
+        "Jackpots",
+        "Bingo"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 42,
+      "nome": "OasisMax",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "2126+",
+      "categorias": [
+        "Novidades",
+        "Cashback",
+        "Live Casino",
+        "Esportes"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 43,
+      "nome": "MiragePix",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "2854+",
+      "categorias": [
+        "Bingo",
+        "Live Casino",
+        "Novidades",
+        "High Rollers"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 44,
+      "nome": "ImperialMega",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "2953+",
+      "categorias": [
+        "VIP",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 45,
+      "nome": "StarTurbo",
+      "bonus": "500% até R$ 3000",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "2305+",
+      "categorias": [
+        "Live Casino",
+        "Jackpots",
+        "Poker"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 46,
+      "nome": "Silver777",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 1",
+      "saque": "5 min",
+      "jogos": "4190+",
+      "categorias": [
+        "Dados",
+        "High Rollers",
+        "Bingo",
+        "Saque Rápido"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 47,
+      "nome": "KingPix",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "2414+",
+      "categorias": [
+        "Confiável",
+        "Esportes"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 48,
+      "nome": "EdenPlus",
+      "bonus": "500% até R$ 1000",
+      "deposito_min": "R$ 5",
+      "saque": "15 min",
+      "jogos": "4574+",
+      "categorias": [
+        "Confiável",
+        "Bingo",
+        "Jackpots",
+        "Live Casino"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 49,
+      "nome": "RegalSlots",
+      "bonus": "200% até R$ 2000",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "2400+",
+      "categorias": [
+        "Premium",
+        "Poker",
+        "Novidades"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 50,
+      "nome": "GrandUltra",
+      "bonus": "200% até R$ 10000",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "3533+",
+      "categorias": [
+        "Poker",
+        "Melhor Bônus",
+        "VIP",
+        "Saque Rápido"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 51,
+      "nome": "BonusPro",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "1401+",
+      "categorias": [
+        "Melhor Bônus",
+        "High Rollers",
+        "VIP",
+        "Slots"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 52,
+      "nome": "TropicalPlus",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "3948+",
+      "categorias": [
+        "Live Casino",
+        "Dados",
+        "Saque Rápido",
+        "Bingo"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 53,
+      "nome": "BrasilPix",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "3858+",
+      "categorias": [
+        "Pix",
+        "Live Casino",
+        "Novidades"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 54,
+      "nome": "BrasilGames",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "1 hora",
+      "jogos": "4504+",
+      "categorias": [
+        "Melhor Bônus",
+        "Jackpots",
+        "Poker",
+        "Cashback"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 55,
+      "nome": "MoonRápido",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "3935+",
+      "categorias": [
+        "Melhor Bônus",
+        "Poker",
+        "High Rollers"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 56,
+      "nome": "PokerExpress",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "1098+",
+      "categorias": [
+        "Saque Rápido",
+        "Melhor Bônus",
+        "High Rollers"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 57,
+      "nome": "WindSlots",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "3428+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Dados",
+        "High Rollers"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 58,
+      "nome": "Ace777",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "3718+",
+      "categorias": [
+        "Slots",
+        "Poker",
+        "Jogos de Mesa",
+        "Novidades"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 59,
+      "nome": "ParadiseFlash",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 5",
+      "saque": "15 min",
+      "jogos": "1048+",
+      "categorias": [
+        "Premium",
+        "Pix",
+        "Melhor Bônus",
+        "Esportes"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 60,
+      "nome": "RouletteCasino",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "2490+",
+      "categorias": [
+        "Depósito Baixo",
+        "Saque Rápido",
+        "High Rollers",
+        "Slots"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 61,
+      "nome": "RoulettePlus",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 15",
+      "saque": "5 min",
+      "jogos": "1175+",
+      "categorias": [
+        "Poker",
+        "Depósito Baixo",
+        "Jogos de Mesa"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 62,
+      "nome": "GoldenPix",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "4289+",
+      "categorias": [
+        "Bingo",
+        "Dados"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 63,
+      "nome": "Planet777",
+      "bonus": "200% até R$ 500",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "3848+",
+      "categorias": [
+        "Jackpots",
+        "Jogos de Mesa",
+        "Esportes",
+        "VIP"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 64,
+      "nome": "ParadiseExpress",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 20",
+      "saque": "1 hora",
+      "jogos": "4539+",
+      "categorias": [
+        "Dados",
+        "Live Casino",
+        "Jogos de Mesa",
+        "High Rollers"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 65,
+      "nome": "RouletteUltra",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "2867+",
+      "categorias": [
+        "Poker",
+        "Confiável"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 66,
+      "nome": "FlashTurbo",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "4819+",
+      "categorias": [
+        "Saque Rápido",
+        "Confiável",
+        "Live Casino"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 67,
+      "nome": "BetVIP",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "4622+",
+      "categorias": [
+        "Confiável",
+        "Poker"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 68,
+      "nome": "NexusMax",
+      "bonus": "100% até R$ 500",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "4096+",
+      "categorias": [
+        "Slots",
+        "Poker"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 69,
+      "nome": "PlatinumExpress",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "2988+",
+      "categorias": [
+        "High Rollers",
+        "Premium",
+        "Jackpots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 70,
+      "nome": "Casino777",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "1545+",
+      "categorias": [
+        "Jackpots",
+        "Depósito Baixo",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 71,
+      "nome": "NexusGames",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 5",
+      "saque": "10 min",
+      "jogos": "4292+",
+      "categorias": [
+        "Bingo",
+        "High Rollers",
+        "Premium"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 72,
+      "nome": "Noble777",
+      "bonus": "100% até R$ 3000",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "1702+",
+      "categorias": [
+        "Saque Rápido",
+        "Live Casino"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 73,
+      "nome": "MoonMax",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "3250+",
+      "categorias": [
+        "Saque Rápido",
+        "Pix",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 74,
+      "nome": "CosmicBet",
+      "bonus": "300% até R$ 500",
+      "deposito_min": "R$ 50",
+      "saque": "10 min",
+      "jogos": "2667+",
+      "categorias": [
+        "Saque Rápido",
+        "Poker"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 75,
+      "nome": "QueenExpress",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "3697+",
+      "categorias": [
+        "High Rollers",
+        "Jogos de Mesa",
+        "Jackpots"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 76,
+      "nome": "WaveExpress",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "30 min",
+      "jogos": "3412+",
+      "categorias": [
+        "Premium",
+        "VIP",
+        "Melhor Bônus",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 77,
+      "nome": "Elite888",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "3398+",
+      "categorias": [
+        "Saque Rápido",
+        "Dados",
+        "Premium",
+        "High Rollers"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 78,
+      "nome": "Ace888",
+      "bonus": "200% até R$ 500",
+      "deposito_min": "R$ 50",
+      "saque": "10 min",
+      "jogos": "2842+",
+      "categorias": [
+        "Cashback",
+        "Melhor Bônus",
+        "Novidades",
+        "Slots"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 79,
+      "nome": "Apex777",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "4583+",
+      "categorias": [
+        "Depósito Baixo",
+        "Cashback",
+        "Live Casino"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 80,
+      "nome": "GalaxyBet",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "3298+",
+      "categorias": [
+        "Novidades",
+        "Slots"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 81,
+      "nome": "BrasilRápido",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "3446+",
+      "categorias": [
+        "Cashback",
+        "Saque Rápido",
+        "Premium"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 82,
+      "nome": "TurboTurbo",
+      "bonus": "100% até R$ 1000",
+      "deposito_min": "R$ 50",
+      "saque": "10 min",
+      "jogos": "4294+",
+      "categorias": [
+        "Melhor Bônus",
+        "High Rollers"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 83,
+      "nome": "Fortune999",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "2103+",
+      "categorias": [
+        "Pix",
+        "Saque Rápido"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 84,
+      "nome": "PokerMax",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "30 min",
+      "jogos": "3589+",
+      "categorias": [
+        "Cashback",
+        "Slots",
+        "Confiável",
+        "Depósito Baixo"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 85,
+      "nome": "CarnivalPlay",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "4527+",
+      "categorias": [
+        "High Rollers",
+        "Poker"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 86,
+      "nome": "BrasilClub",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "4334+",
+      "categorias": [
+        "High Rollers",
+        "Pix",
+        "Poker",
+        "VIP"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 87,
+      "nome": "EdenPro",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "3400+",
+      "categorias": [
+        "Slots",
+        "Esportes",
+        "Pix",
+        "VIP"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 88,
+      "nome": "Wave999",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "2743+",
+      "categorias": [
+        "Confiável",
+        "Esportes",
+        "Pix"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 89,
+      "nome": "SambaPro",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "2080+",
+      "categorias": [
+        "Premium",
+        "High Rollers",
+        "Pix"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 90,
+      "nome": "UltraMega",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 20",
+      "saque": "30 min",
+      "jogos": "3658+",
+      "categorias": [
+        "Novidades",
+        "VIP",
+        "Confiável"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 91,
+      "nome": "Ace999",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "2060+",
+      "categorias": [
+        "Depósito Baixo",
+        "Jogos de Mesa",
+        "Live Casino",
+        "Confiável"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 92,
+      "nome": "Luxury888",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "Imediato",
+      "jogos": "4348+",
+      "categorias": [
+        "Cashback",
+        "VIP",
+        "Esportes",
+        "Poker"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 93,
+      "nome": "Regal777",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "4487+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Premium"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 94,
+      "nome": "ImperialClub",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "3359+",
+      "categorias": [
+        "Jackpots",
+        "Confiável",
+        "High Rollers",
+        "Premium"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 95,
+      "nome": "ImperialRápido",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 50",
+      "saque": "Imediato",
+      "jogos": "3813+",
+      "categorias": [
+        "Poker",
+        "Dados",
+        "Confiável"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 96,
+      "nome": "DeluxeRápido",
+      "bonus": "300% até R$ 500",
+      "deposito_min": "R$ 50",
+      "saque": "Imediato",
+      "jogos": "1380+",
+      "categorias": [
+        "Melhor Bônus",
+        "Premium",
+        "Jackpots",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 97,
+      "nome": "NexusPlay",
+      "bonus": "300% até R$ 500",
+      "deposito_min": "R$ 50",
+      "saque": "10 min",
+      "jogos": "1878+",
+      "categorias": [
+        "Dados",
+        "Jackpots",
+        "High Rollers"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 98,
+      "nome": "CosmicRápido",
+      "bonus": "500% até R$ 5000",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "4309+",
+      "categorias": [
+        "Confiável",
+        "VIP"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 99,
+      "nome": "BrasilBet",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "3818+",
+      "categorias": [
+        "Esportes",
+        "Bingo",
+        "Slots",
+        "Melhor Bônus"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 100,
+      "nome": "SovereignPix",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "2903+",
+      "categorias": [
+        "Premium",
+        "Confiável",
+        "Dados",
+        "Pix"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 101,
+      "nome": "Paradise777",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "5 min",
+      "jogos": "1049+",
+      "categorias": [
+        "High Rollers",
+        "Cashback"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 102,
+      "nome": "ImperialPro",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "4625+",
+      "categorias": [
+        "Poker",
+        "Dados",
+        "Jackpots",
+        "Premium"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 103,
+      "nome": "ApexFlash",
+      "bonus": "200% até R$ 2000",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "3336+",
+      "categorias": [
+        "Saque Rápido",
+        "Novidades",
+        "Dados",
+        "Bingo"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 104,
+      "nome": "MegaPlay",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "1229+",
+      "categorias": [
+        "VIP",
+        "Bingo"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 105,
+      "nome": "Oasis888",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 10",
+      "saque": "15 min",
+      "jogos": "3015+",
+      "categorias": [
+        "Dados",
+        "Poker",
+        "Esportes"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 106,
+      "nome": "QuantumPro",
+      "bonus": "500% até R$ 10000",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "2274+",
+      "categorias": [
+        "Jackpots",
+        "VIP",
+        "Melhor Bônus",
+        "Bingo"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 107,
+      "nome": "FlashClub",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "3444+",
+      "categorias": [
+        "Esportes",
+        "VIP",
+        "Cashback"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 108,
+      "nome": "ParadiseBet",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "3955+",
+      "categorias": [
+        "Jackpots",
+        "Poker",
+        "Slots"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 109,
+      "nome": "SovereignPlay",
+      "bonus": "500% até R$ 5000",
+      "deposito_min": "R$ 10",
+      "saque": "15 min",
+      "jogos": "1009+",
+      "categorias": [
+        "Confiável",
+        "Poker"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 110,
+      "nome": "SlotTurbo",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "3973+",
+      "categorias": [
+        "Confiável",
+        "Premium",
+        "Jackpots"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 111,
+      "nome": "StormPro",
+      "bonus": "500% até R$ 5000",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "1375+",
+      "categorias": [
+        "Bingo",
+        "Slots"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 112,
+      "nome": "EdenVIP",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "1 hora",
+      "jogos": "4683+",
+      "categorias": [
+        "Depósito Baixo",
+        "Live Casino"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 113,
+      "nome": "Infinity888",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "1975+",
+      "categorias": [
+        "Saque Rápido",
+        "Live Casino"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 114,
+      "nome": "SunBet",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 50",
+      "saque": "5 min",
+      "jogos": "3540+",
+      "categorias": [
+        "Novidades",
+        "Depósito Baixo",
+        "Slots",
+        "High Rollers"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 115,
+      "nome": "RouletteMega",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "30 min",
+      "jogos": "1998+",
+      "categorias": [
+        "Poker",
+        "Live Casino",
+        "High Rollers"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 116,
+      "nome": "DiamondClub",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "5 min",
+      "jogos": "2134+",
+      "categorias": [
+        "Poker",
+        "Cashback",
+        "Live Casino"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 117,
+      "nome": "SunExpress",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "2712+",
+      "categorias": [
+        "Saque Rápido",
+        "Esportes",
+        "Slots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 118,
+      "nome": "RouletteSlots",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 50",
+      "saque": "Imediato",
+      "jogos": "1253+",
+      "categorias": [
+        "Confiável",
+        "Poker",
+        "Pix"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 119,
+      "nome": "EdenMega",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "3189+",
+      "categorias": [
+        "Poker",
+        "High Rollers",
+        "Slots",
+        "Bingo"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 120,
+      "nome": "RioClub",
+      "bonus": "100% até R$ 10000",
+      "deposito_min": "R$ 5",
+      "saque": "10 min",
+      "jogos": "4738+",
+      "categorias": [
+        "Confiável",
+        "Jackpots",
+        "Dados"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 121,
+      "nome": "JackExpress",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "3169+",
+      "categorias": [
+        "Pix",
+        "Bingo"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 122,
+      "nome": "SunPix",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "2348+",
+      "categorias": [
+        "VIP",
+        "Depósito Baixo",
+        "Confiável"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 123,
+      "nome": "FortuneUltra",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 50",
+      "saque": "5 min",
+      "jogos": "1846+",
+      "categorias": [
+        "Premium",
+        "Cashback",
+        "Poker",
+        "Pix"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 124,
+      "nome": "RegalFlash",
+      "bonus": "100% até R$ 1000",
+      "deposito_min": "R$ 20",
+      "saque": "1 hora",
+      "jogos": "4368+",
+      "categorias": [
+        "Confiável",
+        "Cashback",
+        "Premium"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 125,
+      "nome": "RioMega",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "3814+",
+      "categorias": [
+        "Jackpots",
+        "Melhor Bônus",
+        "VIP"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 126,
+      "nome": "AmazonTurbo",
+      "bonus": "300% até R$ 5000",
+      "deposito_min": "R$ 10",
+      "saque": "15 min",
+      "jogos": "1795+",
+      "categorias": [
+        "Pix",
+        "Dados",
+        "VIP"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 127,
+      "nome": "JackPro",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "4876+",
+      "categorias": [
+        "Poker",
+        "Saque Rápido",
+        "Jackpots",
+        "Live Casino"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 128,
+      "nome": "DeluxeMega",
+      "bonus": "100% até R$ 5000",
+      "deposito_min": "R$ 15",
+      "saque": "Imediato",
+      "jogos": "2469+",
+      "categorias": [
+        "Live Casino",
+        "High Rollers",
+        "Premium",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 129,
+      "nome": "CasinoTurbo",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "1121+",
+      "categorias": [
+        "Saque Rápido",
+        "High Rollers",
+        "Live Casino",
+        "Slots"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 130,
+      "nome": "GoldenCasino",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "2695+",
+      "categorias": [
+        "Bingo",
+        "Saque Rápido",
+        "Cashback",
+        "Live Casino"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 131,
+      "nome": "SunFlash",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "30 min",
+      "jogos": "4726+",
+      "categorias": [
+        "Premium",
+        "Cashback",
+        "Live Casino",
+        "Melhor Bônus"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 132,
+      "nome": "QueenFlash",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "5 min",
+      "jogos": "2939+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Confiável",
+        "Saque Rápido",
+        "Premium"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 133,
+      "nome": "RoyalCasino",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "3260+",
+      "categorias": [
+        "Saque Rápido",
+        "High Rollers"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 134,
+      "nome": "FortuneBet",
+      "bonus": "300% até R$ 2000",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "2726+",
+      "categorias": [
+        "Depósito Baixo",
+        "Premium",
+        "High Rollers",
+        "Live Casino"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 135,
+      "nome": "Grand777",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "4566+",
+      "categorias": [
+        "Cashback",
+        "Pix",
+        "Bingo",
+        "Esportes"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 136,
+      "nome": "Majestic777",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "4880+",
+      "categorias": [
+        "High Rollers",
+        "Confiável"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 137,
+      "nome": "Galaxy999",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "2448+",
+      "categorias": [
+        "High Rollers",
+        "Live Casino",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 138,
+      "nome": "WavePlus",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "2302+",
+      "categorias": [
+        "Confiável",
+        "Slots",
+        "Cashback"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 139,
+      "nome": "RegalExpress",
+      "bonus": "500% até R$ 3000",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "2425+",
+      "categorias": [
+        "Depósito Baixo",
+        "Premium"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 140,
+      "nome": "Jackpot888",
+      "bonus": "100% até R$ 500",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "3289+",
+      "categorias": [
+        "Slots",
+        "Melhor Bônus",
+        "High Rollers"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 141,
+      "nome": "InfinityPlus",
+      "bonus": "100% até R$ 3000",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "2833+",
+      "categorias": [
+        "Confiável",
+        "Novidades",
+        "Slots",
+        "Melhor Bônus"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 142,
+      "nome": "CosmicPix",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "10 min",
+      "jogos": "2537+",
+      "categorias": [
+        "Confiável",
+        "Poker"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 143,
+      "nome": "Ice777",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "1459+",
+      "categorias": [
+        "Bingo",
+        "Poker",
+        "Esportes"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 144,
+      "nome": "NoblePlus",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 50",
+      "saque": "10 min",
+      "jogos": "2368+",
+      "categorias": [
+        "Novidades",
+        "Cashback"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 145,
+      "nome": "ParadisePlus",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "3288+",
+      "categorias": [
+        "Dados",
+        "Cashback"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 146,
+      "nome": "MajesticCasino",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "1671+",
+      "categorias": [
+        "Melhor Bônus",
+        "Premium",
+        "Bingo"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 147,
+      "nome": "CasinoMega",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "15 min",
+      "jogos": "1133+",
+      "categorias": [
+        "High Rollers",
+        "VIP",
+        "Jogos de Mesa",
+        "Jackpots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 148,
+      "nome": "Silver888",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "3188+",
+      "categorias": [
+        "Confiável",
+        "Jogos de Mesa",
+        "Novidades",
+        "Live Casino"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 149,
+      "nome": "GalaxyTurbo",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "1074+",
+      "categorias": [
+        "Live Casino",
+        "VIP"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 150,
+      "nome": "CasinoRápido",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "4581+",
+      "categorias": [
+        "Jackpots",
+        "Cashback"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 151,
+      "nome": "TurboClub",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "2528+",
+      "categorias": [
+        "Cashback",
+        "Esportes",
+        "Slots"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 152,
+      "nome": "Tropical999",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "1614+",
+      "categorias": [
+        "Saque Rápido",
+        "Pix",
+        "Cashback",
+        "Melhor Bônus"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 153,
+      "nome": "MegaVIP",
+      "bonus": "100% até R$ 10000",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "4349+",
+      "categorias": [
+        "Pix",
+        "Esportes",
+        "Melhor Bônus"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 154,
+      "nome": "GrandExpress",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "4783+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Pix",
+        "Novidades"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 155,
+      "nome": "DiamondVIP",
+      "bonus": "500% até R$ 3000",
+      "deposito_min": "R$ 15",
+      "saque": "5 min",
+      "jogos": "3180+",
+      "categorias": [
+        "Poker",
+        "Live Casino",
+        "Pix"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 156,
+      "nome": "CarnivalPix",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 20",
+      "saque": "1 hora",
+      "jogos": "3223+",
+      "categorias": [
+        "Poker",
+        "Cashback",
+        "Esportes",
+        "Novidades"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 157,
+      "nome": "SunPlay",
+      "bonus": "500% até R$ 2000",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "3750+",
+      "categorias": [
+        "Slots",
+        "Confiável"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 158,
+      "nome": "MiragePlus",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "1026+",
+      "categorias": [
+        "Jackpots",
+        "Premium",
+        "Esportes"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 159,
+      "nome": "TropicalRápido",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "4558+",
+      "categorias": [
+        "Esportes",
+        "Poker"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 160,
+      "nome": "StormTurbo",
+      "bonus": "100% até R$ 5000",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "4430+",
+      "categorias": [
+        "Confiável",
+        "Saque Rápido",
+        "Jogos de Mesa",
+        "Jackpots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 161,
+      "nome": "SpinClub",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "3147+",
+      "categorias": [
+        "Novidades",
+        "VIP",
+        "Confiável"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 162,
+      "nome": "NexusVIP",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "5 min",
+      "jogos": "4192+",
+      "categorias": [
+        "Live Casino",
+        "Melhor Bônus",
+        "Slots",
+        "VIP"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 163,
+      "nome": "TropicalFlash",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "2823+",
+      "categorias": [
+        "Saque Rápido",
+        "Premium"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 164,
+      "nome": "BrasilFlash",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "3184+",
+      "categorias": [
+        "Poker",
+        "Dados",
+        "Confiável"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 165,
+      "nome": "Samba888",
+      "bonus": "100% até R$ 5000",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "4723+",
+      "categorias": [
+        "VIP",
+        "Esportes",
+        "Novidades"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 166,
+      "nome": "BrasilMega",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "4410+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Live Casino",
+        "Dados"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 167,
+      "nome": "SilverClub",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "4276+",
+      "categorias": [
+        "Cashback",
+        "Esportes"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 168,
+      "nome": "RegalVIP",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "4665+",
+      "categorias": [
+        "Novidades",
+        "Saque Rápido"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 169,
+      "nome": "AcePlus",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "3324+",
+      "categorias": [
+        "Novidades",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 170,
+      "nome": "MegaPix",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 15",
+      "saque": "1 hora",
+      "jogos": "1335+",
+      "categorias": [
+        "Dados",
+        "Bingo"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 171,
+      "nome": "SunMax",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 1",
+      "saque": "5 min",
+      "jogos": "1483+",
+      "categorias": [
+        "High Rollers",
+        "Live Casino",
+        "Pix",
+        "Jackpots"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 172,
+      "nome": "SpinGames",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "4499+",
+      "categorias": [
+        "High Rollers",
+        "Slots",
+        "Dados"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 173,
+      "nome": "GalaxyPix",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 10",
+      "saque": "5 min",
+      "jogos": "2705+",
+      "categorias": [
+        "Poker",
+        "Live Casino",
+        "Esportes",
+        "Cashback"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 174,
+      "nome": "SilverPlus",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "2143+",
+      "categorias": [
+        "Live Casino",
+        "Premium",
+        "Slots",
+        "Poker"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 175,
+      "nome": "JackpotTurbo",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "2000+",
+      "categorias": [
+        "Poker",
+        "Jackpots"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 176,
+      "nome": "InfinitySlots",
+      "bonus": "200% até R$ 3000",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "4376+",
+      "categorias": [
+        "Pix",
+        "VIP",
+        "Jackpots"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 177,
+      "nome": "NobleMega",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "2160+",
+      "categorias": [
+        "Confiável",
+        "Pix",
+        "Novidades",
+        "Poker"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 178,
+      "nome": "KingGames",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 15",
+      "saque": "Imediato",
+      "jogos": "4392+",
+      "categorias": [
+        "VIP",
+        "Confiável",
+        "Dados"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 179,
+      "nome": "ImperialGames",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "4882+",
+      "categorias": [
+        "Melhor Bônus",
+        "Poker",
+        "Cashback"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 180,
+      "nome": "SpinFlash",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "1111+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Saque Rápido",
+        "Pix",
+        "Depósito Baixo"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 181,
+      "nome": "NexusExpress",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "3729+",
+      "categorias": [
+        "Poker",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 182,
+      "nome": "AmazonBet",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "Imediato",
+      "jogos": "1563+",
+      "categorias": [
+        "Confiável",
+        "Slots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 183,
+      "nome": "DeluxePlus",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "2330+",
+      "categorias": [
+        "Premium",
+        "Slots"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 184,
+      "nome": "TurboSlots",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "24 horas",
+      "jogos": "1445+",
+      "categorias": [
+        "Premium",
+        "Confiável"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 185,
+      "nome": "PremiumBet",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 15",
+      "saque": "Imediato",
+      "jogos": "4976+",
+      "categorias": [
+        "Depósito Baixo",
+        "Pix",
+        "Confiável",
+        "Novidades"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 186,
+      "nome": "GoldenMega",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "4917+",
+      "categorias": [
+        "Esportes",
+        "Jackpots",
+        "Slots"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 187,
+      "nome": "SlotSlots",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "Imediato",
+      "jogos": "1098+",
+      "categorias": [
+        "Premium",
+        "Jogos de Mesa",
+        "Esportes",
+        "Slots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 188,
+      "nome": "KingExpress",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "4694+",
+      "categorias": [
+        "Saque Rápido",
+        "Live Casino",
+        "Melhor Bônus",
+        "Novidades"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 189,
+      "nome": "ParadiseVIP",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "3565+",
+      "categorias": [
+        "Poker",
+        "Jackpots"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 190,
+      "nome": "BetCasino",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "2311+",
+      "categorias": [
+        "Depósito Baixo",
+        "Dados",
+        "Premium"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 191,
+      "nome": "WaveClub",
+      "bonus": "300% até R$ 500",
+      "deposito_min": "R$ 1",
+      "saque": "5 min",
+      "jogos": "2641+",
+      "categorias": [
+        "Poker",
+        "Jogos de Mesa",
+        "Saque Rápido",
+        "Slots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 192,
+      "nome": "Noble888",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "1906+",
+      "categorias": [
+        "Slots",
+        "Poker",
+        "Jogos de Mesa",
+        "Premium"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 193,
+      "nome": "OasisUltra",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 50",
+      "saque": "Imediato",
+      "jogos": "3089+",
+      "categorias": [
+        "Slots",
+        "Dados"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 194,
+      "nome": "GrandCasino",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "1480+",
+      "categorias": [
+        "Jackpots",
+        "Melhor Bônus",
+        "Novidades"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 195,
+      "nome": "CasinoPlus",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "1246+",
+      "categorias": [
+        "Dados",
+        "Novidades"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 196,
+      "nome": "EdenMax",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "1024+",
+      "categorias": [
+        "Dados",
+        "Cashback"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 197,
+      "nome": "DeluxePro",
+      "bonus": "200% até R$ 500",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "3989+",
+      "categorias": [
+        "Novidades",
+        "Premium",
+        "Saque Rápido"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 198,
+      "nome": "Elite999",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "1911+",
+      "categorias": [
+        "Bingo",
+        "High Rollers",
+        "Poker"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 199,
+      "nome": "WaveMax",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "4606+",
+      "categorias": [
+        "Pix",
+        "Melhor Bônus",
+        "Cashback",
+        "Depósito Baixo"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 200,
+      "nome": "MiragePro",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "4245+",
+      "categorias": [
+        "Jackpots",
+        "Saque Rápido",
+        "High Rollers",
+        "Dados"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 201,
+      "nome": "SunTurbo",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "1800+",
+      "categorias": [
+        "Pix",
+        "Premium",
+        "VIP",
+        "Cashback"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 202,
+      "nome": "Imperial777",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "1124+",
+      "categorias": [
+        "Cashback",
+        "Jogos de Mesa",
+        "Dados",
+        "High Rollers"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 203,
+      "nome": "RioPix",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 25",
+      "saque": "10 min",
+      "jogos": "2510+",
+      "categorias": [
+        "Dados",
+        "Premium"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 204,
+      "nome": "DiamondPlus",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "Imediato",
+      "jogos": "2326+",
+      "categorias": [
+        "Novidades",
+        "Premium"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 205,
+      "nome": "Casino999",
+      "bonus": "300% até R$ 1000",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "4728+",
+      "categorias": [
+        "High Rollers",
+        "Jogos de Mesa",
+        "Dados",
+        "Esportes"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 206,
+      "nome": "SpinPlay",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "2815+",
+      "categorias": [
+        "Novidades",
+        "Confiável"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 207,
+      "nome": "RioPlus",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 15",
+      "saque": "Imediato",
+      "jogos": "4896+",
+      "categorias": [
+        "Esportes",
+        "Poker"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 208,
+      "nome": "LuxuryMax",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "3196+",
+      "categorias": [
+        "Melhor Bônus",
+        "Pix"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 209,
+      "nome": "CarnivalTurbo",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 25",
+      "saque": "10 min",
+      "jogos": "1024+",
+      "categorias": [
+        "Depósito Baixo",
+        "Poker",
+        "Cashback",
+        "Bingo"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 210,
+      "nome": "AcePlay",
+      "bonus": "500% até R$ 10000",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "2983+",
+      "categorias": [
+        "Jackpots",
+        "Depósito Baixo"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 211,
+      "nome": "AceRápido",
+      "bonus": "300% até R$ 1000",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "4879+",
+      "categorias": [
+        "Live Casino",
+        "Premium",
+        "Saque Rápido",
+        "Jackpots"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 212,
+      "nome": "FireTurbo",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "4425+",
+      "categorias": [
+        "VIP",
+        "Dados",
+        "Bingo"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 213,
+      "nome": "ImperialTurbo",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "3384+",
+      "categorias": [
+        "Poker",
+        "Dados",
+        "Saque Rápido",
+        "Slots"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 214,
+      "nome": "EliteMega",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "2794+",
+      "categorias": [
+        "Pix",
+        "Esportes",
+        "Live Casino",
+        "High Rollers"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 215,
+      "nome": "InfinityPlay",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "4679+",
+      "categorias": [
+        "High Rollers",
+        "Cashback"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 216,
+      "nome": "CosmicVIP",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "4676+",
+      "categorias": [
+        "High Rollers",
+        "Saque Rápido",
+        "Confiável"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 217,
+      "nome": "SambaFlash",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "4022+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Slots",
+        "Depósito Baixo"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 218,
+      "nome": "GoldenExpress",
+      "bonus": "500% até R$ 5000",
+      "deposito_min": "R$ 20",
+      "saque": "30 min",
+      "jogos": "4461+",
+      "categorias": [
+        "Bingo",
+        "Jackpots",
+        "Saque Rápido"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 219,
+      "nome": "JackRápido",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "2210+",
+      "categorias": [
+        "High Rollers",
+        "Confiável"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 220,
+      "nome": "LuckPro",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "2196+",
+      "categorias": [
+        "Premium",
+        "Depósito Baixo"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 221,
+      "nome": "IcePlus",
+      "bonus": "100% até R$ 5000",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "3875+",
+      "categorias": [
+        "Bingo",
+        "Confiável",
+        "Novidades"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 222,
+      "nome": "StormMega",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "3094+",
+      "categorias": [
+        "High Rollers",
+        "Premium"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 223,
+      "nome": "ElitePlus",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "4187+",
+      "categorias": [
+        "Saque Rápido",
+        "Pix",
+        "Novidades",
+        "Confiável"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 224,
+      "nome": "Oasis777",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "4026+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Premium"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 225,
+      "nome": "FireGames",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "2044+",
+      "categorias": [
+        "Melhor Bônus",
+        "VIP",
+        "Confiável"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 226,
+      "nome": "EdenGames",
+      "bonus": "300% até R$ 2000",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "2739+",
+      "categorias": [
+        "Poker",
+        "Jackpots"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 227,
+      "nome": "OasisPlus",
+      "bonus": "200% até R$ 1000",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "1013+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Melhor Bônus",
+        "Esportes"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 228,
+      "nome": "SpinUltra",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "1411+",
+      "categorias": [
+        "Depósito Baixo",
+        "Saque Rápido"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 229,
+      "nome": "ApexRápido",
+      "bonus": "500% até R$ 10000",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "4373+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Jackpots",
+        "Premium"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 230,
+      "nome": "Grand888",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "1764+",
+      "categorias": [
+        "Jackpots",
+        "Jogos de Mesa",
+        "Poker",
+        "Saque Rápido"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 231,
+      "nome": "Sovereign777",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "4146+",
+      "categorias": [
+        "Jackpots",
+        "Dados",
+        "Cashback",
+        "Pix"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 232,
+      "nome": "PremiumRápido",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "3483+",
+      "categorias": [
+        "Jackpots",
+        "Premium"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 233,
+      "nome": "NobleTurbo",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "3541+",
+      "categorias": [
+        "Bingo",
+        "VIP",
+        "Pix"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 234,
+      "nome": "WindMax",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "4409+",
+      "categorias": [
+        "Melhor Bônus",
+        "Confiável",
+        "Pix"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 235,
+      "nome": "QuantumClub",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "1947+",
+      "categorias": [
+        "Live Casino",
+        "Slots",
+        "Jogos de Mesa",
+        "Jackpots"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 236,
+      "nome": "GalaxyPlus",
+      "bonus": "100% até R$ 5000",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "1795+",
+      "categorias": [
+        "Jackpots",
+        "Pix"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 237,
+      "nome": "PlatinumRápido",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "4507+",
+      "categorias": [
+        "Jackpots",
+        "Confiável"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 238,
+      "nome": "InfinityBet",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "4869+",
+      "categorias": [
+        "Slots",
+        "Poker",
+        "Dados"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 239,
+      "nome": "ApexMax",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "2351+",
+      "categorias": [
+        "Pix",
+        "Dados",
+        "Saque Rápido"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 240,
+      "nome": "TurboBet",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "2687+",
+      "categorias": [
+        "Pix",
+        "VIP"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 241,
+      "nome": "RioRápido",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 25",
+      "saque": "10 min",
+      "jogos": "2506+",
+      "categorias": [
+        "Dados",
+        "Novidades",
+        "Pix"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 242,
+      "nome": "ImperialFlash",
+      "bonus": "100% até R$ 5000",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "2584+",
+      "categorias": [
+        "Saque Rápido",
+        "Depósito Baixo",
+        "Slots",
+        "Bingo"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 243,
+      "nome": "PlatinumPix",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "5 min",
+      "jogos": "2066+",
+      "categorias": [
+        "Poker",
+        "Pix",
+        "Esportes",
+        "Depósito Baixo"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 244,
+      "nome": "CosmicMax",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "30 min",
+      "jogos": "2172+",
+      "categorias": [
+        "Melhor Bônus",
+        "Depósito Baixo",
+        "Esportes"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 245,
+      "nome": "ImperialSlots",
+      "bonus": "100% até R$ 5000",
+      "deposito_min": "R$ 10",
+      "saque": "Imediato",
+      "jogos": "4555+",
+      "categorias": [
+        "Melhor Bônus",
+        "Poker"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 246,
+      "nome": "RioFlash",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "1635+",
+      "categorias": [
+        "High Rollers",
+        "Confiável",
+        "Bingo",
+        "Poker"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 247,
+      "nome": "RioVIP",
+      "bonus": "300% até R$ 2000",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "4490+",
+      "categorias": [
+        "Premium",
+        "Dados",
+        "Depósito Baixo"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 248,
+      "nome": "IceGames",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 25",
+      "saque": "10 min",
+      "jogos": "4312+",
+      "categorias": [
+        "High Rollers",
+        "Pix",
+        "Saque Rápido"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 249,
+      "nome": "RioTurbo",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "3366+",
+      "categorias": [
+        "VIP",
+        "Poker",
+        "Depósito Baixo"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 250,
+      "nome": "MegaPro",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "Imediato",
+      "jogos": "2356+",
+      "categorias": [
+        "Slots",
+        "Saque Rápido",
+        "Novidades",
+        "Poker"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 251,
+      "nome": "BrasilMax",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "3183+",
+      "categorias": [
+        "Poker",
+        "Confiável",
+        "High Rollers",
+        "Bingo"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 252,
+      "nome": "PremiumPro",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "2101+",
+      "categorias": [
+        "Slots",
+        "Cashback",
+        "VIP"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 253,
+      "nome": "EliteRápido",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "3188+",
+      "categorias": [
+        "Poker",
+        "Esportes",
+        "Novidades"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 254,
+      "nome": "SilverExpress",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "4692+",
+      "categorias": [
+        "Live Casino",
+        "Confiável",
+        "Novidades"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 255,
+      "nome": "SilverPro",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "2249+",
+      "categorias": [
+        "Poker",
+        "Melhor Bônus",
+        "Saque Rápido"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 256,
+      "nome": "JackUltra",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "1464+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Cashback",
+        "Premium",
+        "Live Casino"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 257,
+      "nome": "SilverSlots",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "3771+",
+      "categorias": [
+        "VIP",
+        "Pix"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 258,
+      "nome": "SunPlus",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "1105+",
+      "categorias": [
+        "Live Casino",
+        "Jogos de Mesa",
+        "Premium"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 259,
+      "nome": "Deluxe999",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "4465+",
+      "categorias": [
+        "Confiável",
+        "Saque Rápido"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 260,
+      "nome": "WindUltra",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "2651+",
+      "categorias": [
+        "Pix",
+        "Melhor Bônus"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 261,
+      "nome": "EliteClub",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "4931+",
+      "categorias": [
+        "VIP",
+        "Dados"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 262,
+      "nome": "QueenPlay",
+      "bonus": "200% até R$ 3000",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "3174+",
+      "categorias": [
+        "Esportes",
+        "Confiável"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 263,
+      "nome": "FortuneFlash",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "4259+",
+      "categorias": [
+        "Dados",
+        "Jogos de Mesa"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 264,
+      "nome": "StarMax",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "1138+",
+      "categorias": [
+        "Bingo",
+        "Saque Rápido",
+        "Dados",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 265,
+      "nome": "RoyalUltra",
+      "bonus": "200% até R$ 3000",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "2049+",
+      "categorias": [
+        "Cashback",
+        "Pix"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 266,
+      "nome": "TropicalMega",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "3474+",
+      "categorias": [
+        "Dados",
+        "Depósito Baixo"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 267,
+      "nome": "GoldenUltra",
+      "bonus": "100% até R$ 1000",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "4720+",
+      "categorias": [
+        "Saque Rápido",
+        "Poker"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 268,
+      "nome": "EdenBet",
+      "bonus": "100% até R$ 3000",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "2751+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Slots",
+        "Depósito Baixo"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 269,
+      "nome": "CosmicPlus",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "4471+",
+      "categorias": [
+        "Novidades",
+        "Depósito Baixo"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 270,
+      "nome": "RoyalPlay",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 15",
+      "saque": "1 hora",
+      "jogos": "1779+",
+      "categorias": [
+        "Premium",
+        "Poker"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 271,
+      "nome": "SlotBet",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "2053+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Live Casino",
+        "Poker"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 272,
+      "nome": "Platinum777",
+      "bonus": "200% até R$ 10000",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "3021+",
+      "categorias": [
+        "Live Casino",
+        "Confiável",
+        "VIP"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 273,
+      "nome": "OasisSlots",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "2585+",
+      "categorias": [
+        "Premium",
+        "Slots",
+        "Dados",
+        "Confiável"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 274,
+      "nome": "ParadiseMega",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "1853+",
+      "categorias": [
+        "Poker",
+        "Melhor Bônus"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 275,
+      "nome": "GalaxyCasino",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "2977+",
+      "categorias": [
+        "Cashback",
+        "Jackpots"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 276,
+      "nome": "EliteMax",
+      "bonus": "200% até R$ 10000",
+      "deposito_min": "R$ 20",
+      "saque": "30 min",
+      "jogos": "2613+",
+      "categorias": [
+        "Depósito Baixo",
+        "Poker",
+        "Melhor Bônus",
+        "Dados"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 277,
+      "nome": "InfinityUltra",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "24 horas",
+      "jogos": "4895+",
+      "categorias": [
+        "Bingo",
+        "Slots",
+        "Pix",
+        "Esportes"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 278,
+      "nome": "PokerGames",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 5",
+      "saque": "5 min",
+      "jogos": "3028+",
+      "categorias": [
+        "Confiável",
+        "Jackpots",
+        "Dados"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 279,
+      "nome": "JackpotClub",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "3738+",
+      "categorias": [
+        "Pix",
+        "Cashback",
+        "Saque Rápido",
+        "Live Casino"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 280,
+      "nome": "WavePix",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "1784+",
+      "categorias": [
+        "Cashback",
+        "Pix",
+        "Dados",
+        "Live Casino"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 281,
+      "nome": "BetGames",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "4235+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Pix"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 282,
+      "nome": "ThunderSlots",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "10 min",
+      "jogos": "1034+",
+      "categorias": [
+        "Novidades",
+        "Jackpots",
+        "Dados"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 283,
+      "nome": "BonusVIP",
+      "bonus": "100% até R$ 10000",
+      "deposito_min": "R$ 20",
+      "saque": "15 min",
+      "jogos": "4064+",
+      "categorias": [
+        "Cashback",
+        "Jogos de Mesa",
+        "Pix"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 284,
+      "nome": "NobleMax",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 50",
+      "saque": "Imediato",
+      "jogos": "4449+",
+      "categorias": [
+        "High Rollers",
+        "Cashback"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 285,
+      "nome": "EliteGames",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "2126+",
+      "categorias": [
+        "Poker",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 286,
+      "nome": "Star888",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 15",
+      "saque": "24 horas",
+      "jogos": "2860+",
+      "categorias": [
+        "Depósito Baixo",
+        "Melhor Bônus"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 287,
+      "nome": "BonusSlots",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "1114+",
+      "categorias": [
+        "Bingo",
+        "Saque Rápido",
+        "Premium",
+        "Esportes"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 288,
+      "nome": "IcePlay",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "2387+",
+      "categorias": [
+        "Esportes",
+        "Novidades"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 289,
+      "nome": "DiamondRápido",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "4365+",
+      "categorias": [
+        "Bingo",
+        "Novidades",
+        "Depósito Baixo"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 290,
+      "nome": "SlotPix",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "1133+",
+      "categorias": [
+        "Confiável",
+        "High Rollers",
+        "Bingo",
+        "Saque Rápido"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 291,
+      "nome": "PlatinumMega",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "5 min",
+      "jogos": "2738+",
+      "categorias": [
+        "Slots",
+        "Jogos de Mesa",
+        "Saque Rápido",
+        "VIP"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 292,
+      "nome": "QuantumPix",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 20",
+      "saque": "30 min",
+      "jogos": "2604+",
+      "categorias": [
+        "Saque Rápido",
+        "High Rollers",
+        "Poker",
+        "Pix"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 293,
+      "nome": "QueenUltra",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "3303+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Esportes",
+        "Depósito Baixo"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 294,
+      "nome": "SuperMax",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "2289+",
+      "categorias": [
+        "Esportes",
+        "Premium",
+        "Melhor Bônus",
+        "Live Casino"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 295,
+      "nome": "NexusTurbo",
+      "bonus": "R$ 2000 bônus diário",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "4105+",
+      "categorias": [
+        "Cashback",
+        "Jogos de Mesa",
+        "High Rollers",
+        "Pix"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 296,
+      "nome": "CosmicPlay",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "2787+",
+      "categorias": [
+        "Poker",
+        "Saque Rápido"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 297,
+      "nome": "LuxuryPro",
+      "bonus": "100% até R$ 500",
+      "deposito_min": "R$ 1",
+      "saque": "Imediato",
+      "jogos": "1883+",
+      "categorias": [
+        "Saque Rápido",
+        "Pix",
+        "Slots",
+        "Cashback"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 298,
+      "nome": "KingTurbo",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "4493+",
+      "categorias": [
+        "Esportes",
+        "Melhor Bônus",
+        "Live Casino"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 299,
+      "nome": "Brasil888",
+      "bonus": "500% até R$ 3000",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "2623+",
+      "categorias": [
+        "VIP",
+        "Depósito Baixo",
+        "Slots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 300,
+      "nome": "GrandSlots",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "4059+",
+      "categorias": [
+        "Dados",
+        "Saque Rápido"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 301,
+      "nome": "Turbo777",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "3988+",
+      "categorias": [
+        "Novidades",
+        "Bingo",
+        "Cashback",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 302,
+      "nome": "PokerPro",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "2640+",
+      "categorias": [
+        "Melhor Bônus",
+        "Jackpots"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 303,
+      "nome": "FlashFlash",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 15",
+      "saque": "1 hora",
+      "jogos": "2203+",
+      "categorias": [
+        "Premium",
+        "VIP",
+        "Novidades",
+        "Cashback"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 304,
+      "nome": "PlatinumTurbo",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "1392+",
+      "categorias": [
+        "Premium",
+        "Confiável",
+        "Jackpots"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 305,
+      "nome": "CasinoUltra",
+      "bonus": "200% até R$ 2000",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "4140+",
+      "categorias": [
+        "Poker",
+        "Novidades",
+        "VIP"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 306,
+      "nome": "SovereignSlots",
+      "bonus": "100% até R$ 500",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "2828+",
+      "categorias": [
+        "Bingo",
+        "Poker"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 307,
+      "nome": "JackGames",
+      "bonus": "200% até R$ 2000",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "3551+",
+      "categorias": [
+        "Jackpots",
+        "Cashback"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 308,
+      "nome": "ThunderBet",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "1659+",
+      "categorias": [
+        "High Rollers",
+        "Jogos de Mesa",
+        "Jackpots",
+        "Pix"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 309,
+      "nome": "Luck999",
+      "bonus": "200% até R$ 10000",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "4307+",
+      "categorias": [
+        "High Rollers",
+        "Esportes",
+        "Poker"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 310,
+      "nome": "Mirage888",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "4301+",
+      "categorias": [
+        "Dados",
+        "Confiável"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 311,
+      "nome": "WaveVIP",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "4363+",
+      "categorias": [
+        "Slots",
+        "Confiável"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 312,
+      "nome": "Sovereign888",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "4176+",
+      "categorias": [
+        "Saque Rápido",
+        "Confiável",
+        "Jackpots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 313,
+      "nome": "ParadiseGames",
+      "bonus": "300% até R$ 3000",
+      "deposito_min": "R$ 15",
+      "saque": "15 min",
+      "jogos": "1186+",
+      "categorias": [
+        "Melhor Bônus",
+        "Depósito Baixo"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 314,
+      "nome": "PlanetClub",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "4411+",
+      "categorias": [
+        "Slots",
+        "Depósito Baixo"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 315,
+      "nome": "BetPro",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "4536+",
+      "categorias": [
+        "Depósito Baixo",
+        "High Rollers",
+        "Pix",
+        "Saque Rápido"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 316,
+      "nome": "SovereignClub",
+      "bonus": "500% até R$ 1000",
+      "deposito_min": "R$ 5",
+      "saque": "5 min",
+      "jogos": "1697+",
+      "categorias": [
+        "Confiável",
+        "Saque Rápido",
+        "High Rollers"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 317,
+      "nome": "PokerBet",
+      "bonus": "100% até R$ 3000",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "3152+",
+      "categorias": [
+        "Depósito Baixo",
+        "High Rollers",
+        "Poker",
+        "Novidades"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 318,
+      "nome": "CarnivalClub",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 20",
+      "saque": "1 hora",
+      "jogos": "1273+",
+      "categorias": [
+        "Novidades",
+        "Live Casino",
+        "Cashback",
+        "Melhor Bônus"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 319,
+      "nome": "LuckRápido",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "4558+",
+      "categorias": [
+        "Saque Rápido",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 320,
+      "nome": "TropicalUltra",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "1888+",
+      "categorias": [
+        "Premium",
+        "Bingo",
+        "Pix"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 321,
+      "nome": "CasinoExpress",
+      "bonus": "100% até R$ 500",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "4155+",
+      "categorias": [
+        "Jackpots",
+        "VIP",
+        "Cashback"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 322,
+      "nome": "MajesticGames",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 20",
+      "saque": "30 min",
+      "jogos": "2830+",
+      "categorias": [
+        "Esportes",
+        "Jogos de Mesa",
+        "High Rollers"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 323,
+      "nome": "TropicalExpress",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 15",
+      "saque": "Imediato",
+      "jogos": "3930+",
+      "categorias": [
+        "VIP",
+        "Pix",
+        "Confiável",
+        "Cashback"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 324,
+      "nome": "StarSlots",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "2050+",
+      "categorias": [
+        "Live Casino",
+        "Slots",
+        "Poker"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 325,
+      "nome": "PlatinumMax",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "1000+",
+      "categorias": [
+        "Saque Rápido",
+        "Dados",
+        "Melhor Bônus"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 326,
+      "nome": "KingVIP",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "3641+",
+      "categorias": [
+        "VIP",
+        "Slots"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 327,
+      "nome": "DiamondCasino",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "1413+",
+      "categorias": [
+        "Novidades",
+        "Poker",
+        "High Rollers",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 328,
+      "nome": "OasisGames",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "4906+",
+      "categorias": [
+        "Bingo",
+        "Premium",
+        "Live Casino"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 329,
+      "nome": "AmazonVIP",
+      "bonus": "200% até R$ 1000",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "3510+",
+      "categorias": [
+        "Saque Rápido",
+        "Bingo",
+        "Jackpots",
+        "Live Casino"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 330,
+      "nome": "ApexUltra",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "3220+",
+      "categorias": [
+        "Esportes",
+        "High Rollers",
+        "Melhor Bônus",
+        "Cashback"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 331,
+      "nome": "LuxuryGames",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "4284+",
+      "categorias": [
+        "Premium",
+        "Novidades",
+        "Confiável",
+        "Jackpots"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 332,
+      "nome": "WindPlus",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "30 min",
+      "jogos": "3195+",
+      "categorias": [
+        "Premium",
+        "Dados"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 333,
+      "nome": "AmazonRápido",
+      "bonus": "500% até R$ 500",
+      "deposito_min": "R$ 10",
+      "saque": "15 min",
+      "jogos": "3030+",
+      "categorias": [
+        "Jackpots",
+        "Dados",
+        "Poker"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 334,
+      "nome": "AmazonCasino",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "5 min",
+      "jogos": "3068+",
+      "categorias": [
+        "Depósito Baixo",
+        "Live Casino",
+        "High Rollers"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 335,
+      "nome": "Majestic888",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "4654+",
+      "categorias": [
+        "High Rollers",
+        "Novidades",
+        "VIP",
+        "Slots"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 336,
+      "nome": "NexusCasino",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "1 hora",
+      "jogos": "3958+",
+      "categorias": [
+        "Saque Rápido",
+        "VIP",
+        "Depósito Baixo",
+        "Live Casino"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 337,
+      "nome": "SovereignCasino",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "10 min",
+      "jogos": "4776+",
+      "categorias": [
+        "Novidades",
+        "High Rollers"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 338,
+      "nome": "CosmicPro",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "4384+",
+      "categorias": [
+        "High Rollers",
+        "Jackpots"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 339,
+      "nome": "SunMega",
+      "bonus": "300% até R$ 1000",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "3157+",
+      "categorias": [
+        "Saque Rápido",
+        "Jogos de Mesa",
+        "High Rollers"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 340,
+      "nome": "SambaSlots",
+      "bonus": "200% até R$ 3000",
+      "deposito_min": "R$ 5",
+      "saque": "5 min",
+      "jogos": "1284+",
+      "categorias": [
+        "Pix",
+        "Jackpots"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 341,
+      "nome": "JackMax",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "3203+",
+      "categorias": [
+        "Jackpots",
+        "High Rollers"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 342,
+      "nome": "NobleCasino",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "3382+",
+      "categorias": [
+        "Esportes",
+        "Saque Rápido"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 343,
+      "nome": "ThunderMax",
+      "bonus": "300% até R$ 2000",
+      "deposito_min": "R$ 1",
+      "saque": "1 hora",
+      "jogos": "3039+",
+      "categorias": [
+        "High Rollers",
+        "Jogos de Mesa",
+        "Live Casino"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 344,
+      "nome": "EliteTurbo",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "1076+",
+      "categorias": [
+        "Jackpots",
+        "Poker",
+        "Cashback",
+        "Confiável"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 345,
+      "nome": "PlanetVIP",
+      "bonus": "500% até R$ 5000",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "1481+",
+      "categorias": [
+        "Melhor Bônus",
+        "Jackpots",
+        "Novidades"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 346,
+      "nome": "ParadisePro",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "2373+",
+      "categorias": [
+        "Confiável",
+        "Novidades",
+        "Pix"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 347,
+      "nome": "CasinoGames",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "4623+",
+      "categorias": [
+        "VIP",
+        "Depósito Baixo",
+        "Confiável",
+        "Premium"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 348,
+      "nome": "DeluxeMax",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "1174+",
+      "categorias": [
+        "VIP",
+        "Depósito Baixo",
+        "Poker",
+        "Slots"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 349,
+      "nome": "StarUltra",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "24 horas",
+      "jogos": "1964+",
+      "categorias": [
+        "Slots",
+        "Poker",
+        "Esportes",
+        "Melhor Bônus"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 350,
+      "nome": "ParadisePlay",
+      "bonus": "100% até R$ 2000",
+      "deposito_min": "R$ 1",
+      "saque": "5 min",
+      "jogos": "1740+",
+      "categorias": [
+        "Esportes",
+        "Saque Rápido",
+        "Novidades",
+        "Live Casino"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 351,
+      "nome": "ApexClub",
+      "bonus": "500% até R$ 3000",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "2885+",
+      "categorias": [
+        "Confiável",
+        "Cashback",
+        "Esportes"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 352,
+      "nome": "KingMega",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "1 hora",
+      "jogos": "2708+",
+      "categorias": [
+        "Jackpots",
+        "Esportes",
+        "Confiável"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 353,
+      "nome": "WindPlay",
+      "bonus": "300% até R$ 10000",
+      "deposito_min": "R$ 1",
+      "saque": "15 min",
+      "jogos": "2491+",
+      "categorias": [
+        "Dados",
+        "Saque Rápido"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 354,
+      "nome": "LuxuryPix",
+      "bonus": "500% até R$ 10000",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "4754+",
+      "categorias": [
+        "Esportes",
+        "Slots"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 355,
+      "nome": "MajesticFlash",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "30 min",
+      "jogos": "1552+",
+      "categorias": [
+        "Jackpots",
+        "Depósito Baixo",
+        "Esportes",
+        "Slots"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 356,
+      "nome": "SuperMega",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 10",
+      "saque": "10 min",
+      "jogos": "3895+",
+      "categorias": [
+        "Saque Rápido",
+        "Cashback"
+      ],
+      "rating": 4.6
+    },
+    {
+      "id": 357,
+      "nome": "Diamond999",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "4909+",
+      "categorias": [
+        "Slots",
+        "Jackpots",
+        "Cashback"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 358,
+      "nome": "Jackpot777",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "4537+",
+      "categorias": [
+        "Slots",
+        "Cashback",
+        "VIP"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 359,
+      "nome": "AceMax",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "2244+",
+      "categorias": [
+        "Melhor Bônus",
+        "Live Casino",
+        "Slots",
+        "Cashback"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 360,
+      "nome": "SovereignPlus",
+      "bonus": "300% até R$ 500",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "1921+",
+      "categorias": [
+        "Premium",
+        "VIP",
+        "Esportes"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 361,
+      "nome": "ParadisePix",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 5",
+      "saque": "Imediato",
+      "jogos": "1759+",
+      "categorias": [
+        "Pix",
+        "Jackpots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 362,
+      "nome": "SovereignExpress",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "3413+",
+      "categorias": [
+        "Esportes",
+        "Poker"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 363,
+      "nome": "CarnivalPro",
+      "bonus": "200% até R$ 10000",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "2302+",
+      "categorias": [
+        "Depósito Baixo",
+        "Confiável",
+        "Jackpots",
+        "Pix"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 364,
+      "nome": "StarPix",
+      "bonus": "200% até R$ 5000",
+      "deposito_min": "R$ 50",
+      "saque": "5 min",
+      "jogos": "3311+",
+      "categorias": [
+        "Jackpots",
+        "Slots",
+        "Premium"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 365,
+      "nome": "SuperClub",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "1010+",
+      "categorias": [
+        "Esportes",
+        "High Rollers",
+        "Premium",
+        "Novidades"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 366,
+      "nome": "MirageUltra",
+      "bonus": "150 giros grátis",
+      "deposito_min": "R$ 15",
+      "saque": "Imediato",
+      "jogos": "2656+",
+      "categorias": [
+        "Saque Rápido",
+        "Depósito Baixo"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 367,
+      "nome": "King888",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 5",
+      "saque": "15 min",
+      "jogos": "2423+",
+      "categorias": [
+        "Dados",
+        "Bingo",
+        "Saque Rápido"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 368,
+      "nome": "StormSlots",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "4274+",
+      "categorias": [
+        "Confiável",
+        "Live Casino",
+        "Melhor Bônus",
+        "Slots"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 369,
+      "nome": "NobleFlash",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 50",
+      "saque": "30 min",
+      "jogos": "2878+",
+      "categorias": [
+        "Cashback",
+        "Pix",
+        "Confiável"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 370,
+      "nome": "StormUltra",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "1507+",
+      "categorias": [
+        "Esportes",
+        "Jackpots",
+        "VIP"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 371,
+      "nome": "BonusClub",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "3081+",
+      "categorias": [
+        "Premium",
+        "Live Casino"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 372,
+      "nome": "MegaUltra",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "5 min",
+      "jogos": "4000+",
+      "categorias": [
+        "Depósito Baixo",
+        "Esportes",
+        "Bingo",
+        "Saque Rápido"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 373,
+      "nome": "Apex888",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 1",
+      "saque": "24 horas",
+      "jogos": "2415+",
+      "categorias": [
+        "Saque Rápido",
+        "Esportes",
+        "Cashback"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 374,
+      "nome": "GoldenPlay",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "4947+",
+      "categorias": [
+        "Live Casino",
+        "Premium"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 375,
+      "nome": "NexusSlots",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "2806+",
+      "categorias": [
+        "High Rollers",
+        "Poker",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 376,
+      "nome": "RioUltra",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 25",
+      "saque": "Imediato",
+      "jogos": "4370+",
+      "categorias": [
+        "Pix",
+        "Live Casino"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 377,
+      "nome": "CasinoClub",
+      "bonus": "200% até R$ 1000",
+      "deposito_min": "R$ 25",
+      "saque": "24 horas",
+      "jogos": "3101+",
+      "categorias": [
+        "Slots",
+        "Poker",
+        "Cashback",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 378,
+      "nome": "ApexPlus",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "3317+",
+      "categorias": [
+        "Melhor Bônus",
+        "Novidades"
+      ],
+      "rating": 5.0
+    },
+    {
+      "id": 379,
+      "nome": "WaveCasino",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "24 horas",
+      "jogos": "1587+",
+      "categorias": [
+        "Live Casino",
+        "Cashback",
+        "Pix",
+        "Melhor Bônus"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 380,
+      "nome": "JackFlash",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "2372+",
+      "categorias": [
+        "High Rollers",
+        "Dados",
+        "Slots",
+        "Novidades"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 381,
+      "nome": "FortunePlus",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 25",
+      "saque": "30 min",
+      "jogos": "4339+",
+      "categorias": [
+        "Pix",
+        "Cashback",
+        "Bingo"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 382,
+      "nome": "ParadiseRápido",
+      "bonus": "100 giros grátis",
+      "deposito_min": "R$ 25",
+      "saque": "15 min",
+      "jogos": "4247+",
+      "categorias": [
+        "Premium",
+        "VIP"
+      ],
+      "rating": 4.4
+    },
+    {
+      "id": 383,
+      "nome": "LuxuryUltra",
+      "bonus": "Cashback 20%",
+      "deposito_min": "R$ 50",
+      "saque": "15 min",
+      "jogos": "3093+",
+      "categorias": [
+        "Melhor Bônus",
+        "Pix",
+        "Premium"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 384,
+      "nome": "SilverCasino",
+      "bonus": "500% até R$ 5000",
+      "deposito_min": "R$ 50",
+      "saque": "1 hora",
+      "jogos": "1146+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Poker",
+        "Confiável"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 385,
+      "nome": "EliteUltra",
+      "bonus": "500% até R$ 10000",
+      "deposito_min": "R$ 15",
+      "saque": "10 min",
+      "jogos": "3959+",
+      "categorias": [
+        "Premium",
+        "Esportes",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 386,
+      "nome": "DeluxeGames",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 1",
+      "saque": "Imediato",
+      "jogos": "3192+",
+      "categorias": [
+        "Bingo",
+        "Live Casino",
+        "Novidades"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 387,
+      "nome": "StarMega",
+      "bonus": "200 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "Imediato",
+      "jogos": "1493+",
+      "categorias": [
+        "Melhor Bônus",
+        "Premium",
+        "Saque Rápido"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 388,
+      "nome": "SunGames",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 15",
+      "saque": "30 min",
+      "jogos": "2603+",
+      "categorias": [
+        "Dados",
+        "Esportes"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 389,
+      "nome": "QueenCasino",
+      "bonus": "Cashback 5%",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "1899+",
+      "categorias": [
+        "Jogos de Mesa",
+        "High Rollers"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 390,
+      "nome": "GalaxyVIP",
+      "bonus": "50 giros grátis",
+      "deposito_min": "R$ 5",
+      "saque": "10 min",
+      "jogos": "4677+",
+      "categorias": [
+        "Jackpots",
+        "Dados"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 391,
+      "nome": "Fortune777",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "2331+",
+      "categorias": [
+        "Saque Rápido",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.2
+    },
+    {
+      "id": 392,
+      "nome": "LuckBet",
+      "bonus": "Cashback 15%",
+      "deposito_min": "R$ 20",
+      "saque": "5 min",
+      "jogos": "2554+",
+      "categorias": [
+        "Depósito Baixo",
+        "Saque Rápido"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 393,
+      "nome": "JackpotPro",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 10",
+      "saque": "24 horas",
+      "jogos": "1486+",
+      "categorias": [
+        "Novidades",
+        "Slots"
+      ],
+      "rating": 4.9
+    },
+    {
+      "id": 394,
+      "nome": "EdenRápido",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 1",
+      "saque": "10 min",
+      "jogos": "4875+",
+      "categorias": [
+        "Premium",
+        "Live Casino",
+        "VIP"
+      ],
+      "rating": 4.5
+    },
+    {
+      "id": 395,
+      "nome": "MoonTurbo",
+      "bonus": "R$ 1000 bônus diário",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "1379+",
+      "categorias": [
+        "Jogos de Mesa",
+        "Saque Rápido",
+        "Bingo"
+      ],
+      "rating": 4.1
+    },
+    {
+      "id": 396,
+      "nome": "Flash999",
+      "bonus": "R$ 500 bônus diário",
+      "deposito_min": "R$ 5",
+      "saque": "15 min",
+      "jogos": "2253+",
+      "categorias": [
+        "Slots",
+        "Dados"
+      ],
+      "rating": 4.8
+    },
+    {
+      "id": 397,
+      "nome": "RoyalPix",
+      "bonus": "Cashback 10%",
+      "deposito_min": "R$ 5",
+      "saque": "24 horas",
+      "jogos": "3210+",
+      "categorias": [
+        "Poker",
+        "Dados"
+      ],
+      "rating": 4.0
+    },
+    {
+      "id": 398,
+      "nome": "Ultra888",
+      "bonus": "300 giros grátis",
+      "deposito_min": "R$ 20",
+      "saque": "10 min",
+      "jogos": "2115+",
+      "categorias": [
+        "Slots",
+        "Melhor Bônus",
+        "High Rollers",
+        "Bingo"
+      ],
+      "rating": 4.3
+    },
+    {
+      "id": 399,
+      "nome": "QueenMega",
+      "bonus": "Bônus sem rollover",
+      "deposito_min": "R$ 5",
+      "saque": "1 hora",
+      "jogos": "3443+",
+      "categorias": [
+        "Cashback",
+        "Esportes",
+        "Premium",
+        "Confiável"
+      ],
+      "rating": 4.7
+    },
+    {
+      "id": 400,
+      "nome": "Carnival999",
+      "bonus": "300% até R$ 5000",
+      "deposito_min": "R$ 25",
+      "saque": "5 min",
+      "jogos": "3391+",
+      "categorias": [
+        "Depósito Baixo",
+        "Melhor Bônus",
+        "Jogos de Mesa"
+      ],
+      "rating": 4.9
+    }
+  ],
+  "total": 400,
+  "categorias": {
+    "Melhor Bônus": "Cassinos com melhor bônus",
+    "Saque Rápido": "Cassinos com saque rápido",
+    "Pix": "Cassinos com pix",
+    "Depósito Baixo": "Cassinos com depósito baixo",
+    "Slots": "Cassinos com slots",
+    "Live Casino": "Cassinos com live casino",
+    "VIP": "Cassinos com vip",
+    "Premium": "Cassinos com premium",
+    "Cashback": "Cassinos com cashback",
+    "Jackpots": "Cassinos com jackpots",
+    "High Rollers": "Cassinos com high rollers",
+    "Confiável": "Cassinos com confiável",
+    "Esportes": "Cassinos com esportes",
+    "Novidades": "Cassinos com novidades",
+    "Jogos de Mesa": "Cassinos com jogos de mesa",
+    "Bingo": "Cassinos com bingo",
+    "Dados": "Cassinos com dados",
+    "Poker": "Cassinos com poker"
+  },
+  "aeet": {
+    "nome": "AEET - Associação Europeia de Entretenimento em Tempo Real",
+    "descricao": "Organização que representa operadores de jogos de azar online na Europa",
+    "site": "https://www.aeet.eu",
+    "regulamentacao": "Promove práticas responsáveis e conformidade com regulamentações"
+  }
+}

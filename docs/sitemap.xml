@@ -248,6 +248,29 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Páginas Legais Obrigatórias -->
+    <url>
+        <loc>https://casino-radar.github.io/privacidade.html</loc>
+        <lastmod>2026-05-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://casino-radar.github.io/termos.html</loc>
+        <lastmod>2026-05-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- Arquivo JSON de Cassinos -->
+    <url>
+        <loc>https://casino-radar.github.io/cassinos.json</loc>
+        <lastmod>2026-05-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Sitemap HTML -->
     <url>
         <loc>https://casino-radar.github.io/sitemap.html</loc>

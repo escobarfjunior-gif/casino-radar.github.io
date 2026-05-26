@@ -986,10 +986,15 @@
             }, 600);
         }
 
-        // Inicializar
-        renderFilters();
-        renderCasinos();
-        renderPagination();
+        // Inicializar - Carregar cassinos do JSON
+        loadCasinos();
+        
+        // Fallback se o JSON não carregar
+        setTimeout(() => {
+            if (CASINOS.length === 0) {
+                loadDefaultCasinos();
+            }
+        }, 2000);
     </script>
 </body>
 </html>
