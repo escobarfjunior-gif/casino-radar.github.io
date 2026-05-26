@@ -1,614 +1,416 @@
-import React, { useState } from "react";
-import { 
-  Shield, 
-  Search, 
-  CheckCircle, 
-  HelpCircle, 
-  ArrowUpRight, 
-  BookOpen, 
-  Coins, 
-  Smartphone, 
-  FileText, 
-  ExternalLink, 
-  Info, 
-  AlertTriangle,
-  UserCheck,
-  Scale,
-  Award,
-  ChevronDown,
-  Clock
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { toast } from "sonner";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Sparkles, Zap, Shield, TrendingUp, Heart, Dice5 } from "lucide-react";
+import { useState } from "react";
 
-// Dados fictícios/estruturados para simular a metodologia de avaliação e comparativos transparentes
-interface CasinoModel {
-  id: string;
+const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663697524081/m6JmXYFonBksNXfMtEy6oo/hero-casino-modern-ftma3NBNDoHeLxHgyc3gVm.webp";
+const CARDS_PATTERN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663697524081/m6JmXYFonBksNXfMtEy6oo/cards-pattern-modern-Ao47Mc89TrzRxhg5WcBrk4.webp";
+const GRADIENT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663697524081/m6JmXYFonBksNXfMtEy6oo/gradient-accent-modern-B6yuPwFf4ehJfcp4MMiB3X.webp";
+
+interface Casino {
+  id: number;
   name: string;
   rating: number;
   bonus: string;
   minDeposit: string;
-  payoutTime: string;
-  license: string;
-  pros: string[];
-  status: "autorizado" | "analise" | "nao-recomendado";
+  withdrawalTime: string;
+  icon: string;
 }
 
-const CASINOS_DATA: CasinoModel[] = [
+const casinos: Casino[] = [
   {
-    id: "1",
+    id: 1,
     name: "SpinVegas",
     rating: 4.9,
-    bonus: "100% até R$ 5.000 + 150 Rodadas Grátis",
-    minDeposit: "R$ 10,00",
-    payoutTime: "Imediato (Pix)",
-    license: "SPA/MF nº 0042/2026",
-    pros: ["Suporte 24h em português", "Excelente catálogo de slots", "Saques instantâneos"],
-    status: "autorizado"
+    bonus: "100% até R$ 5.000 + 150 RG",
+    minDeposit: "R$ 10",
+    withdrawalTime: "Imediato via Pix",
+    icon: "🎰",
   },
   {
-    id: "2",
+    id: 2,
     name: "Império Bet",
     rating: 4.8,
-    bonus: "Boas-vindas até R$ 3.500",
-    minDeposit: "R$ 5,00",
-    payoutTime: "Até 10 min (Pix)",
-    license: "SPA/MF nº 0019/2026",
-    pros: ["Depósito mínimo muito baixo", "App Android nativo", "Rollover justo"],
-    status: "autorizado"
+    bonus: "Bônus até R$ 3.500",
+    minDeposit: "R$ 5",
+    withdrawalTime: "Até 10 min via Pix",
+    icon: "👑",
   },
   {
-    id: "3",
+    id: 3,
     name: "PixSorte",
     rating: 4.7,
-    bonus: "R$ 50,00 no cadastro + 100% de bônus",
-    minDeposit: "R$ 1,00",
-    payoutTime: "Segundos (Pix)",
-    license: "SPA/MF nº 0088/2026",
-    pros: ["Saque automatizado", "Cadastro simplificado", "Promoções diárias"],
-    status: "autorizado"
+    bonus: "R$ 50 + 100% bônus",
+    minDeposit: "R$ 1",
+    withdrawalTime: "Segundos via Pix",
+    icon: "⚡",
   },
   {
-    id: "4",
-    name: "Royal Palace Casino",
+    id: 4,
+    name: "Royal Palace",
     rating: 4.6,
     bonus: "Bônus VIP até R$ 10.000",
-    minDeposit: "R$ 50,00",
-    payoutTime: "Até 1 hora",
-    license: "SPA/MF nº 0102/2026",
-    pros: ["Clube VIP exclusivo", "Mesas de Blackjack exclusivas", "Altos limites de saque"],
-    status: "autorizado"
+    minDeposit: "R$ 50",
+    withdrawalTime: "Até 1 hora",
+    icon: "🏰",
   },
   {
-    id: "5",
+    id: 5,
     name: "Brasil Slots",
     rating: 4.6,
-    bonus: "200 Giros Grátis em jogos selecionados",
-    minDeposit: "R$ 10,00",
-    payoutTime: "Até 15 min (Pix)",
-    license: "SPA/MF nº 0077/2026",
-    pros: ["Milhares de caça-níqueis", "Provedores certificados", "Torneios semanais"],
-    status: "autorizado"
-  }
+    bonus: "200 giros em slots",
+    minDeposit: "R$ 10",
+    withdrawalTime: "Até 15 min via Pix",
+    icon: "🍀",
+  },
+  {
+    id: 6,
+    name: "Mesa Ao Vivo Pro",
+    rating: 4.5,
+    bonus: "Cashback semanal",
+    minDeposit: "R$ 20",
+    withdrawalTime: "Até 30 min via Pix",
+    icon: "🃏",
+  },
 ];
 
-const GUIDES_DATA = [
-  {
-    id: "bonus",
-    category: "Bônus",
-    title: "Guia Completo de Bônus de Boas-Vindas",
-    desc: "Aprenda a analisar os requisitos de aposta (rollover), prazos de validade e contribuição de jogos antes de aceitar uma promoção.",
-    words: 1062,
-    icon: Coins
-  },
-  {
-    id: "seguranca",
-    category: "Segurança",
-    title: "Como Identificar um Cassino Seguro",
-    desc: "Um checklist detalhado para avaliar licenças oficiais, criptografia de dados, políticas de KYC e a reputação do operador no mercado brasileiro.",
-    words: 1073,
-    icon: Shield
-  },
-  {
-    id: "pix",
-    category: "Pagamentos",
-    title: "Cassinos com Pix: Taxas e Limites",
-    desc: "Entenda as regras de transação via Pix, como evitar taxas ocultas e por que a velocidade do saque não deve anular a verificação de segurança.",
-    words: 1070,
-    icon: UserCheck
-  },
-  {
-    id: "responsavel",
-    category: "Jogo Responsável",
-    title: "Diretrizes de Jogo Responsável",
-    desc: "Como configurar limites de depósito, tempo de sessão e utilizar ferramentas de autoexclusão para manter as apostas apenas como entretenimento.",
-    words: 1069,
-    icon: Scale
-  }
+const guides = [
+  { title: "Bônus de Boas-Vindas", desc: "Tipos, requisitos e como maximizar", icon: "🎁" },
+  { title: "Estratégias Roleta", desc: "Dicas para iniciantes e experientes", icon: "🎲" },
+  { title: "Blackjack Online", desc: "Regras, contagem de cartas e variantes", icon: "🂡" },
+  { title: "Cassinos Móveis", desc: "Apps seguros e vantagens do mobile", icon: "📱" },
+  { title: "Segurança Online", desc: "Proteja seus dados e transações", icon: "🔐" },
+  { title: "Jogo Responsável", desc: "Limites, autoexclusão e ajuda", icon: "🛡️" },
 ];
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filterStatus, setFilterStatus] = useState<string>("todos");
-  const [expandedCasino, setExpandedCasino] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [guideSearch, setGuideSearch] = useState("");
 
-  const filteredCasinos = CASINOS_DATA.filter(casino => {
-    const matchesSearch = casino.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          casino.bonus.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesSearch;
-  });
+  const filteredCasinos = casinos.filter((c) =>
+    c.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-  const handleAction = (casinoName: string) => {
-    toast.info(`Você está sendo redirecionado para a verificação oficial de ${casinoName}.`, {
-      description: "Sempre confirme a autorização do operador no site do Ministério da Fazenda antes de se cadastrar.",
-      duration: 5000,
-    });
-  };
-
-  const handlePlaceholderClick = (title: string) => {
-    toast.success(`Guia "${title}" carregado com sucesso!`, {
-      description: "Conteúdo educativo otimizado para leitura responsável.",
-    });
-  };
+  const filteredGuides = guides.filter((g) =>
+    g.title.toLowerCase().includes(guideSearch.toLowerCase())
+  );
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/20 selection:text-primary">
-      {/* Top Banner - Aviso Legal Obrigatório */}
-      <div className="bg-amber-950/40 border-b border-amber-900/40 py-2 px-4 text-center text-xs text-amber-200/90 flex items-center justify-center gap-2">
-        <AlertTriangle className="h-4 w-4 text-amber-400 shrink-0" />
-        <span>
-          <strong>Aviso de Responsabilidade:</strong> Apostas online envolvem risco financeiro. Este site é estritamente informativo para maiores de 18 anos. Verifique a regularidade do operador na Secretaria de Prêmios e Apostas (SPA/MF) antes de jogar.
-        </span>
-      </div>
-
-      {/* Header */}
-      <header className="border-b border-border/60 bg-background/80 backdrop-blur-md sticky top-0 z-50 transition-all">
-        <div className="container flex h-16 items-center justify-between">
+    <div className="min-h-screen bg-background text-foreground overflow-hidden">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/80 border-b border-border">
+        <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center shadow-md shadow-primary/10">
-              <span className="font-serif text-lg font-bold text-background">♠</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold tracking-tight text-white">CasinoRadar</span>
-              <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">Guia de Escolha Segura</span>
-            </div>
+            <span className="text-2xl">♠</span>
+            <span className="text-xl font-bold text-gradient">CasinoRadar</span>
           </div>
-
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
-            <a href="#rankings" className="hover:text-primary transition-colors">Rankings</a>
-            <a href="#metodologia" className="hover:text-primary transition-colors">Metodologia</a>
-            <a href="#guias" className="hover:text-primary transition-colors">Guias Educativos</a>
-            <a href="#jogo-responsavel" className="hover:text-primary transition-colors">Jogo Responsável</a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Badge variant="outline" className="border-emerald-500/30 text-emerald-400 bg-emerald-950/20 px-2.5 py-1 text-xs font-semibold gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              Conteúdo Verificado
-            </Badge>
+          <div className="hidden md:flex gap-8">
+            <a href="#rankings" className="hover-glow text-sm">Rankings</a>
+            <a href="#guias" className="hover-glow text-sm">Guias</a>
+            <a href="#responsavel" className="hover-glow text-sm">Jogo Responsável</a>
           </div>
+          <Button className="btn-neon">Pegar Bônus</Button>
         </div>
-      </header>
+      </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 lg:py-28 border-b border-border/40 bg-gradient-to-b from-card/30 via-background to-background">
-        {/* Elemento Decorativo de Fundo */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('${HERO_IMAGE}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent"></div>
+        </div>
 
-        <div className="container relative z-10 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold">
-              <Award className="h-3.5 w-3.5" />
-              <span>Análise Técnica e Isenta de Operadores</span>
+        <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 slide-in-up">
+            <div className="inline-block">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 w-fit">
+                <Sparkles className="w-4 h-4 text-accent" />
+                <span className="text-sm text-accent">100% conteúdo verificado</span>
+              </div>
             </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white leading-[1.1]">
-              Decisões Inteligentes em <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-amber-400 to-primary">Cassinos Online</span> no Brasil
+
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              Encontre seu <span className="text-gradient">cassino ideal</span> no Brasil
             </h1>
-            
-            <p className="text-muted-foreground text-base sm:text-lg max-w-2xl leading-relaxed">
-              O CasinoRadar é um portal independente que avalia operadores com base em critérios técnicos estritos de segurança, conformidade legal, clareza nos bônus e eficiência de pagamento. Ajudamos você a pesquisar antes de apostar.
+
+            <p className="text-lg text-muted-foreground max-w-lg">
+              Rankings verificados, guias completos, bônus explicados e jogo responsável. Tudo que você precisa saber antes de apostar.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-background font-semibold px-8 shadow-lg shadow-primary/20" onClick={() => window.location.href = "#rankings"}>
-                Ver Rankings Técnicos
+            <div className="flex gap-4 pt-4">
+              <Button className="btn-neon" size="lg">
+                Ver Rankings
               </Button>
-              <Button size="lg" variant="outline" className="border-border hover:bg-card text-white px-8" onClick={() => window.location.href = "#metodologia"}>
-                Nossa Metodologia
+              <Button variant="outline" size="lg" className="border-accent/50 hover:border-accent">
+                Saiba Mais
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/40 max-w-md">
-              <div>
-                <p className="text-2xl font-serif font-bold text-white">100%</p>
-                <p className="text-xs text-muted-foreground">Foco em Segurança</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+              <div className="space-y-1">
+                <p className="text-2xl font-bold text-accent">45+</p>
+                <p className="text-sm text-muted-foreground">Cassinos analisados</p>
               </div>
-              <div>
-                <p className="text-2xl font-serif font-bold text-white">SPA/MF</p>
-                <p className="text-xs text-muted-foreground">Fontes Oficiais</p>
+              <div className="space-y-1">
+                <p className="text-2xl font-bold text-accent">20</p>
+                <p className="text-sm text-muted-foreground">Guias +800 palavras</p>
               </div>
-              <div>
-                <p className="text-2xl font-serif font-bold text-white">20+</p>
-                <p className="text-xs text-muted-foreground">Guias de Estudo</p>
+              <div className="space-y-1">
+                <p className="text-2xl font-bold text-accent">100%</p>
+                <p className="text-sm text-muted-foreground">Conteúdo original</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-2xl font-bold text-accent">24h</p>
+                <p className="text-sm text-muted-foreground">Atualização editorial</p>
               </div>
             </div>
           </div>
 
-          {/* Destaque do Mês Card */}
-          <div className="lg:col-span-5">
-            <div className="bg-gradient-to-b from-card to-card/90 border border-primary/20 rounded-2xl p-6 shadow-xl relative overflow-hidden group">
-              {/* Brilho sutil no hover */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="absolute top-0 right-0 bg-primary text-background text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-xl">
-                Destaque do Mês
-              </div>
-
-              <div className="space-y-5">
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-serif text-xl font-bold">
-                    SV
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white font-serif">SpinVegas</h3>
-                    <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                      <span className="text-primary font-bold">★ 4.9</span>
-                      <span>•</span>
-                      <span>Autorizado SPA/MF</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-background/50 border border-border/40 space-y-2">
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">Bônus de Boas-Vindas</p>
-                  <p className="text-base font-bold text-primary">100% até R$ 5.000 + 150 Rodadas Grátis</p>
-                  <div className="flex justify-between text-xs text-muted-foreground pt-2 border-t border-border/20">
-                    <span>Dep. Mínimo: <strong>R$ 10</strong></span>
-                    <span>Saque: <strong>Imediato (Pix)</strong></span>
-                  </div>
-                </div>
-
-                <div className="space-y-2 text-xs text-muted-foreground">
-                  <p className="flex items-center gap-2">
-                    <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                    <span>Licença ativa sob regulação federal brasileira</span>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                    <span>Termos de rollover explicados de forma clara</span>
-                  </p>
-                </div>
-
-                <Button className="w-full bg-primary hover:bg-primary/90 text-background font-bold py-5 rounded-xl transition-all" onClick={() => handleAction("SpinVegas")}>
-                  Acessar Site & Verificar Bônus
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Button>
-                
-                <p className="text-[10px] text-center text-muted-foreground">
-                  *Sempre consulte os Termos & Condições diretamente no operador.
-                </p>
-              </div>
+          <div className="hidden md:flex justify-center fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="relative w-full max-w-md h-96 float">
+              <img
+                src={CARDS_PATTERN}
+                alt="Casino cards"
+                className="w-full h-full object-cover rounded-2xl pulse-glow"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Rankings Section */}
-      <section id="rankings" className="py-20 bg-background border-b border-border/40">
-        <div className="container space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
-              Operadores Verificados no Brasil
-            </h2>
-            <p className="text-muted-foreground text-sm sm:text-base">
-              Abaixo apresentamos a nossa seleção de cassinos que cumprem os requisitos de segurança e possuem autorização ativa ou em andamento junto ao Ministério da Fazenda. Use os filtros para refinar sua busca.
-            </p>
+      <section id="rankings" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+          backgroundImage: `url('${GRADIENT_BG}')`,
+          backgroundSize: "cover",
+        }}></div>
 
-            {/* Search and Filters */}
-            <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto pt-4">
-              <div className="relative flex-1">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <input
-                  type="text"
-                  placeholder="Pesquisar por nome ou bônus..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-card border border-border rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
-                />
-              </div>
-            </div>
+        <div className="container relative z-10">
+          <div className="space-y-4 mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Os melhores <span className="text-gradient">cassinos online</span> verificados
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Filtrados por Pix, bônus, saque rápido e suporte 24h. Sempre confirme a autorização do operador.
+            </p>
           </div>
 
-          {/* Casinos Grid/Table */}
-          <div className="space-y-4 max-w-5xl mx-auto">
-            {filteredCasinos.length > 0 ? (
-              filteredCasinos.map((casino, index) => {
-                const isExpanded = expandedCasino === casino.id;
-                return (
-                  <div 
-                    key={casino.id}
-                    className={`bg-card border transition-all duration-300 rounded-xl overflow-hidden ${
-                      isExpanded ? "border-primary/40 shadow-lg shadow-primary/5" : "border-border/60 hover:border-border"
-                    }`}
-                  >
-                    {/* Main Row */}
-                    <div className="p-5 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                      <div className="flex items-center gap-4">
-                        <div className="h-12 w-12 rounded-lg bg-secondary flex items-center justify-center text-primary font-serif text-lg font-bold border border-border">
-                          {casino.name.substring(0, 2)}
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs text-primary font-bold">#{index + 1}</span>
-                            <h3 className="text-lg font-bold text-white font-serif">{casino.name}</h3>
-                            <Badge variant="outline" className="border-primary/20 text-primary bg-primary/5 text-[10px] px-2 py-0.5">
-                              ★ {casino.rating}
-                            </Badge>
-                          </div>
-                          <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
-                            <Shield className="h-3 w-3 text-emerald-500" />
-                            Licença: <span className="text-emerald-400 font-mono">{casino.license}</span>
-                          </p>
-                        </div>
-                      </div>
+          <div className="mb-8">
+            <Input
+              placeholder="Pesquisar cassino, bônus ou Pix..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="bg-card border-border/50 focus:border-accent focus:ring-accent"
+            />
+          </div>
 
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 flex-1 max-w-md">
-                        <div>
-                          <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">Bônus</p>
-                          <p className="text-xs font-bold text-white mt-0.5 line-clamp-1">{casino.bonus}</p>
-                        </div>
-                        <div>
-                          <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">Dep. Mínimo</p>
-                          <p className="text-xs font-semibold text-white mt-0.5">{casino.minDeposit}</p>
-                        </div>
-                        <div className="col-span-2 md:col-span-1">
-                          <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">Saque</p>
-                          <p className="text-xs font-semibold text-white mt-0.5 flex items-center gap-1">
-                            <Clock className="h-3 w-3 text-primary" />
-                            {casino.payoutTime}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-2.5">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => setExpandedCasino(isExpanded ? null : casino.id)}
-                          className="border-border text-xs hover:bg-secondary text-white"
-                        >
-                          {isExpanded ? "Ocultar" : "Detalhes"}
-                          <ChevronDown className={`ml-1.5 h-3.5 w-3.5 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
-                        </Button>
-                        <Button 
-                          size="sm"
-                          onClick={() => handleAction(casino.name)}
-                          className="bg-primary hover:bg-primary/90 text-background font-semibold text-xs px-4"
-                        >
-                          Verificar
-                          <ExternalLink className="ml-1.5 h-3 w-3" />
-                        </Button>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredCasinos.map((casino, idx) => (
+              <div
+                key={casino.id}
+                className="card-neon group"
+                style={{ animationDelay: `${idx * 0.1}s` }}
+              >
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <div className="space-y-1">
+                      <div className="text-3xl">{casino.icon}</div>
+                      <h3 className="text-xl font-bold">{casino.name}</h3>
+                      <div className="flex items-center gap-1">
+                        <span className="text-accent">★</span>
+                        <span className="text-sm">{casino.rating}</span>
                       </div>
                     </div>
-
-                    {/* Expanded Content */}
-                    {isExpanded && (
-                      <div className="px-5 pb-5 pt-1 border-t border-border/40 bg-secondary/20 grid md:grid-cols-2 gap-6 animate-fadeIn">
-                        <div className="space-y-3">
-                          <h4 className="text-xs font-bold uppercase tracking-wider text-primary">Pontos de Destaque</h4>
-                          <ul className="space-y-1.5 text-xs text-muted-foreground">
-                            {casino.pros.map((pro, i) => (
-                              <li key={i} className="flex items-center gap-2">
-                                <span className="h-1.5 w-1.5 rounded-full bg-primary"></span>
-                                {pro}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div className="space-y-3">
-                          <h4 className="text-xs font-bold uppercase tracking-wider text-primary">Aviso de Verificação</h4>
-                          <p className="text-xs text-muted-foreground leading-relaxed">
-                            Nossa equipe analisou os termos de rollover e políticas de saque deste operador. Certifique-se de que seus dados cadastrais (CPF) coincidem com a chave Pix utilizada para depósitos e saques para evitar atrasos na verificação de identidade (KYC).
-                          </p>
-                        </div>
-                      </div>
-                    )}
                   </div>
-                );
-              })
-            ) : (
-              <div className="text-center py-12 border border-dashed border-border rounded-xl">
-                <Info className="h-8 w-8 text-muted-foreground mx-auto mb-3" />
-                <p className="text-sm text-muted-foreground">Nenhum operador corresponde aos termos de pesquisa.</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
 
-      {/* Metodologia Section */}
-      <section id="metodologia" className="py-20 bg-card/30 border-b border-border/40">
-        <div className="container max-w-5xl space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-4">
-            <Badge variant="outline" className="border-primary/20 text-primary bg-primary/5">Como Avaliamos</Badge>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">Nossa Metodologia Editorial</h2>
-            <p className="text-muted-foreground text-sm sm:text-base">
-              A transparência é o nosso principal pilar. Nossas notas e posicionamentos nos rankings não são patrocinados e seguem critérios técnicos rigorosos.
-            </p>
-          </div>
+                  <div className="space-y-2 py-4 border-y border-border/50">
+                    <p className="font-semibold text-accent">{casino.bonus}</p>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>Depósito mín.: {casino.minDeposit}</p>
+                      <p>Saque: {casino.withdrawalTime}</p>
+                    </div>
+                  </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-card border border-border/60 p-6 rounded-xl space-y-4">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Shield className="h-5 w-5" />
+                  <Button className="btn-neon w-full">Acessar Site</Button>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-white font-serif">1. Licença e Regulação</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Verificamos ativamente a validade da licença do operador junto à Secretaria de Prêmios e Apostas (SPA/MF) do Ministério da Fazenda. Cassinos sem registro ou em situação irregular são imediatamente desqualificados.
-              </p>
-            </div>
-
-            <div className="bg-card border border-border/60 p-6 rounded-xl space-y-4">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <Coins className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white font-serif">2. Termos de Rollover</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Calculamos o custo real de cada bônus. Analisamos se as exigências de apostas são realistas para o jogador comum e se os prazos de validade das ofertas são adequados e transparentes.
-              </p>
-            </div>
-
-            <div className="bg-card border border-border/60 p-6 rounded-xl space-y-4">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                <UserCheck className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white font-serif">3. Práticas de Pagamento</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Avaliamos a velocidade de processamento dos saques via Pix, a presença de limites diários ocultos e a clareza nas exigências de verificação de identidade (KYC) antes do primeiro saque.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Guides Section */}
-      <section id="guias" className="py-20 bg-background border-b border-border/40">
-        <div className="container max-w-5xl space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-4">
-            <Badge variant="outline" className="border-primary/20 text-primary bg-primary/5">Conteúdo Educativo</Badge>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">Guias Completos para Apostadores</h2>
-            <p className="text-muted-foreground text-sm sm:text-base">
-              Nossa equipe escreve artigos aprofundados para ajudar você a entender o ecossistema de apostas online de forma crítica e analítica.
+      <section id="guias" className="py-20 relative">
+        <div className="container">
+          <div className="space-y-4 mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Guias <span className="text-gradient">educativos</span> completos
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Artigos de 800+ palavras sobre bônus, segurança, estratégias e jogo responsável.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
-            {GUIDES_DATA.map((guide) => {
-              const IconComp = guide.icon;
-              return (
-                <div 
-                  key={guide.id}
-                  onClick={() => handlePlaceholderClick(guide.title)}
-                  className="bg-card border border-border/60 p-6 rounded-xl hover:border-primary/30 transition-all duration-300 cursor-pointer group flex flex-col justify-between space-y-4"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] text-primary font-bold uppercase tracking-wider">{guide.category}</span>
-                      <span className="text-[10px] text-muted-foreground">{guide.words} palavras</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-white font-serif group-hover:text-primary transition-colors">
+          <div className="mb-8">
+            <Input
+              placeholder="Pesquisar guia por tema..."
+              value={guideSearch}
+              onChange={(e) => setGuideSearch(e.target.value)}
+              className="bg-card border-border/50 focus:border-accent focus:ring-accent"
+            />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredGuides.map((guide, idx) => (
+              <div
+                key={idx}
+                className="card-neon group cursor-pointer"
+                style={{ animationDelay: `${idx * 0.1}s` }}
+              >
+                <div className="space-y-4">
+                  <div className="text-4xl">{guide.icon}</div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold group-hover:text-accent transition-colors">
                       {guide.title}
                     </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      {guide.desc}
-                    </p>
+                    <p className="text-sm text-muted-foreground">{guide.desc}</p>
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-primary font-semibold pt-2">
-                    <span>Ler guia completo</span>
-                    <ArrowUpRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <div className="pt-4 border-t border-border/50">
+                    <a href="#" className="text-accent text-sm font-semibold hover:text-accent/80 transition-colors">
+                      Ler guia completo →
+                    </a>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Jogo Responsável Section */}
-      <section id="jogo-responsavel" className="py-20 bg-emerald-950/10 border-b border-emerald-900/20">
-        <div className="container max-w-4xl bg-card border border-emerald-900/30 p-8 sm:p-12 rounded-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 h-32 w-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none"></div>
-          
-          <div className="space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 text-xs font-semibold">
-              <Scale className="h-3.5 w-3.5" />
-              <span>Compromisso com o Jogo Responsável</span>
+      {/* Features Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-animate opacity-10 pointer-events-none"></div>
+
+        <div className="container relative z-10">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-4 text-center">
+              <div className="flex justify-center mb-4">
+                <div className="p-4 rounded-full bg-accent/10 border border-accent/30">
+                  <Shield className="w-8 h-8 text-accent" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold">100% Seguro</h3>
+              <p className="text-muted-foreground">
+                Todos os cassinos são verificados e licenciados. Seus dados estão protegidos.
+              </p>
             </div>
 
-            <h2 className="text-3xl font-serif font-bold text-white">
-              Apostas devem ser uma forma de entretenimento, nunca uma solução financeira
-            </h2>
+            <div className="space-y-4 text-center">
+              <div className="flex justify-center mb-4">
+                <div className="p-4 rounded-full bg-accent/10 border border-accent/30">
+                  <Zap className="w-8 h-8 text-accent" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold">Saques Rápidos</h3>
+              <p className="text-muted-foreground">
+                Pix instantâneo, transferência bancária e e-wallets. Saque em segundos.
+              </p>
+            </div>
 
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              O CasinoRadar apoia firmemente as diretrizes de Jogo Responsável estabelecidas pela legislação brasileira. Incentivamos todos os usuários a definirem limites estritos de depósito, perda e tempo de sessão antes de iniciar qualquer atividade de aposta.
+            <div className="space-y-4 text-center">
+              <div className="flex justify-center mb-4">
+                <div className="p-4 rounded-full bg-accent/10 border border-accent/30">
+                  <Heart className="w-8 h-8 text-accent" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold">Jogo Responsável</h3>
+              <p className="text-muted-foreground">
+                Limites de depósito, autoexclusão e recursos de ajuda sempre disponíveis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('${GRADIENT_BG}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+        </div>
+
+        <div className="container relative z-10 text-center space-y-8">
+          <h2 className="text-4xl md:text-5xl font-bold max-w-2xl mx-auto">
+            Pronto para começar? <span className="text-gradient">Escolha seu cassino</span>
+          </h2>
+
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Acesse um dos nossos cassinos recomendados e comece a jogar com segurança e responsabilidade.
+          </p>
+
+          <Button className="btn-neon" size="lg">
+            Ver Todos os Cassinos
+          </Button>
+
+          <div className="pt-8 border-t border-border/50 mt-12">
+            <p className="text-sm text-muted-foreground">
+              ⚠️ Jogo é para maiores de 18 anos. Jogue com responsabilidade. Consulte nossa política de jogo responsável.
             </p>
-
-            <div className="grid sm:grid-cols-2 gap-6 pt-4 border-t border-border/40">
-              <div className="space-y-2">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-emerald-400" />
-                  Defina Limites Claros
-                </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Nunca jogue com dinheiro destinado a despesas essenciais (aluguel, alimentação, saúde). Estabeleça um orçamento mensal de entretenimento e cumpra-o rigorosamente.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-emerald-400" />
-                  Reconheça os Sinais
-                </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Se você sentir necessidade de recuperar perdas, mentir sobre seus hábitos de aposta ou deixar de cumprir obrigações pessoais para jogar, busque ajuda especializada imediatamente.
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-6 flex flex-wrap gap-4 items-center">
-              <span className="text-xs text-muted-foreground">Precisa de ajuda ou orientação?</span>
-              <a 
-                href="https://falabr.cgu.gov.br/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5 underline"
-              >
-                Canais de Apoio do Governo Federal
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-card/40 border-t border-border/60 py-12 text-xs text-muted-foreground">
-        <div className="container max-w-5xl space-y-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-border/40">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-background font-serif text-base font-bold">
-                ♠
-              </div>
-              <div>
-                <span className="font-serif text-base font-bold text-white block">CasinoRadar</span>
-                <span className="text-[9px] uppercase tracking-wider text-muted-foreground block">Guia de Escolha Segura</span>
-              </div>
+      <footer className="border-t border-border/50 py-12 bg-card/50">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 className="font-bold mb-4">CasinoRadar</h3>
+              <p className="text-sm text-muted-foreground">
+                Guia confiável de cassinos online no Brasil com foco em segurança e jogo responsável.
+              </p>
             </div>
-            
-            <div className="flex flex-wrap gap-6 text-xs font-medium">
-              <a href="#rankings" className="hover:text-primary transition-colors">Rankings</a>
-              <a href="#metodologia" className="hover:text-primary transition-colors">Metodologia</a>
-              <a href="#guias" className="hover:text-primary transition-colors">Guias</a>
-              <a href="#jogo-responsavel" className="hover:text-primary transition-colors">Jogo Responsável</a>
+            <div>
+              <h4 className="font-semibold mb-4">Cassinos</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-accent transition-colors">Cassino Seguro</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Cassinos com Pix</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Bônus e Rollover</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Informações</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-accent transition-colors">Sobre</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Metodologia</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Contato</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-accent transition-colors">Privacidade</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Termos</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Jogo Responsável</a></li>
+              </ul>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className="leading-relaxed">
-              O CasinoRadar é um portal informativo e educativo independente. Não operamos jogos de azar e não recebemos depósitos de jogadores. Todas as avaliações, pontuações e rankings são elaborados de acordo com nossa metodologia editorial técnica e independente.
-            </p>
-            <p className="leading-relaxed">
-              A exploração de apostas de quota fixa no Brasil é regulamentada pela Lei nº 14.790/2023 e supervisionada pela Secretaria de Prêmios e Apostas do Ministério da Fazenda (SPA/MF). O cadastro e participação em plataformas de apostas são estritamente proibidos para menores de 18 anos.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4 text-[10px] border-t border-border/20">
-              <p>© {new Date().getFullYear()} CasinoRadar. Todos os direitos reservados. Conteúdo estritamente informativo.</p>
-              <div className="flex gap-4">
-                <a href="#" onClick={(e) => { e.preventDefault(); toast.info("Política de Privacidade em conformidade com a LGPD."); }} className="hover:text-white transition-colors">Privacidade</a>
-                <a href="#" onClick={(e) => { e.preventDefault(); toast.info("Termos de Uso do portal CasinoRadar."); }} className="hover:text-white transition-colors">Termos de Uso</a>
-              </div>
-            </div>
+          <div className="border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; 2026 CasinoRadar. Todos os direitos reservados. Jogue com responsabilidade.</p>
           </div>
         </div>
       </footer>
