@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog CasinoRadar - Guias, Notícias e Análises de Cassinos</title>
+    <meta name="description" content="Leia artigos completos sobre cassinos online, estratégias de jogo, bônus, Pix, jogo responsável e regulamentação no Brasil.">
+    <meta name="keywords" content="blog cassino, guia cassino, notícias apostas, pix cassino, jogo responsável">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #d4af37;
+            --primary-light: #e5c158;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --bg-darker: #0a0e18;
+            --card-bg: rgba(26, 31, 58, 0.85);
+        }
+        body {
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #1a1f3a 100%);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header {
+            background: rgba(26, 31, 58, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            margin-bottom: 40px;
+        }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        h1 { font-size: 36px; margin-bottom: 12px; color: var(--primary); }
+        .subtitle { color: var(--text-secondary); margin-bottom: 30px; font-size: 16px; }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.15);
+        }
+        .blog-header {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .blog-icon { font-size: 32px; margin-bottom: 8px; }
+        .blog-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .blog-date {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .blog-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .blog-meta {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .blog-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .read-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 16px;
+        }
+        .read-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">♠ CasinoRadar</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>📚 Blog CasinoRadar</h1>
+        <p class="subtitle">Artigos, guias e notícias sobre cassinos online, bônus, Pix e jogo responsável no Brasil</p>
+
+        <div class="blog-grid">
+            <!-- Artigo 1 -->
+            <div class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">🏆</div>
+                    <div class="blog-title">Betano vs Blaze: Qual Cassino Escolher?</div>
+                    <div class="blog-date">26 de maio de 2026</div>
+                </div>
+                <div class="blog-content">
+                    <p class="blog-excerpt">Comparação completa entre os dois maiores cassinos do Brasil. Analisamos bônus, saque, segurança e experiência do usuário para ajudar você a escolher o melhor.</p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Comparação</span>
+                        <span class="blog-tag">Betano</span>
+                        <span class="blog-tag">Blaze</span>
+                    </div>
+                    <button class="read-btn" onclick="alert('Artigo completo em breve!')">Ler Artigo</button>
+                </div>
+            </div>
+
+            <!-- Artigo 2 -->
+            <div class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">💳</div>
+                    <div class="blog-title">Como Depositar com Pix em Cassinos</div>
+                    <div class="blog-date">24 de maio de 2026</div>
+                </div>
+                <div class="blog-content">
+                    <p class="blog-excerpt">Guia passo a passo para fazer depósitos via Pix em cassinos online. Saiba quais cassinos aceitam Pix, taxas, limites e quanto tempo leva.</p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Guia</span>
+                        <span class="blog-tag">Pix</span>
+                        <span class="blog-tag">Depósito</span>
+                    </div>
+                    <button class="read-btn" onclick="alert('Artigo completo em breve!')">Ler Artigo</button>
+                </div>
+            </div>
+
+            <!-- Artigo 3 -->
+            <div class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">⚡</div>
+                    <div class="blog-title">Cassinos com Saque Rápido: Receba em Minutos</div>
+                    <div class="blog-date">22 de maio de 2026</div>
+                </div>
+                <div class="blog-content">
+                    <p class="blog-excerpt">Descubra quais cassinos oferecem saques instantâneos via Pix. Comparamos velocidade, limites de saque e confiabilidade dos principais operadores.</p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Saque</span>
+                        <span class="blog-tag">Pix</span>
+                        <span class="blog-tag">Rápido</span>
+                    </div>
+                    <button class="read-btn" onclick="alert('Artigo completo em breve!')">Ler Artigo</button>
+                </div>
+            </div>
+
+            <!-- Artigo 4 -->
+            <div class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">🎁</div>
+                    <div class="blog-title">Entenda o Rollover: Guia Completo</div>
+                    <div class="blog-date">20 de maio de 2026</div>
+                </div>
+                <div class="blog-content">
+                    <p class="blog-excerpt">O que é rollover? Como funciona? Quais são os melhores bônus com rollover baixo? Leia nosso guia completo e evite armadilhas comuns.</p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Educação</span>
+                        <span class="blog-tag">Bônus</span>
+                        <span class="blog-tag">Rollover</span>
+                    </div>
+                    <button class="read-btn" onclick="alert('Artigo completo em breve!')">Ler Artigo</button>
+                </div>
+            </div>
+
+            <!-- Artigo 5 -->
+            <div class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">🛡️</div>
+                    <div class="blog-title">Jogo Responsável: Dicas de Segurança</div>
+                    <div class="blog-date">18 de maio de 2026</div>
+                </div>
+                <div class="blog-content">
+                    <p class="blog-excerpt">Como jogar com segurança e responsabilidade. Dicas práticas para controlar gastos, reconhecer sinais de dependência e se divertir com segurança.</p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Responsável</span>
+                        <span class="blog-tag">Segurança</span>
+                        <span class="blog-tag">Bem-estar</span>
+                    </div>
+                    <button class="read-btn" onclick="alert('Artigo completo em breve!')">Ler Artigo</button>
+                </div>
+            </div>
+
+            <!-- Artigo 6 -->
+            <div class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">📱</div>
+                    <div class="blog-title">Cassinos Mobile: Jogue Pelo Celular</div>
+                    <div class="blog-date">16 de maio de 2026</div>
+                </div>
+                <div class="blog-content">
+                    <p class="blog-excerpt">Guia completo sobre cassinos mobile. Descubra os melhores apps, como baixar com segurança e quais cassinos têm as melhores experiências mobile.</p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Mobile</span>
+                        <span class="blog-tag">App</span>
+                        <span class="blog-tag">Tecnologia</span>
+                    </div>
+                    <button class="read-btn" onclick="alert('Artigo completo em breve!')">Ler Artigo</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>
