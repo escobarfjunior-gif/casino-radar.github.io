@@ -1191,17 +1191,36 @@ hr {
         // =============================================
         // EVENT LISTENERS PARA BOTOES DE FILTRO RAPIDO
         // =============================================
-        document.addEventListener('DOMContentLoaded', function() {
-            loadCasinos();
+        function setupQuickFilterButtons() {
+            console.log('🔧 Configurando botões de filtro rápido...');
+            const buttons = document.querySelectorAll('.quick-filter-btn');
+            console.log(`📍 Encontrados ${buttons.length} botões de filtro`);
             
-            // Adicionar event listeners aos botoes de filtro rapido
-            document.querySelectorAll('.quick-filter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
+            buttons.forEach((btn, index) => {
+                const category = btn.getAttribute('data-category');
+                console.log(`✅ Botão ${index + 1}: ${category}`);
+                
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log(`🎯 Filtro clicado: ${category}`);
                     filterByCategory(category, this);
                 });
             });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM carregado');
+            loadCasinos();
+            setTimeout(setupQuickFilterButtons, 100);
         });
+        
+        // Fallback: tentar configurar os botões imediatamente se o DOM já estiver pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupQuickFilterButtons);
+        } else {
+            setTimeout(setupQuickFilterButtons, 100);
+        }
 
         // =============================================
         // REGISTRAR SERVICE WORKER (PWA)
