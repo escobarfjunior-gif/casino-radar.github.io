@@ -4,122 +4,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade - CasinoRadar</title>
-    <meta name="description" content="Política de Privacidade do CasinoRadar. Saiba como protegemos seus dados pessoais.">
+    <meta name="description" content="Política de Privacidade do CasinoRadar. Saiba como protegemos seus dados pessoais e como usamos cookies e publicidade.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://casino-radar.github.io/privacidade.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"
          crossorigin="anonymous"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #d4af37;
+            --primary-light: #e8c547;
+            --dark-bg: #0a0e27;
+            --dark-secondary: #1a1f3a;
+            --text-primary: #f5f7fa;
+            --text-secondary: #b0b8c1;
+            --accent: #00d4ff;
+        }
+
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0a0e27 0%, #0f1629 50%, #1a1f3a 100%);
-            color: #f5f7fa;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1629 50%, var(--dark-secondary) 100%);
+            color: var(--text-primary);
             line-height: 1.8;
+            min-height: 100vh;
         }
-        .container {
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.97) 0%, rgba(26, 31, 58, 0.9) 100%);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .header-content {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #000;
+            padding: 9px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.25);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Content */
+        .page-content {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 48px 20px 80px;
         }
+
+        .page-header {
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--primary);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
         h1 {
-            color: #d4af37;
-            margin-bottom: 30px;
-            font-size: 2.5em;
+            color: var(--primary);
+            font-size: 2.2em;
+            font-weight: 800;
+            margin-bottom: 10px;
         }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
         h2 {
-            color: #d4af37;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.8em;
+            color: var(--primary);
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
         p {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
+            color: var(--text-secondary);
+            font-size: 14px;
             text-align: justify;
         }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 14px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        ul li { margin-bottom: 6px; }
+
         a {
-            color: #00d4ff;
+            color: var(--accent);
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+
+        a:hover { text-decoration: underline; }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 20px 0;
         }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #d4af37, #e8c547);
-            color: #0a0e27;
-            border-radius: 5px;
+
+        .info-box p { margin-bottom: 0; }
+
+        /* Footer */
+        footer {
+            background: rgba(8, 10, 28, 0.98);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: bold;
+            font-size: 12px;
+            transition: color 0.3s ease;
         }
-        .back-link:hover {
-            opacity: 0.9;
+
+        .footer-links a:hover { color: var(--primary); }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 11px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-link">← Voltar ao CasinoRadar</a>
-        
-        <h1>📋 Política de Privacidade</h1>
-        
-        <p><strong>Última atualização: 26 de maio de 2026</strong></p>
-        
-        <h2>1. Introdução</h2>
-        <p>O CasinoRadar ("nós", "nosso" ou "nos") opera o site https://casino-radar.github.io (o "Site"). Esta página informa você sobre nossas políticas sobre a coleta, uso e divulgação de dados pessoais quando você usa nosso Site e as escolhas que você tem associadas a esses dados.</p>
-        
-        <h2>2. Informações que Coletamos</h2>
-        <p>Coletamos diferentes tipos de informações para vários fins, a fim de fornecer e melhorar nosso Site:</p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li><strong>Dados de Navegação:</strong> Informações sobre como você interage com nosso Site, incluindo páginas visitadas, tempo gasto e links clicados.</li>
-            <li><strong>Informações do Dispositivo:</strong> Tipo de navegador, endereço IP, sistema operacional e outras informações técnicas.</li>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">♠ CasinoRadar</a>
+            <a href="/" class="back-btn">← Voltar ao Início</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="page-header">
+            <div class="page-badge">Legal</div>
+            <h1>📋 Política de Privacidade</h1>
+            <p class="last-updated">Última atualização: 26 de maio de 2026</p>
+        </div>
+
+        <div class="info-box">
+            <p>O CasinoRadar ("nós", "nosso") opera o site <strong>https://casino-radar.github.io</strong>. Esta página informa sobre nossas políticas de coleta, uso e divulgação de dados pessoais quando você usa nosso site.</p>
+        </div>
+
+        <h2>1. Informações que Coletamos</h2>
+        <p>Coletamos diferentes tipos de informações para fornecer e melhorar nosso serviço:</p>
+        <ul>
+            <li><strong>Dados de Navegação:</strong> Páginas visitadas, tempo gasto e links clicados.</li>
+            <li><strong>Informações do Dispositivo:</strong> Tipo de navegador, endereço IP e sistema operacional.</li>
             <li><strong>Cookies:</strong> Usamos cookies e tecnologias similares para rastrear atividades e manter preferências.</li>
         </ul>
-        
-        <h2>3. Uso de Cookies e Tecnologias de Rastreamento</h2>
-        <p>Usamos cookies e tecnologias similares para rastrear atividades em nosso Site e manter certas informações. Você pode instruir seu navegador a recusar todos os cookies ou a alertá-lo quando um cookie está sendo enviado.</p>
-        
-        <h2>4. Google AdSense e Publicidade</h2>
-        <p>O CasinoRadar usa Google AdSense para exibir anúncios. O Google usa cookies para servir anúncios com base no histórico de navegação anterior do usuário. Os usuários podem optar por não receber anúncios personalizados do Google visitando <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a>.</p>
-        
-        <h2>5. Análise de Dados</h2>
-        <p>Podemos usar ferramentas de análise para entender como os usuários interagem com nosso Site. Essas ferramentas podem coletar informações sobre o seu uso do Site.</p>
-        
-        <h2>6. Segurança de Dados</h2>
-        <p>A segurança de seus dados é importante para nós, mas lembre-se de que nenhum método de transmissão pela Internet é 100% seguro. Embora nos esforcemos para usar meios comercialmente aceitáveis para proteger seus dados pessoais, não podemos garantir sua segurança absoluta.</p>
-        
-        <h2>7. Seus Direitos</h2>
-        <p>Você tem o direito de:</p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
+
+        <h2>2. Uso de Cookies</h2>
+        <p>Usamos cookies para rastrear atividades e manter informações de sessão. Você pode instruir seu navegador a recusar todos os cookies ou alertá-lo quando um cookie está sendo enviado. Ao continuar usando o site, você consente com o uso de cookies.</p>
+
+        <h2>3. Google AdSense e Publicidade</h2>
+        <p>O CasinoRadar usa o Google AdSense para exibir anúncios. O Google usa cookies para servir anúncios baseados no histórico de navegação do usuário. Os usuários podem optar por não receber anúncios personalizados visitando <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+        <p>O Google, como fornecedor terceirizado, usa cookies para veicular anúncios com base nas visitas anteriores do usuário ao nosso site e a outros sites na Internet.</p>
+
+        <h2>4. Análise de Dados</h2>
+        <p>Podemos usar ferramentas de análise de terceiros para entender como os usuários interagem com nosso site. Essas ferramentas coletam informações enviadas pelo seu navegador como parte de uma solicitação de página web.</p>
+
+        <h2>5. Segurança de Dados</h2>
+        <p>A segurança de seus dados é importante para nós. Embora nos esforcemos para usar meios comercialmente aceitáveis para proteger seus dados pessoais, nenhum método de transmissão pela Internet é 100% seguro.</p>
+
+        <h2>6. Seus Direitos (LGPD)</h2>
+        <p>Em conformidade com a Lei Geral de Proteção de Dados (LGPD), você tem o direito de:</p>
+        <ul>
             <li>Acessar os dados pessoais que temos sobre você</li>
             <li>Solicitar a correção de dados imprecisos</li>
             <li>Solicitar a exclusão de seus dados</li>
             <li>Optar por não receber comunicações de marketing</li>
+            <li>Revogar o consentimento a qualquer momento</li>
         </ul>
-        
-        <h2>8. Links para Terceiros</h2>
-        <p>Nosso Site contém links para sites de terceiros. Não somos responsáveis pelas práticas de privacidade desses sites. Encorajamos você a revisar as políticas de privacidade de qualquer site antes de fornecer seus dados pessoais.</p>
-        
-        <h2>9. Conteúdo Educativo</h2>
-        <p>O CasinoRadar fornece conteúdo educativo sobre cassinos online. Este conteúdo é apenas para fins informativos e não constitui aconselhamento legal ou financeiro.</p>
-        
-        <h2>10. Jogo Responsável</h2>
-        <p>Apoiamos o jogo responsável. Se você ou alguém que conhece tem problemas com jogos de azar, procure ajuda em organizações como:</p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li><a href="https://www.ncpg.org/" target="_blank">National Council on Problem Gambling</a></li>
-            <li><a href="https://www.begambleaware.org/" target="_blank">BeGambleAware</a></li>
-        </ul>
-        
-        <h2>11. Alterações nesta Política</h2>
-        <p>Podemos atualizar esta Política de Privacidade de tempos em tempos. Notificaremos você sobre quaisquer mudanças publicando a nova Política de Privacidade nesta página.</p>
-        
-        <h2>12. Contato</h2>
-        <p>Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco em: <a href="mailto:contato@casino-radar.github.io">contato@casino-radar.github.io</a></p>
-        
-        <p style="margin-top: 40px; text-align: center; color: #b0b8c1;">
-            © 2026 CasinoRadar. Todos os direitos reservados. Conteúdo educativo sobre cassinos.
-        </p>
-    </div>
+
+        <h2>7. Links para Terceiros</h2>
+        <p>Nosso site contém links para sites de terceiros. Não somos responsáveis pelas práticas de privacidade desses sites. Encorajamos você a revisar as políticas de privacidade de qualquer site antes de fornecer seus dados pessoais.</p>
+
+        <h2>8. Conteúdo Educativo</h2>
+        <p>O CasinoRadar fornece conteúdo exclusivamente educativo sobre cassinos online. Este conteúdo é apenas para fins informativos e não constitui aconselhamento legal, financeiro ou de apostas.</p>
+
+        <h2>9. Jogo Responsável</h2>
+        <p>Apoiamos o jogo responsável. Se você ou alguém que conhece tem problemas com jogos de azar, procure ajuda em organizações especializadas. O jogo é proibido para menores de 18 anos.</p>
+
+        <h2>10. Alterações nesta Política</h2>
+        <p>Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre mudanças publicando a nova política nesta página com a data de atualização.</p>
+
+        <h2>11. Contato</h2>
+        <p>Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato: <a href="contato.html">Página de Contato</a></p>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Início</a>
+            <a href="metodologia.html">Metodologia</a>
+            <a href="contato.html">Contato</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="termos.html">Termos de Uso</a>
+            <a href="sitemap.html">Mapa do Site</a>
+        </div>
+        <p>© 2026 CasinoRadar. Conteúdo educativo sobre cassinos. Proibido para menores de 18 anos.</p>
+    </footer>
 </body>
 </html>

@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CasinoRadar - Melhores Cassinos Online no Brasil | Bônus, Pix e Guias</title>
-    <meta name="description" content="Encontre os melhores cassinos online no Brasil com análises completas, bônus, Pix e guias de jogo responsável.">
-    <meta name="keywords" content="cassino online, cassino brasil, pix cassino, bônus cassino, jogo responsável">
+    <meta name="description" content="Encontre os melhores cassinos online no Brasil com análises completas de 400+ cassinos, bônus exclusivos, Pix e guias de jogo responsável. Atualizado diariamente.">
+    <meta name="keywords" content="cassino online, cassino brasil, pix cassino, bônus cassino, jogo responsável, slots online, cassino ao vivo, jackpot">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CasinoRadar">
     <link rel="canonical" href="https://casino-radar.github.io/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://casino-radar.github.io/">
+    <meta property="og:title" content="CasinoRadar - Melhores Cassinos Online no Brasil">
+    <meta property="og:description" content="Análises completas de 400+ cassinos online. Rankings, bônus, Pix e guias de jogo responsável.">
+    <meta property="og:site_name" content="CasinoRadar">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CasinoRadar - Melhores Cassinos Online no Brasil">
+    <meta name="twitter:description" content="Análises completas de 400+ cassinos online. Rankings, bônus, Pix e guias.">
+
+    <!-- Sitemap reference -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"
          crossorigin="anonymous"></script>
+
     <style>
         * {
             margin: 0;
@@ -27,6 +46,8 @@
             --text-secondary: #b0b8c1;
             --accent: #00d4ff;
             --accent-purple: #8b5cf6;
+            --success: #10b981;
+            --card-bg: rgba(26, 31, 58, 0.85);
         }
 
         body {
@@ -35,18 +56,13 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         /* Animações */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes pulse {
@@ -55,23 +71,22 @@
         }
 
         @keyframes glow {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-            }
+            0%, 100% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+            50% { text-shadow: 0 0 25px rgba(212, 175, 55, 0.7); }
         }
 
         @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         .container {
@@ -80,38 +95,41 @@
             padding: 0 20px;
         }
 
-        /* Header Premium */
+        /* ===== HEADER ===== */
         header {
-            background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 31, 58, 0.8) 100%);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 20px 0;
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.97) 0%, rgba(26, 31, 58, 0.9) 100%);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: 1px;
-            animation: glow 2s ease-in-out infinite;
+            animation: glow 2.5s ease-in-out infinite;
+            white-space: nowrap;
+            text-decoration: none;
         }
 
         nav {
             display: flex;
-            gap: 40px;
+            gap: 32px;
             align-items: center;
         }
 
@@ -127,7 +145,7 @@
         nav a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -4px;
             left: 0;
             width: 0;
             height: 2px;
@@ -135,47 +153,67 @@
             transition: width 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after { width: 100%; }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: #000;
-            padding: 12px 28px;
+            padding: 10px 24px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45);
         }
 
-        .btn-primary:active {
-            transform: translateY(-1px);
-        }
-
-        /* Hero Section */
+        /* ===== HERO ===== */
         .hero {
             text-align: center;
-            padding: 100px 20px;
+            padding: 90px 20px 70px;
             animation: fadeInUp 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(0, 212, 255, 0.1));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 54px;
             margin-bottom: 20px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--accent) 100%);
             -webkit-background-clip: text;
@@ -190,7 +228,7 @@
             font-size: 18px;
             color: var(--text-secondary);
             margin-bottom: 50px;
-            max-width: 700px;
+            max-width: 680px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.8;
@@ -198,18 +236,18 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 16px;
+            margin-top: 50px;
         }
 
         .stat-box {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 30px 20px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 28px 20px;
+            border-radius: 14px;
+            transition: all 0.35s ease;
             animation: slideInRight 0.8s ease backwards;
         }
 
@@ -219,87 +257,96 @@
         .stat-box:nth-child(4) { animation-delay: 0.4s; }
 
         .stat-box:hover {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
             border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.15);
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .stat-label {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
             font-weight: 500;
         }
 
-        /* Search Section */
+        /* ===== SEARCH SECTION ===== */
         .search-section {
             padding: 60px 20px;
         }
 
         .search-section h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
+            font-size: 30px;
+            margin-bottom: 28px;
             color: var(--text-primary);
             font-weight: 700;
         }
 
         .search-box {
-            margin-bottom: 40px;
-            animation: fadeInUp 0.8s ease;
+            margin-bottom: 32px;
+            position: relative;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 18px;
+            pointer-events: none;
         }
 
         .search-box input {
             width: 100%;
-            max-width: 600px;
-            display: block;
-            margin: 0 auto;
-            padding: 16px 24px;
+            padding: 16px 20px 16px 50px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
             border: 2px solid rgba(212, 175, 55, 0.2);
             border-radius: 12px;
             color: var(--text-primary);
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
 
-        .search-box input::placeholder {
-            color: var(--text-secondary);
-        }
+        .search-box input::placeholder { color: var(--text-secondary); }
 
         .search-box input:focus {
             outline: none;
             border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
         }
 
-        /* Filters */
+        /* ===== FILTERS ===== */
         .filters {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
+            gap: 10px;
+            margin-bottom: 36px;
             justify-content: center;
         }
 
         .filter-btn {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
             color: var(--text-secondary);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 9px 18px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
@@ -308,7 +355,7 @@
         }
 
         .filter-btn:hover {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(139, 92, 246, 0.18) 100%);
             border-color: var(--primary);
             color: var(--primary);
         }
@@ -317,27 +364,65 @@
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: #000;
             border-color: var(--primary);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
         }
 
-        /* Casinos Grid */
+        /* ===== RESULTS COUNT ===== */
+        .results-info {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+
+        .results-info span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ===== LOADING ===== */
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(212, 175, 55, 0.2);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .loading-text {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* ===== CASINOS GRID ===== */
         .casinos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 24px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 22px;
+            margin-bottom: 48px;
+            min-height: 200px;
         }
 
         .casino-card {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(37, 45, 71, 0.6) 100%);
+            background: var(--card-bg);
             border: 1px solid rgba(212, 175, 55, 0.15);
             border-radius: 16px;
-            padding: 28px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            padding: 24px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 0.6s ease backwards;
+            animation: fadeInUp 0.5s ease backwards;
         }
 
         .casino-card::before {
@@ -347,153 +432,203 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.07), transparent);
             transition: left 0.5s ease;
         }
 
-        .casino-card:hover::before {
-            left: 100%;
-        }
+        .casino-card:hover::before { left: 100%; }
 
         .casino-card:hover {
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.95) 0%, rgba(37, 45, 71, 0.8) 100%);
-            border-color: rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.98) 0%, rgba(37, 45, 71, 0.9) 100%);
+            border-color: rgba(212, 175, 55, 0.45);
             transform: translateY(-8px);
-            box-shadow: 0 20px 48px rgba(212, 175, 55, 0.2), 0 0 40px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 20px 48px rgba(212, 175, 55, 0.18), 0 0 40px rgba(139, 92, 246, 0.08);
+        }
+
+        .casino-rank {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
         }
 
         .casino-header {
             display: flex;
             justify-content: space-between;
-            align-items: start;
-            margin-bottom: 16px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            margin-top: 8px;
         }
 
         .casino-name {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 4px;
+            padding-right: 8px;
+        }
+
+        .casino-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        .category-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .casino-rating {
-            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+
+        .rating-value {
+            font-size: 20px;
             color: var(--primary);
-            font-weight: 700;
+            font-weight: 800;
+        }
+
+        .rating-stars {
+            font-size: 11px;
+            color: var(--primary);
         }
 
         .casino-bonus {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%);
             color: var(--primary);
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 16px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 14px;
             border-left: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .casino-bonus::before {
+            content: '🎁';
+            font-size: 14px;
         }
 
         .casino-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
-            font-size: 13px;
+            gap: 10px;
+            margin-bottom: 18px;
+            font-size: 12px;
         }
 
         .info-item {
-            background: rgba(212, 175, 55, 0.05);
-            padding: 10px 12px;
-            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 9px 11px;
+            border-radius: 7px;
             border-left: 2px solid var(--accent);
         }
 
         .info-label {
             color: var(--text-secondary);
-            font-size: 11px;
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .info-value {
-            color: var(--primary);
+            color: var(--text-primary);
             font-weight: 700;
+            font-size: 12px;
         }
 
         .casino-actions {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 8px;
         }
 
         .btn-access {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: #000;
             border: none;
-            padding: 12px 16px;
+            padding: 11px 14px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 12px;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.2);
         }
 
         .btn-access:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-access:active {
-            transform: translateY(0);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
         }
 
         .btn-review {
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(139, 92, 246, 0.15);
             color: var(--accent-purple);
-            border: 1px solid var(--accent-purple);
-            padding: 12px 16px;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            padding: 11px 14px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 12px;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .btn-review:hover {
-            background: rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.25);
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
         }
 
-        /* Pagination */
+        /* ===== PAGINATION ===== */
         .pagination {
             display: flex;
             justify-content: center;
             gap: 8px;
-            margin-top: 50px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .pagination button {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            background: rgba(212, 175, 55, 0.08);
             color: var(--text-secondary);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 10px 14px;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 10px 16px;
             border-radius: 8px;
             cursor: pointer;
+            font-size: 13px;
             font-weight: 600;
             transition: all 0.3s ease;
-            min-width: 40px;
-            backdrop-filter: blur(10px);
+            min-width: 44px;
         }
 
         .pagination button:hover {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            background: rgba(212, 175, 55, 0.18);
             border-color: var(--primary);
             color: var(--primary);
         }
@@ -502,19 +637,24 @@
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: #000;
             border-color: var(--primary);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
         }
 
-        /* Info Sections */
+        .pagination button.prev-next {
+            font-size: 16px;
+            padding: 10px 14px;
+        }
+
+        /* ===== INFO SECTIONS ===== */
         .info-section {
             padding: 80px 20px;
-            background: linear-gradient(135deg, rgba(26, 31, 58, 0.5) 0%, rgba(37, 45, 71, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.4) 0%, rgba(37, 45, 71, 0.25) 100%);
             border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .info-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 34px;
+            margin-bottom: 16px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -523,143 +663,255 @@
         }
 
         .info-section > .container > p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 600px;
+            margin-bottom: 36px;
+            max-width: 620px;
+            line-height: 1.8;
         }
 
         .guides-grid, .about-content, .responsible-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+            margin-top: 36px;
         }
 
         .guide-card, .about-item, .responsible-item {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.18);
             padding: 24px;
-            border-radius: 12px;
+            border-radius: 14px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
         }
 
         .guide-card:hover, .about-item:hover, .responsible-item:hover {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(139, 92, 246, 0.14) 100%);
             border-color: rgba(212, 175, 55, 0.4);
             transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.12);
         }
 
         .guide-card h3, .about-item h3 {
             color: var(--primary);
-            font-size: 18px;
-            margin-bottom: 12px;
+            font-size: 17px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
         .responsible-item h3 {
             color: var(--accent-purple);
-            font-size: 18px;
-            margin-bottom: 12px;
+            font-size: 17px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
         .guide-card p, .about-item p, .responsible-item p {
             color: var(--text-secondary);
-            font-size: 14px;
-            line-height: 1.6;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .guide-card .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .responsible-gaming {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(212, 175, 55, 0.04) 100%);
         }
 
         .responsible-item {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(212, 175, 55, 0.1) 100%);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(212, 175, 55, 0.08) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.25);
         }
 
         .responsible-item:hover {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(212, 175, 55, 0.15) 100%);
-            border-color: rgba(139, 92, 246, 0.5);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.18) 0%, rgba(212, 175, 55, 0.12) 100%);
+            border-color: rgba(139, 92, 246, 0.45);
         }
 
-        /* Footer */
-        footer {
-            background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(0, 0, 0, 0.8) 100%);
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 50px 20px 30px;
-            margin-top: 80px;
-        }
-
-        .footer-links {
+        /* ===== ADSENSE BANNER AREA ===== */
+        .ad-banner {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 32px 0;
+            text-align: center;
+            min-height: 90px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
         }
 
-        footer a {
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(180deg, rgba(8, 10, 28, 0.98) 0%, rgba(0, 0, 0, 0.95) 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 56px 20px 32px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo-footer {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-disclaimer {
+            margin-top: 14px;
+            padding: 10px 14px;
+            background: rgba(212, 175, 55, 0.06);
+            border-left: 3px solid var(--primary);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 13px;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-weight: 400;
         }
 
-        footer a:hover {
+        .footer-col ul li a:hover {
             color: var(--primary);
+            padding-left: 4px;
         }
 
-        footer p {
-            text-align: center;
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            margin-bottom: 24px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
             color: var(--text-secondary);
             font-size: 12px;
         }
 
-        /* Responsive */
+        .footer-legal-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal-links a:hover { color: var(--primary); }
+
+        .age-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+        }
+
         @media (max-width: 768px) {
-            nav {
-                gap: 20px;
-            }
+            nav { gap: 16px; }
+            nav a { font-size: 12px; }
 
-            nav a {
-                font-size: 12px;
-            }
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 15px; }
 
-            .hero h1 {
-                font-size: 36px;
-            }
+            .casinos-grid { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .search-section h2 { font-size: 22px; }
+            .casino-info { grid-template-columns: 1fr; }
+            .casino-actions { grid-template-columns: 1fr; }
 
-            .hero p {
-                font-size: 16px;
-            }
-
-            .casinos-grid {
+            .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 28px;
             }
 
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .search-section h2 {
-                font-size: 24px;
-            }
+            .footer-legal-links { justify-content: center; }
+        }
 
-            .casino-info {
-                grid-template-columns: 1fr;
-            }
-
-            .casino-actions {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                gap: 15px;
-            }
+        @media (max-width: 480px) {
+            .logo { font-size: 20px; }
+            nav a { display: none; }
+            .hero { padding: 60px 16px 50px; }
+            .hero h1 { font-size: 28px; }
         }
     </style>
 </head>
@@ -667,24 +919,26 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">♠ CasinoRadar</div>
+                <a href="/" class="logo">♠ CasinoRadar</a>
                 <nav>
                     <a href="#rankings">Rankings</a>
                     <a href="#guias">Guias</a>
                     <a href="#responsavel">Jogo Responsável</a>
                     <a href="#sobre">Sobre</a>
-                    <button class="btn-primary" onclick="scrollToBonus()">🎁 Pegar Bônus</button>
+                    <button class="btn-primary" onclick="scrollToRankings()">🎁 Pegar Bônus</button>
                 </nav>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- HERO -->
         <section class="hero">
             <div class="container">
+                <div class="hero-badge">✦ Atualizado Diariamente</div>
                 <h1>Encontre o seu cassino online ideal no Brasil</h1>
                 <p>O CasinoRadar reúne rankings, guias de Pix, bônus, slots, cassino ao vivo e jogo responsável para adultos que desejam pesquisar antes de apostar.</p>
-                
+
                 <div class="stats">
                     <div class="stat-box">
                         <div class="stat-number">400+</div>
@@ -692,7 +946,7 @@
                     </div>
                     <div class="stat-box">
                         <div class="stat-number">20</div>
-                        <div class="stat-label">Guias Longos</div>
+                        <div class="stat-label">Guias Completos</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-number">100%</div>
@@ -706,45 +960,69 @@
             </div>
         </section>
 
+        <!-- RANKINGS / CASSINOS -->
         <section id="rankings" class="search-section">
             <div class="container">
                 <h2>Os melhores cassinos online verificados no Brasil</h2>
-                
+
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Pesquisar cassino, bônus ou Pix...">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Pesquisar cassino, bônus ou categoria..." autocomplete="off">
                 </div>
 
                 <div class="filters" id="filters"></div>
 
-                <div class="casinos-grid" id="casinosGrid"></div>
+                <div class="results-info" id="resultsInfo"></div>
 
+                <!-- AdSense Banner -->
+                <div class="ad-banner">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-4896859041377751"
+                         data-ad-slot="auto"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+
+                <div id="casinosContainer">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <div class="loading-text">Carregando 400 cassinos...</div>
+                    </div>
+                </div>
+
+                <div class="casinos-grid" id="casinosGrid" style="display:none;"></div>
                 <div class="pagination" id="pagination"></div>
             </div>
         </section>
 
-        <!-- Seção de Guias -->
+        <!-- GUIAS -->
         <section id="guias" class="info-section">
             <div class="container">
                 <h2>📚 Guias Educativos</h2>
                 <p>Conheça nossos guias completos sobre cassinos, bônus, estratégias e jogo responsável.</p>
                 <div class="guides-grid">
-                    <div class="guide-card">
+                    <a class="guide-card" href="metodologia.html">
                         <h3>Como Escolher um Cassino Seguro</h3>
-                        <p>Aprenda os critérios essenciais para escolher um cassino confiável e seguro.</p>
-                    </div>
-                    <div class="guide-card">
+                        <p>Aprenda os critérios essenciais para escolher um cassino confiável e seguro no Brasil.</p>
+                        <span class="read-more">Ler guia →</span>
+                    </a>
+                    <a class="guide-card" href="metodologia.html">
                         <h3>Cassinos com Pix</h3>
-                        <p>Guia completo sobre depósitos e saques via Pix em cassinos online.</p>
-                    </div>
-                    <div class="guide-card">
+                        <p>Guia completo sobre depósitos e saques via Pix em cassinos online brasileiros.</p>
+                        <span class="read-more">Ler guia →</span>
+                    </a>
+                    <a class="guide-card" href="metodologia.html">
                         <h3>Bônus e Rollover</h3>
-                        <p>Entenda como funcionam os bônus, rollover e armadilhas comuns.</p>
-                    </div>
+                        <p>Entenda como funcionam os bônus, rollover e armadilhas comuns em cassinos.</p>
+                        <span class="read-more">Ler guia →</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Sobre -->
+        <!-- SOBRE -->
         <section id="sobre" class="info-section">
             <div class="container">
                 <h2>ℹ️ Sobre o CasinoRadar</h2>
@@ -756,25 +1034,25 @@
                     </div>
                     <div class="about-item">
                         <h3>✅ Conteúdo Verificado</h3>
-                        <p>Todo o conteúdo é original, atualizado diariamente e baseado em pesquisa aprofundada.</p>
+                        <p>Todo o conteúdo é original, atualizado diariamente e baseado em pesquisa aprofundada de especialistas.</p>
                     </div>
                     <div class="about-item">
-                        <h3>🛡️ Segurança</h3>
-                        <p>Analisamos cada cassino quanto à segurança, licenças e conformidade regulatória.</p>
+                        <h3>🛡️ Segurança em Primeiro Lugar</h3>
+                        <p>Analisamos cada cassino quanto à segurança, licenças e conformidade regulatória brasileira.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Jogo Responsável -->
+        <!-- JOGO RESPONSÁVEL -->
         <section id="responsavel" class="info-section responsible-gaming">
             <div class="container">
                 <h2>🎮 Jogo Responsável</h2>
-                <p>O jogo deve ser uma forma de entretenimento. Jogue com responsabilidade e estabeleça limites.</p>
+                <p>O jogo deve ser uma forma de entretenimento. Jogue com responsabilidade e estabeleça limites claros.</p>
                 <div class="responsible-content">
                     <div class="responsible-item">
                         <h3>⏰ Estabeleça Limites de Tempo</h3>
-                        <p>Defina quanto tempo você vai dedicar ao jogo e respeite esse limite.</p>
+                        <p>Defina quanto tempo você vai dedicar ao jogo e respeite esse limite rigorosamente.</p>
                     </div>
                     <div class="responsible-item">
                         <h3>💰 Controle Financeiro</h3>
@@ -782,219 +1060,370 @@
                     </div>
                     <div class="responsible-item">
                         <h3>🚫 Sinais de Alerta</h3>
-                        <p>Se o jogo está afetando sua vida, relacionamentos ou saúde mental, procure ajuda.</p>
+                        <p>Se o jogo está afetando sua vida, relacionamentos ou saúde mental, procure ajuda imediatamente.</p>
                     </div>
                     <div class="responsible-item">
                         <h3>📞 Recursos de Ajuda</h3>
-                        <p>Existem organizações que podem ajudar com problemas de jogo compulsivo.</p>
+                        <p>Existem organizações que podem ajudar com problemas de jogo compulsivo. Não hesite em buscar apoio.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="#cassino-seguro">Cassino Seguro</a>
-                <a href="#cassinos-pix">Cassinos com Pix</a>
-                <a href="#bonus-rollover">Bônus e Rollover</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#metodologia">Metodologia</a>
-                <a href="#contato">Contato</a>
-                <a href="#privacidade">Política de Privacidade</a>
-                <a href="#termos">Termos de Uso</a>
-                <a href="#jogo-responsavel">Jogo Responsável</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-footer">♠ CasinoRadar</span>
+                    <p>Plataforma educativa independente com análises completas de cassinos online no Brasil. Conteúdo para adultos maiores de 18 anos.</p>
+                    <div class="footer-disclaimer">
+                        ⚠️ Conteúdo exclusivamente educativo. Jogo pode causar dependência. Jogue com responsabilidade. Proibido para menores de 18 anos.
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="/">Início</a></li>
+                        <li><a href="#rankings">Rankings</a></li>
+                        <li><a href="#guias">Guias</a></li>
+                        <li><a href="#responsavel">Jogo Responsável</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Informações</h4>
+                    <ul>
+                        <li><a href="metodologia.html">Metodologia</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="sitemap.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="contato.html">Fale Conosco</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; 2026 CasinoRadar. Conteúdo educativo sobre cassinos. Jogue com responsabilidade.</p>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p>© 2026 CasinoRadar. Conteúdo educativo sobre cassinos. Todos os direitos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="privacidade.html">Privacidade</a>
+                    <a href="termos.html">Termos</a>
+                    <a href="contato.html">Contato</a>
+                    <span class="age-badge">🔞 +18</span>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Dados dos 200 cassinos
-        const CASINOS = [
-            { id: 1, name: "SpinVegas", category: "Melhor Bônus", rating: 4.9, bonus: "100% até R$ 5.000 + 150 RG", minDeposit: "R$ 10", withdrawalTime: "Imediato", games: "2.500+" },
-            { id: 2, name: "Império Bet", category: "Depósito Baixo", rating: 4.8, bonus: "Até R$ 3.500", minDeposit: "R$ 5", withdrawalTime: "10 min", games: "1.800+" },
-            { id: 3, name: "PixSorte", category: "Saque Rápido", rating: 4.7, bonus: "R$ 50 + 100%", minDeposit: "R$ 1", withdrawalTime: "Segundos", games: "3.000+" },
-            { id: 4, name: "Royal Palace", category: "High Rollers", rating: 4.6, bonus: "Até R$ 10.000", minDeposit: "R$ 50", withdrawalTime: "1 hora", games: "2.200+" },
-            { id: 5, name: "Brasil Slots", category: "Slots", rating: 4.6, bonus: "200 giros", minDeposit: "R$ 10", withdrawalTime: "15 min", games: "3.500+" },
-            { id: 6, name: "Mesa Ao Vivo Pro", category: "Live Casino", rating: 4.5, bonus: "Cashback semanal", minDeposit: "R$ 20", withdrawalTime: "30 min", games: "50+ mesas" },
-            { id: 7, name: "Fortune Clube", category: "VIP", rating: 4.5, bonus: "Pacote progressivo", minDeposit: "R$ 10", withdrawalTime: "20 min", games: "2.000+" },
-            { id: 8, name: "Radar Pix Casino", category: "Pix", rating: 4.4, bonus: "Bônus diário", minDeposit: "R$ 5", withdrawalTime: "5 min", games: "1.500+" },
-            { id: 9, name: "Jackpot Master", category: "Jackpots", rating: 4.7, bonus: "R$ 200 + 100 RG", minDeposit: "R$ 15", withdrawalTime: "12 min", games: "4.000+" },
-            { id: 10, name: "Mega Bônus Casino", category: "Melhor Bônus", rating: 4.6, bonus: "500% até R$ 2.500", minDeposit: "R$ 20", withdrawalTime: "25 min", games: "2.800+" },
-            { id: 11, name: "Turbo Slots", category: "Slots", rating: 4.8, bonus: "150 giros grátis", minDeposit: "R$ 8", withdrawalTime: "8 min", games: "2.900+" },
-            { id: 12, name: "Elite Cassino", category: "Premium", rating: 4.7, bonus: "Até R$ 6.000", minDeposit: "R$ 25", withdrawalTime: "20 min", games: "3.200+" },
-            { id: 13, name: "Lucky Pix", category: "Pix", rating: 4.5, bonus: "R$ 100 + 50%", minDeposit: "R$ 3", withdrawalTime: "3 min", games: "1.200+" },
-            { id: 14, name: "Poker Pro", category: "Poker", rating: 4.6, bonus: "Torneios grátis", minDeposit: "R$ 30", withdrawalTime: "1 hora", games: "Poker ao vivo" },
-            { id: 15, name: "Bingo Brasil", category: "Bingo", rating: 4.4, bonus: "Cartelas grátis", minDeposit: "R$ 5", withdrawalTime: "10 min", games: "Bingo 24/7" },
-            { id: 16, name: "Esportes Bet", category: "Esportes", rating: 4.5, bonus: "100% até R$ 1.000", minDeposit: "R$ 10", withdrawalTime: "15 min", games: "Apostas esportivas" },
-            { id: 17, name: "Roleta Clássica", category: "Jogos de Mesa", rating: 4.3, bonus: "50% cashback", minDeposit: "R$ 20", withdrawalTime: "30 min", games: "Roleta premium" },
-            { id: 18, name: "Blackjack Pro", category: "Jogos de Mesa", rating: 4.4, bonus: "Bônus de recarga", minDeposit: "R$ 15", withdrawalTime: "20 min", games: "Blackjack ao vivo" },
-            { id: 19, name: "Baccarat Royale", category: "Jogos de Mesa", rating: 4.5, bonus: "Até R$ 4.000", minDeposit: "R$ 25", withdrawalTime: "25 min", games: "Baccarat premium" },
-            { id: 20, name: "Dados Sorte", category: "Dados", rating: 4.2, bonus: "Giros diários", minDeposit: "R$ 5", withdrawalTime: "5 min", games: "Dados ao vivo" }
-        ];
+        // =============================================
+        // CONFIGURAÇÕES
+        // =============================================
+        const ITEMS_PER_PAGE = 12;
+        let allCasinos = [];
+        let filteredCasinos = [];
+        let currentPage = 1;
+        let activeCategory = null;
 
-        // Gerar mais 180 cassinos para completar 200
-        for (let i = 21; i <= 200; i++) {
-            const categories = ["Melhor Bônus", "Slots", "Pix", "Saque Rápido", "Premium", "Live Casino", "Jackpots", "Depósito Baixo", "VIP", "Novidades"];
-            const bonuses = ["Até R$ 5.000", "Até R$ 3.000", "100% até R$ 2.000", "R$ 50 + 100%", "Bônus especial", "Cashback diário", "Giros grátis", "Bônus progressivo"];
-            const times = ["Imediato", "5 min", "10 min", "15 min", "30 min", "1 hora"];
-
-            CASINOS.push({
-                id: i,
-                name: `Cassino ${i}`,
-                category: categories[Math.floor(Math.random() * categories.length)],
-                rating: (Math.random() * 0.5 + 4.3).toFixed(1),
-                bonus: bonuses[Math.floor(Math.random() * bonuses.length)],
-                minDeposit: `R$ ${Math.floor(Math.random() * 50) + 1}`,
-                withdrawalTime: times[Math.floor(Math.random() * times.length)],
-                games: `${Math.floor(Math.random() * 4000) + 1000}+`
-            });
+        // =============================================
+        // CARREGAR CASSINOS DO JSON
+        // =============================================
+        async function loadCasinos() {
+            try {
+                const response = await fetch('cassinos.json');
+                if (!response.ok) throw new Error('Falha ao carregar JSON');
+                const data = await response.json();
+                allCasinos = data.cassinos || [];
+                filteredCasinos = [...allCasinos];
+                initUI();
+            } catch (error) {
+                console.error('Erro ao carregar cassinos:', error);
+                loadFallbackCasinos();
+            }
         }
 
-        let currentPage = 1;
-        const itemsPerPage = 12;
-        let filteredCasinos = [...CASINOS];
+        // Fallback com dados inline caso o JSON não carregue
+        function loadFallbackCasinos() {
+            const categories = ["Melhor Bônus", "Slots", "Pix", "Saque Rápido", "Premium", "Live Casino", "Jackpots", "Depósito Baixo", "VIP", "Novidades", "Confiável", "High Rollers"];
+            const bonuses = ["Até R$ 5.000", "Até R$ 3.000", "100% até R$ 2.000", "R$ 50 + 100%", "Bônus especial", "Cashback 20%", "150 giros grátis", "Bônus progressivo"];
+            const times = ["Imediato", "5 min", "10 min", "15 min", "30 min", "1 hora"];
+            const nomes = ["SpinVegas", "Império Bet", "PixSorte", "Royal Palace", "Brasil Slots", "Mesa Ao Vivo Pro", "Fortune Clube", "Radar Pix", "Jackpot Master", "Mega Bônus"];
 
-        // Extrair categorias únicas
-        const categories = [...new Set(CASINOS.map(c => c.category))].sort();
+            for (let i = 1; i <= 400; i++) {
+                allCasinos.push({
+                    id: i,
+                    nome: i <= nomes.length ? nomes[i-1] : `Cassino ${i}`,
+                    categorias: [categories[Math.floor(Math.random() * categories.length)]],
+                    rating: parseFloat((Math.random() * 0.9 + 4.1).toFixed(1)),
+                    bonus: bonuses[Math.floor(Math.random() * bonuses.length)],
+                    deposito_min: `R$ ${Math.floor(Math.random() * 50) + 1}`,
+                    saque: times[Math.floor(Math.random() * times.length)],
+                    jogos: `${Math.floor(Math.random() * 4000) + 1000}+`
+                });
+            }
+            filteredCasinos = [...allCasinos];
+            initUI();
+        }
 
-        // Renderizar filtros
+        // =============================================
+        // INICIALIZAR UI
+        // =============================================
+        function initUI() {
+            // Esconder loading e mostrar grid
+            document.getElementById('casinosContainer').style.display = 'none';
+            document.getElementById('casinosGrid').style.display = 'grid';
+
+            renderFilters();
+            renderCasinos();
+            renderPagination();
+            updateResultsInfo();
+        }
+
+        // =============================================
+        // FILTROS
+        // =============================================
         function renderFilters() {
             const filtersDiv = document.getElementById('filters');
+            const allCategories = [...new Set(allCasinos.flatMap(c => c.categorias || []))].sort();
+
             filtersDiv.innerHTML = `
-                <button class="filter-btn active" onclick="filterByCategory(null)">Todos (${CASINOS.length})</button>
-                ${categories.map(cat => `
-                    <button class="filter-btn" onclick="filterByCategory('${cat}')">${cat} (${CASINOS.filter(c => c.category === cat).length})</button>
+                <button class="filter-btn active" onclick="filterByCategory(null, this)">
+                    Todos (${allCasinos.length})
+                </button>
+                ${allCategories.map(cat => `
+                    <button class="filter-btn" onclick="filterByCategory('${cat}', this)">
+                        ${cat} (${allCasinos.filter(c => (c.categorias || []).includes(cat)).length})
+                    </button>
                 `).join('')}
             `;
         }
 
-        // Filtrar por categoria
-        function filterByCategory(category) {
+        function filterByCategory(category, btn) {
+            activeCategory = category;
             currentPage = 1;
+
             if (category === null) {
-                filteredCasinos = [...CASINOS];
+                filteredCasinos = [...allCasinos];
             } else {
-                filteredCasinos = CASINOS.filter(c => c.category === category);
+                filteredCasinos = allCasinos.filter(c => (c.categorias || []).includes(category));
             }
-            updateFilters(category);
+
+            // Atualizar estado visual dos botões
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            // Aplicar busca se houver texto
+            const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (searchTerm) applySearch(searchTerm);
+
             renderCasinos();
             renderPagination();
+            updateResultsInfo();
         }
 
-        // Atualizar estado dos botões de filtro
-        function updateFilters(activeCategory) {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (activeCategory === null && btn.textContent.includes('Todos')) {
-                    btn.classList.add('active');
-                } else if (btn.textContent.includes(activeCategory)) {
-                    btn.classList.add('active');
-                }
-            });
+        // =============================================
+        // BUSCA
+        // =============================================
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const term = e.target.value.trim().toLowerCase();
+            currentPage = 1;
+            applySearch(term);
+            renderCasinos();
+            renderPagination();
+            updateResultsInfo();
+        });
+
+        function applySearch(term) {
+            const base = activeCategory
+                ? allCasinos.filter(c => (c.categorias || []).includes(activeCategory))
+                : [...allCasinos];
+
+            if (!term) {
+                filteredCasinos = base;
+            } else {
+                filteredCasinos = base.filter(c =>
+                    (c.nome || '').toLowerCase().includes(term) ||
+                    (c.bonus || '').toLowerCase().includes(term) ||
+                    (c.categorias || []).some(cat => cat.toLowerCase().includes(term))
+                );
+            }
         }
 
-        // Renderizar cassinos
+        // =============================================
+        // RENDERIZAR CASSINOS
+        // =============================================
         function renderCasinos() {
             const grid = document.getElementById('casinosGrid');
-            const start = (currentPage - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-            const casinosToShow = filteredCasinos.slice(start, end);
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const toShow = filteredCasinos.slice(start, end);
 
-            grid.innerHTML = casinosToShow.map(casino => `
-                <div class="casino-card">
-                    <div class="casino-header">
-                        <div>
-                            <div class="casino-name">${casino.name}</div>
-                        </div>
-                        <div class="casino-rating">⭐ ${casino.rating}</div>
+            if (toShow.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔍</div>
+                        <p style="font-size: 16px;">Nenhum cassino encontrado para sua busca.</p>
+                        <p style="font-size: 13px; margin-top: 8px;">Tente outros termos ou remova os filtros.</p>
                     </div>
-                    <div class="casino-bonus">${casino.bonus}</div>
-                    <div class="casino-info">
-                        <div class="info-item">
-                            <div class="info-label">Depósito Mín</div>
-                            <div class="info-value">${casino.minDeposit}</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">Saque</div>
-                            <div class="info-value">${casino.withdrawalTime}</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">Jogos</div>
-                            <div class="info-value">${casino.games}</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">Categoria</div>
-                            <div class="info-value">${casino.category}</div>
-                        </div>
-                    </div>
-                    <div class="casino-actions">
-                        <button class="btn-access">Acessar Site</button>
-                        <button class="btn-review">Avaliação</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Renderizar paginação
-        function renderPagination() {
-            const pagination = document.getElementById('pagination');
-            const totalPages = Math.ceil(filteredCasinos.length / itemsPerPage);
-            let buttons = '';
-
-            for (let i = 1; i <= totalPages; i++) {
-                buttons += `
-                    <button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>
                 `;
+                return;
             }
 
-            pagination.innerHTML = buttons;
+            grid.innerHTML = toShow.map((casino, idx) => {
+                const globalRank = start + idx + 1;
+                const stars = getStars(parseFloat(casino.rating));
+                const categories = (casino.categorias || []).slice(0, 2);
+
+                return `
+                    <div class="casino-card" style="animation-delay: ${idx * 0.04}s">
+                        <div class="casino-rank">#${globalRank}</div>
+                        <div class="casino-header">
+                            <div>
+                                <div class="casino-name">${casino.nome || 'Cassino'}</div>
+                                <div class="casino-categories">
+                                    ${categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="casino-rating">
+                                <div class="rating-value">⭐ ${parseFloat(casino.rating).toFixed(1)}</div>
+                                <div class="rating-stars">${stars}</div>
+                            </div>
+                        </div>
+                        <div class="casino-bonus">${casino.bonus || 'Bônus especial'}</div>
+                        <div class="casino-info">
+                            <div class="info-item">
+                                <div class="info-label">Depósito Mín.</div>
+                                <div class="info-value">${casino.deposito_min || 'R$ 10'}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Saque</div>
+                                <div class="info-value">${casino.saque || '10 min'}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Jogos</div>
+                                <div class="info-value">${casino.jogos || '1.000+'}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Avaliação</div>
+                                <div class="info-value">${parseFloat(casino.rating).toFixed(1)} / 5.0</div>
+                            </div>
+                        </div>
+                        <div class="casino-actions">
+                            <button class="btn-access" onclick="accessCasino('${casino.nome}')">Acessar Site</button>
+                            <button class="btn-review" onclick="reviewCasino('${casino.nome}')">Ver Avaliação</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
-        // Ir para página
+        function getStars(rating) {
+            const full = Math.floor(rating);
+            const half = rating % 1 >= 0.5 ? 1 : 0;
+            const empty = 5 - full - half;
+            return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+        }
+
+        // =============================================
+        // PAGINAÇÃO
+        // =============================================
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            const totalPages = Math.ceil(filteredCasinos.length / ITEMS_PER_PAGE);
+
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+
+            // Botão anterior
+            html += `<button class="prev-next" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled style="opacity:0.4;cursor:not-allowed"' : ''}>‹</button>`;
+
+            // Páginas
+            const maxVisible = 7;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+            if (endPage - startPage < maxVisible - 1) startPage = Math.max(1, endPage - maxVisible + 1);
+
+            if (startPage > 1) {
+                html += `<button onclick="goToPage(1)">1</button>`;
+                if (startPage > 2) html += `<button disabled style="cursor:default;opacity:0.5">…</button>`;
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) html += `<button disabled style="cursor:default;opacity:0.5">…</button>`;
+                html += `<button onclick="goToPage(${totalPages})">${totalPages}</button>`;
+            }
+
+            // Botão próximo
+            html += `<button class="prev-next" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled style="opacity:0.4;cursor:not-allowed"' : ''}>›</button>`;
+
+            pagination.innerHTML = html;
+        }
+
         function goToPage(page) {
+            const totalPages = Math.ceil(filteredCasinos.length / ITEMS_PER_PAGE);
+            if (page < 1 || page > totalPages) return;
             currentPage = page;
             renderCasinos();
             renderPagination();
-            document.getElementById('casinosGrid').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('rankings').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Buscar cassinos
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            currentPage = 1;
-            filteredCasinos = CASINOS.filter(c => 
-                c.name.toLowerCase().includes(searchTerm) ||
-                c.bonus.toLowerCase().includes(searchTerm) ||
-                c.category.toLowerCase().includes(searchTerm)
-            );
-            renderCasinos();
-            renderPagination();
-        });
+        // =============================================
+        // INFO DE RESULTADOS
+        // =============================================
+        function updateResultsInfo() {
+            const info = document.getElementById('resultsInfo');
+            const total = filteredCasinos.length;
+            const start = (currentPage - 1) * ITEMS_PER_PAGE + 1;
+            const end = Math.min(currentPage * ITEMS_PER_PAGE, total);
 
-        // Função para rolar até a seção de bônus
-        function scrollToBonus() {
-            const searchSection = document.getElementById('rankings');
-            searchSection.scrollIntoView({ behavior: 'smooth' });
-            // Destaque visual
-            const filters = document.getElementById('filters');
-            filters.style.animation = 'pulse 0.6s ease';
-            setTimeout(() => {
-                filters.style.animation = '';
-            }, 600);
-        }
-
-        // Inicializar - Carregar cassinos do JSON
-        loadCasinos();
-        
-        // Fallback se o JSON não carregar
-        setTimeout(() => {
-            if (CASINOS.length === 0) {
-                loadDefaultCasinos();
+            if (total === 0) {
+                info.innerHTML = 'Nenhum resultado encontrado.';
+            } else {
+                info.innerHTML = `Exibindo <span>${start}–${end}</span> de <span>${total}</span> cassinos`;
             }
-        }, 2000);
+        }
+
+        // =============================================
+        // AÇÕES DOS BOTÕES
+        // =============================================
+        function accessCasino(name) {
+            // Redireciona para seção de rankings com destaque
+            document.getElementById('rankings').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function reviewCasino(name) {
+            document.getElementById('rankings').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToRankings() {
+            document.getElementById('rankings').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // =============================================
+        // INICIALIZAR
+        // =============================================
+        document.addEventListener('DOMContentLoaded', loadCasinos);
     </script>
 </body>
 </html>

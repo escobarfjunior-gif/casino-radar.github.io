@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodologia - CasinoRadar</title>
-    <meta name="description" content="Conheça a metodologia do CasinoRadar para avaliar e recomendar cassinos online.">
+    <title>Metodologia de Avaliação - CasinoRadar</title>
+    <meta name="description" content="Conheça a metodologia rigorosa do CasinoRadar para avaliar e recomendar cassinos online no Brasil.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://casino-radar.github.io/metodologia.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"
          crossorigin="anonymous"></script>
     <style>
@@ -41,19 +43,68 @@
             margin-bottom: 15px;
             text-align: justify;
         }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #d4af37, #e8c547);
-            color: #0a0e27;
-            border-radius: 5px;
+        /* Header */
+        header {
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.97) 0%, rgba(26, 31, 58, 0.9) 100%);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+            margin-bottom: 0;
+        }
+        .header-content {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-header {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
-            font-weight: bold;
         }
-        .back-link:hover {
-            opacity: 0.9;
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #d4af37, #e8c547);
+            color: #000;
+            padding: 9px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.25);
         }
+        .back-link:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); }
+        /* Footer */
+        .site-footer {
+            background: rgba(8, 10, 28, 0.98);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 28px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .footer-links a { color: #b0b8c1; text-decoration: none; font-size: 12px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: #d4af37; }
+        .site-footer p { color: #b0b8c1; font-size: 11px; }
         .criteria-box {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 92, 246, 0.1));
             backdrop-filter: blur(10px);
@@ -117,8 +168,13 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo-header">♠ CasinoRadar</a>
+            <a href="/" class="back-link">← Voltar ao Início</a>
+        </div>
+    </header>
     <div class="container">
-        <a href="/" class="back-link">← Voltar ao CasinoRadar</a>
         
         <h1>📊 Metodologia de Avaliação</h1>
         
@@ -268,9 +324,17 @@
         
         <p>Se você tiver feedback sobre um cassino ou quiser denunciar problemas, <a href="/contato.html" style="color: #00d4ff;">entre em contato conosco</a>. Investigaremos todas as denúncias e tomaremos as medidas apropriadas.</p>
 
-        <p style="margin-top: 40px; text-align: center; color: #b0b8c1;">
-            © 2026 CasinoRadar. Todos os direitos reservados. Conteúdo educativo sobre cassinos.
-        </p>
     </div>
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="/">Início</a>
+            <a href="metodologia.html">Metodologia</a>
+            <a href="contato.html">Contato</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="termos.html">Termos de Uso</a>
+            <a href="sitemap.html">Mapa do Site</a>
+        </div>
+        <p>© 2026 CasinoRadar. Conteúdo educativo sobre cassinos. Proibido para menores de 18 anos.</p>
+    </footer>
 </body>
 </html>
