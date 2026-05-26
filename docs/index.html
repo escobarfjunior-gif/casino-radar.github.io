@@ -2018,21 +2018,26 @@
             let randomSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
             let cupomCode = `${baseCode}${randomSuffix}`;
             let cupomInfo = '';
+            let casinoInfo = '';
 
-            // Gerar informações do cupom
+            // Gerar informações do cupom com indicação de cassino
             if (type === 'rodadas') {
                 cupomInfo = `🎰 ${value} Rodadas Grátis<br>✓ Válido por 30 dias<br>✓ Sem depósito necessário`;
+                casinoInfo = `<div style="background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 12px;"><strong>💡 Dica:</strong> Este cupom é válido para a maioria dos cassinos. Verifique no site do cassino escolhido se o código está ativo.</div>`;
             } else if (type === 'cadastro') {
                 cupomInfo = `💵 R$ ${value} em Bônus<br>✓ Apenas para novo cadastro<br>✓ Sem depósito necessário`;
+                casinoInfo = `<div style="background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 12px;"><strong>💡 Dica:</strong> Bônus de cadastro disponível em cassinos como Betano, Blaze e Sportingbet.</div>`;
             } else if (type === 'deposito') {
                 cupomInfo = `📈 Bônus de ${value}% no depósito<br>✓ Aplica-se ao primeiro depósito<br>✓ Rollover de 35x`;
+                casinoInfo = `<div style="background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 12px;"><strong>💡 Dica:</strong> Bônus de depósito disponível em cassinos como KTO, Stake e Superbet.</div>`;
             } else if (type === 'cashback') {
                 cupomInfo = `💳 ${value}% de Cashback Garantido<br>✓ Válido em todos os jogos<br>✓ Sem limite de saque`;
+                casinoInfo = `<div style="background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 12px;"><strong>💡 Dica:</strong> Cashback disponível em cassinos como Brazino777, Novibet e BetMGM.</div>`;
             }
 
             // Mostrar resultado
             document.getElementById('cupom-code').textContent = cupomCode;
-            document.getElementById('cupom-info').innerHTML = cupomInfo;
+            document.getElementById('cupom-info').innerHTML = cupomInfo + casinoInfo;
             document.getElementById('cupom-result').style.display = 'flex';
 
             // Scroll para o resultado
