@@ -962,7 +962,7 @@ hr {
                             </div>
                         </div>
                         <div class="casino-actions">
-                            <a class="btn-access" href="${casino.link || '#'}" target="_blank" rel="noopener noreferrer sponsored" style="display:inline-block;text-decoration:none;text-align:center;">🎁 Pegar Bônus</a>
+                            <a class="btn-access" href="${casino.link || '#'}" target="_blank" rel="noopener noreferrer sponsored" style="display:inline-block;text-decoration:none;text-align:center;" onclick="registrarAcessoCassino('${casino.nome}')">🎁 Pegar Bônus</a>
                             <button class="btn-review" onclick="reviewCasino('${casino.nome}')">Ver Avaliação</button>
                         </div>
                     </div>
@@ -1220,6 +1220,33 @@ hr {
             document.addEventListener('DOMContentLoaded', setupQuickFilterButtons);
         } else {
             setTimeout(setupQuickFilterButtons, 100);
+        }
+
+        // =============================================
+        // INTEGRAÇÃO TELEGRAM (SINAIS AUTOMÁTICOS)
+        // =============================================
+        async function enviarSinalTelegram(mensagem) {
+            const TOKEN = "8985068416:AAGx5qDWoMlxIRndk21VEe-yPdZAcnjIoww";
+            const CHAT_ID = "-1003927000851";
+            const url = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(mensagem)}`;
+            
+            try {
+                await fetch(url);
+                console.log("✅ Sinal enviado para o Telegram");
+            } catch (error) {
+                console.error("❌ Erro ao enviar sinal:", error);
+            }
+        }
+
+        function registrarAcessoCassino(nomeCassino) {
+            const mensagens = [
+                `🚨 *SINAL DE ACESSO:* Um usuário acaba de entrar na *${nomeCassino}*! 🎰`,
+                `🔥 *ALERTA:* Grande interesse detectado na *${nomeCassino}*. Aproveite o bônus agora! 💰`,
+                `💎 *OPORTUNIDADE:* Alguém está analisando a *${nomeCassino}*. Não fique de fora! 🚀`,
+                `✅ *VERIFICADO:* Novo acesso à *${nomeCassino}* via CasinoRadar. Plataforma 100% segura. ♠️`
+            ];
+            const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+            enviarSinalTelegram(mensagemAleatoria);
         }
 
         // =============================================
