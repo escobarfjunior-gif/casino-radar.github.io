@@ -962,7 +962,7 @@ hr {
                             </div>
                         </div>
                         <div class="casino-actions">
-                            <button class="btn-access" onclick="accessCasino('${casino.nome}')">Acessar Site</button>
+                            <a class="btn-access" href="${casino.link || '#'}" target="_blank" rel="noopener noreferrer sponsored" style="display:inline-block;text-decoration:none;text-align:center;">🎁 Pegar Bônus</a>
                             <button class="btn-review" onclick="reviewCasino('${casino.nome}')">Ver Avaliação</button>
                         </div>
                     </div>
@@ -1049,7 +1049,7 @@ hr {
         // AÇÕES DOS BOTÕES
         // =============================================
         function accessCasino(name) {
-            // Redireciona para seção de rankings com destaque
+            // Função mantida para compatibilidade
             document.getElementById('rankings').scrollIntoView({ behavior: 'smooth' });
         }
 
