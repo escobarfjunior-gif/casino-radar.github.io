@@ -16,6 +16,8 @@ from datetime import date, datetime
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from openai import OpenAI
 
 # ─── Configurações ────────────────────────────────────────────────────────────
@@ -29,6 +31,17 @@ ADSENSE_ID  = "ca-pub-4896859041377751"
 
 # OpenAI (chave via env var OPENAI_API_KEY)
 client = OpenAI()
+
+def get_session():
+    session = requests.Session()
+    retry = Retry(total=3, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+    return session
+
+session = get_session()
+
 
 # ─── Fontes RSS de notícias confiáveis ────────────────────────────────────────
 RSS_SOURCES = [
@@ -90,7 +103,7 @@ def load_existing_slugs() -> set:
 def fetch_rss(url: str) -> list[dict]:
     """Busca e parseia um feed RSS, retorna lista de {title, link, description, pubDate}."""
     try:
-        resp = requests.get(url, timeout=15, headers={"User-Agent": "CasinoRadar-Bot/1.0"})
+        resp = session.get(url, timeout=15, headers={"User-Agent": "CasinoRadar-Bot/1.0"})
         resp.raise_for_status()
         root = ET.fromstring(resp.content)
         items = []
@@ -102,7 +115,7 @@ def fetch_rss(url: str) -> list[dict]:
             if title and link:
                 items.append({"title": title, "link": link, "description": desc, "pubDate": pub})
         return items
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         print(f"  [AVISO] Falha ao buscar {url}: {e}")
         return []
 
@@ -183,6 +196,7 @@ Fonte: {source_url}
             messages=[{"role": "user", "content": prompt}],
             max_tokens=2200,
             temperature=0.7,
+            timeout=60,
         )
         raw = response.choices[0].message.content.strip()
 
@@ -195,7 +209,7 @@ Fonte: {source_url}
         data = json.loads(json_match.group())
         return data
 
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         print(f"  [ERRO] Falha na geração com IA: {e}")
         return None
 
@@ -406,6 +420,7 @@ def main():
 
         existing_slugs.add(slug)
         articles_created += 1
+        time.sleep(2) # Evitar rate limit
 
         # Limitar a 2 artigos por execução para economizar créditos de IA
         if articles_created >= 2:

@@ -8,11 +8,11 @@
     <meta name="keywords" content="cassino online, cassino brasil, pix cassino, bônus cassino, jogo responsável, slots online, cassino ao vivo, jackpot">
     <meta name="robots" content="index, follow">
     <meta name="author" content="CasinoRadar">
-    <link rel="canonical" href="https://escobarfjunior-gif.github.io/casino-radar.github.io/">
+    <link rel="canonical" href="https://casino-radar.github.io/">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://escobarfjunior-gif.github.io/casino-radar.github.io/">
+    <meta property="og:url" content="https://casino-radar.github.io/">
     <meta property="og:title" content="CasinoRadar - Melhores Cassinos Online no Brasil">
     <meta property="og:description" content="Análises completas de 400+ cassinos online. Rankings, bônus, Pix e guias de jogo responsável.">
     <meta property="og:site_name" content="CasinoRadar">
@@ -61,7 +61,7 @@
         "name": "CasinoRadar",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://escobarfjunior-gif.github.io/casino-radar.github.io/logo.png",
+          "url": "https://casino-radar.github.io/logo.png",
           "width": 250,
           "height": 60
         }
@@ -88,7 +88,7 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Support",
-        "url": "https://escobarfjunior-gif.github.io/casino-radar.github.io/contato.html",
+        "url": "https://casino-radar.github.io/contato.html",
         "email": "contato@casino-radar.github.io"
       }
     }
@@ -778,6 +778,7 @@ hr {
                 const data = await response.json();
                 allCasinos = data.cassinos || [];
                 filteredCasinos = [...allCasinos];
+document.getElementById("loading-indicator").style.display = "none";
                 initUI();
             } catch (error) {
                 console.error('Erro ao carregar cassinos:', error);
@@ -805,6 +806,7 @@ hr {
                 });
             }
             filteredCasinos = [...allCasinos];
+document.getElementById("loading-indicator").style.display = "none";
             initUI();
         }
 

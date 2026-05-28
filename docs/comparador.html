@@ -175,19 +175,13 @@
         <div class="comparison-table" id="comparisonTable"></div>
     </main>
     <script>
-        const cassinosData = {
-            betano: { nome: 'Betano', rating: 4.9, bonus: '100% até R$ 500', deposito: 'R$ 20', saque: '1-2 dias', jogos: '3.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415e2bfa810b4d7005e0/188656/358980/subaccount' },
-            blaze: { nome: 'Blaze', rating: 4.7, bonus: '100% até R$ 1.000 + 40 RG', deposito: 'R$ 1', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415e2bfa8178cd5cbc42/188580/358980/subaccount' },
-            sportingbet: { nome: 'Sportingbet', rating: 4.7, bonus: '100% até R$ 750', deposito: 'R$ 10', saque: '2-3 dias', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415e2bfa8178cd5cbc42/188580/358980/subaccount' },
-            stake: { nome: 'Stake', rating: 4.8, bonus: 'Rakeback 24/7', deposito: 'R$ 1', saque: 'Imediato', jogos: '4.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415b2bfa810b476e9fd4/183605/358980/subaccount' },
-            kto: { nome: 'KTO', rating: 4.9, bonus: 'Bônus sem rollover', deposito: 'R$ 20', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415d2bfa810b4d7005de/188552/358980/subaccount' }
-        };
+        
         function updateComparison() {
             const c1 = document.getElementById('casino1').value;
             const c2 = document.getElementById('casino2').value;
             const c3 = document.getElementById('casino3').value;
             const casinos = [c1, c2, c3].filter(c => c);
-            const data = casinos.map(id => cassinosData[id]);
+            const data = casinos.map(id => cassinosData[id]).filter(d => d);
             let html = '<div class="table-header"><div class="table-header-cell">Característica</div>';
             data.forEach(casino => html += `<div class="table-header-cell">${casino.nome}</div>`);
             html += '</div>';
@@ -218,7 +212,54 @@
             html += '</div>';
             document.getElementById('comparisonTable').innerHTML = html;
         }
-        updateComparison();
+        
+        let cassinosData = {};
+        
+        async function loadData() {
+            try {
+                const response = await fetch('cassinos.json');
+                const data = await response.json();
+                // Transformar array em objeto para busca rápida
+                data.cassinos.forEach(c => {
+                    cassinosData[c.id] = {
+                        nome: c.nome,
+                        rating: c.rating,
+                        bonus: c.bonus,
+                        deposito: c.deposito_min,
+                        saque: c.saque,
+                        jogos: c.jogos,
+                        licenca: 'SPA/MF',
+                        pix: 'Sim',
+                        suporte: '24/7',
+                        url: c.link || '#'
+                    };
+                });
+                populateSelectors(data.cassinos);
+                updateComparison();
+            } catch (e) {
+                console.error("Erro ao carregar dados:", e);
+            }
+        }
+
+        function populateSelectors(cassinos) {
+            const selectors = ['casino1', 'casino2', 'casino3'];
+            selectors.forEach((id, idx) => {
+                const sel = document.getElementById(id);
+                sel.innerHTML = '<option value="">-- Selecione --</option>';
+                cassinos.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = c.id;
+                    opt.textContent = c.nome;
+                    if (idx === 0 && c.id === 1) opt.selected = true;
+                    if (idx === 1 && c.id === 2) opt.selected = true;
+                    if (idx === 2 && c.id === 3) opt.selected = true;
+                    sel.appendChild(opt);
+                });
+            });
+        }
+
+        window.onload = loadData;
+    
         if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(() => {}); }
     </script>
 </body>
