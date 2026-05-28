@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador de Cassinos - CasinoRadar</title>
     <meta name="description" content="Compare cassinos online lado a lado. Analise bônus, depósito mínimo, tempo de saque e muito mais.">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/radar/manifest.json">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -130,7 +130,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="/" class="logo">♠ CasinoRadar</a>
+            <a href="/radar/" class="logo">♠ CasinoRadar</a>
         </div>
     </header>
     <main class="container">
@@ -217,7 +217,7 @@
             document.getElementById('comparisonTable').innerHTML = html;
         }
         updateComparison();
-        if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(() => {}); }
+        if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/radar/sw.js').catch(() => {}); }
     </script>
 </body>
 </html>

@@ -24,7 +24,7 @@ DOCS_DIR    = BASE_DIR / "docs"
 BLOG_DIR    = DOCS_DIR / "blog"
 BLOG_HTML   = DOCS_DIR / "blog.html"
 SITEMAP_XML = DOCS_DIR / "sitemap.xml"
-BASE_URL    = "https://casino-radar.github.io"
+BASE_URL    = "https://granahoje.github.io/radar"
 ADSENSE_ID  = "ca-pub-4896859041377751"
 
 # OpenAI (chave via env var OPENAI_API_KEY)
