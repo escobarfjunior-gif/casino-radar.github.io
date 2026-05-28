@@ -1,0 +1,57 @@
+name: 🤖 CasinoRadar - Robô de Notícias (a cada 3h)
+
+on:
+  schedule:
+    # Roda a cada 3 horas (UTC): 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00
+    - cron: '0 0,3,6,9,12,15,18,21 * * *'
+  workflow_dispatch:
+    # Permite execução manual pelo painel do GitHub Actions
+
+permissions:
+  contents: write
+
+jobs:
+  generate-articles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Instalar dependências
+        run: |
+          pip install --quiet requests openai
+
+      - name: 🤖 Executar robô de notícias
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python scripts/robot_news.py
+
+      - name: 📝 Verificar alterações
+        id: check_changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: 🚀 Commit e push dos novos artigos
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "CasinoRadar Bot"
+          git config user.email "bot@casino-radar.github.io"
+          git add docs/blog/*.html docs/blog.html docs/sitemap.xml
+          ARTICLE_COUNT=$(git diff --cached --name-only | grep "docs/blog/" | grep -v "blog.html" | wc -l)
+          git commit -m "🤖 Auto: ${ARTICLE_COUNT} novo(s) artigo(s) - $(date +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: ✅ Nenhuma alteração
+        if: steps.check_changes.outputs.changed == 'false'
+        run: echo "Nenhum novo artigo gerado nesta execução."
