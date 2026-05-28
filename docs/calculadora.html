@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Rollover - CasinoRadar</title>
     <meta name="description" content="Calcule quanto você precisa apostar para liberar seu bônus de cassino. Ferramenta gratuita e fácil de usar.">
-    <link rel="manifest" href="/radar/manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -146,11 +146,13 @@
             margin-top: 8px;
         }
     </style>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="/radar/" class="logo">♠ CasinoRadar</a>
+            <a href="/" class="logo">♠ CasinoRadar</a>
         </div>
     </header>
     <main class="container">
@@ -236,7 +238,7 @@
         });
 
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/radar/sw.js').catch(() => {});
+            navigator.serviceWorker.register('/sw.js').catch(() => {});
         }
     </script>
 </body>

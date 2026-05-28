@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Análise Completa - CasinoRadar</title>
     <meta name="description" content="Análise detalhada de cassino online com informações sobre segurança, bônus, métodos de pagamento e avaliações de usuários.">
-    <link rel="manifest" href="/radar/manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#d4af37">
     <style>
         * {
@@ -310,11 +310,13 @@
             }
         }
     </style>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="/radar/" class="logo">♠ CasinoRadar</a>
+            <a href="/" class="logo">♠ CasinoRadar</a>
         </div>
     </header>
 
@@ -548,7 +550,7 @@
 
         // Registrar Service Worker
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/radar/sw.js').catch(() => {});
+            navigator.serviceWorker.register('/sw.js').catch(() => {});
         }
     </script>
 </body>

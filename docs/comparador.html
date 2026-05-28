@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador de Cassinos - CasinoRadar</title>
     <meta name="description" content="Compare cassinos online lado a lado. Analise bônus, depósito mínimo, tempo de saque e muito mais.">
-    <link rel="manifest" href="/radar/manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -126,11 +126,13 @@
         }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); }
     </style>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="/radar/" class="logo">♠ CasinoRadar</a>
+            <a href="/" class="logo">♠ CasinoRadar</a>
         </div>
     </header>
     <main class="container">
@@ -174,11 +176,11 @@
     </main>
     <script>
         const cassinosData = {
-            betano: { nome: 'Betano', rating: 4.9, bonus: '100% até R$ 500', deposito: 'R$ 20', saque: '1-2 dias', jogos: '3.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://betano.com.br' },
-            blaze: { nome: 'Blaze', rating: 4.7, bonus: '100% até R$ 1.000 + 40 RG', deposito: 'R$ 1', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://blaze.com' },
-            sportingbet: { nome: 'Sportingbet', rating: 4.7, bonus: '100% até R$ 750', deposito: 'R$ 10', saque: '2-3 dias', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://sportingbet.com.br' },
-            stake: { nome: 'Stake', rating: 4.8, bonus: 'Rakeback 24/7', deposito: 'R$ 1', saque: 'Imediato', jogos: '4.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://stake.com' },
-            kto: { nome: 'KTO', rating: 4.9, bonus: 'Bônus sem rollover', deposito: 'R$ 20', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://kto.com' }
+            betano: { nome: 'Betano', rating: 4.9, bonus: '100% até R$ 500', deposito: 'R$ 20', saque: '1-2 dias', jogos: '3.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415e2bfa810b4d7005e0/188656/358980/subaccount' },
+            blaze: { nome: 'Blaze', rating: 4.7, bonus: '100% até R$ 1.000 + 40 RG', deposito: 'R$ 1', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415e2bfa8178cd5cbc42/188580/358980/subaccount' },
+            sportingbet: { nome: 'Sportingbet', rating: 4.7, bonus: '100% até R$ 750', deposito: 'R$ 10', saque: '2-3 dias', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415e2bfa8178cd5cbc42/188580/358980/subaccount' },
+            stake: { nome: 'Stake', rating: 4.8, bonus: 'Rakeback 24/7', deposito: 'R$ 1', saque: 'Imediato', jogos: '4.000+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415b2bfa810b476e9fd4/183605/358980/subaccount' },
+            kto: { nome: 'KTO', rating: 4.9, bonus: 'Bônus sem rollover', deposito: 'R$ 20', saque: 'Imediato', jogos: '2.500+', licenca: 'SPA/MF', pix: 'Sim', suporte: '24/7', url: 'https://apretailer.com.br/click/6a16415d2bfa810b4d7005de/188552/358980/subaccount' }
         };
         function updateComparison() {
             const c1 = document.getElementById('casino1').value;
@@ -217,7 +219,7 @@
             document.getElementById('comparisonTable').innerHTML = html;
         }
         updateComparison();
-        if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/radar/sw.js').catch(() => {}); }
+        if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(() => {}); }
     </script>
 </body>
 </html>
