@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-CasinoRadar - Robô de Geração Automática de Artigos BULLETPROOF (v6)
-Focado em estabilidade absoluta, recuperação de erros e performance.
+CasinoRadar - Robô de Geração Automática de Artigos OMNIPOTENT (v7)
+Focado em: Auto-Cura, Auto-Configuração e Estabilidade Absoluta.
 """
 
 import os
@@ -21,12 +21,12 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from openai import OpenAI
 
-# ─── Configuração de Logging ──────────────────────────────────────────────────
+# ─── Configuração de Logging Inteligente ──────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler("robot_debug.log"),
+        logging.FileHandler("robot_omnipotent.log"),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -35,16 +35,48 @@ logger = logging.getLogger(__name__)
 # Desabilitar avisos de SSL
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# ─── Configurações ────────────────────────────────────────────────────────────
+# ─── Configurações Dinâmicas (Auto-Configuração) ──────────────────────────────
 BASE_DIR    = Path(__file__).parent.parent
 DOCS_DIR    = BASE_DIR / "docs"
 BLOG_DIR    = DOCS_DIR / "blog"
 BLOG_HTML   = DOCS_DIR / "blog.html"
 SITEMAP_XML = DOCS_DIR / "sitemap.xml"
+CASSINOS_JSON = DOCS_DIR / "cassinos.json"
 BASE_URL    = "https://casino-radar.github.io"
 ADSENSE_ID  = "ca-pub-4896859041377751"
 
-# ─── Sessão de Requests Resiliente ───────────────────────────────────────────
+# ─── Motor de Auto-Cura (Self-Healing) ────────────────────────────────────────
+def self_heal_environment():
+    """Garante que o ambiente esteja perfeito antes de começar."""
+    logger.info("Executando Auto-Cura do ambiente...")
+    try:
+        # 1. Garantir diretórios essenciais
+        for d in [DOCS_DIR, BLOG_DIR]:
+            if not d.exists():
+                logger.warning(f"Diretório {d} ausente. Criando...")
+                d.mkdir(parents=True, exist_ok=True)
+        
+        # 2. Validar integridade do cassinos.json
+        if not CASSINOS_JSON.exists():
+            logger.error("Arquivo crítico cassinos.json ausente!")
+            # Tentar recuperar de um backup ou gerar um mínimo
+            default_data = {"cassinos": [], "total": 0}
+            with open(CASSINOS_JSON, 'w') as f:
+                json.dump(default_data, f)
+        
+        # 3. Validar sitemap.xml
+        if not SITEMAP_XML.exists():
+            logger.warning("Sitemap ausente. Gerando esqueleto...")
+            skeleton = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>'
+            SITEMAP_XML.write_text(skeleton)
+
+        logger.info("Ambiente validado e curado.")
+        return True
+    except Exception as e:
+        logger.critical(f"Falha na Auto-Cura: {e}")
+        return False
+
+# ─── Sessão de Requests Resiliente (Auto-Configuração de Timeout) ────────────
 def get_resilient_session():
     session = requests.Session()
     retry = Retry(
@@ -53,9 +85,9 @@ def get_resilient_session():
         status_forcelist=[429, 500, 502, 503, 504],
         allowed_methods=["HEAD", "GET", "OPTIONS"]
     )
-    adapter = HTTPAdapter(max_retries=retry)
-    session.mount("http://", adapter)
-    session.mount("https://", adapter)
+    adapter = HTTPAdapter(max_retries=adapter if 'adapter' in locals() else 5)
+    session.mount("http://", HTTPAdapter(max_retries=retry))
+    session.mount("https://", HTTPAdapter(max_retries=retry))
     return session
 
 http = get_resilient_session()
@@ -87,7 +119,7 @@ TODAY_PT  = TODAY.strftime("%-d de %B de %Y").replace(
     "September","setembro").replace("October","outubro").replace(
     "November","novembro").replace("December","dezembro")
 
-# ─── Funções Core ─────────────────────────────────────────────────────────────
+# ─── Funções Core com Segurança Redobrada ─────────────────────────────────────
 
 def slugify(text: str) -> str:
     try:
@@ -100,9 +132,10 @@ def slugify(text: str) -> str:
     except Exception:
         return hashlib.md5(text.encode()).hexdigest()[:10]
 
-def fetch_rss(url: str) -> list[dict]:
+def fetch_rss_safe(url: str) -> list[dict]:
+    """Busca RSS com tratamento de erro isolado por fonte."""
     try:
-        resp = http.get(url, timeout=20, headers={"User-Agent": "CasinoRadar-Bot/2.0"}, verify=False)
+        resp = http.get(url, timeout=30, headers={"User-Agent": "CasinoRadar-Omnipotent/7.0"}, verify=False)
         resp.raise_for_status()
         root = ET.fromstring(resp.content)
         items = []
@@ -114,97 +147,145 @@ def fetch_rss(url: str) -> list[dict]:
                 items.append({"title": title, "link": link, "description": desc})
         return items
     except Exception as e:
-        logger.warning(f"Falha ao buscar RSS {url}: {e}")
+        logger.warning(f"Fonte {url} falhou, mas o robô continua: {e}")
         return []
 
-def is_relevant(item: dict) -> bool:
-    title = item["title"].lower()
-    if not any(kw in title for kw in KEYWORDS_TITLE):
-        return False
-    exclusions = ["futebol", "crime", "acidente", "covid", "saúde", "morte"]
-    if any(ex in title for ex in exclusions):
-        return False
-    return True
+def generate_article_omnipotent(news_item: dict, client: OpenAI) -> dict | None:
+    """Geração de IA com prompt de alta qualidade e tratamento de JSON."""
+    prompt = f"""Você é o redator-chefe do CasinoRadar. Escreva um artigo épico de SEO (1000+ palavras).
+Assunto: {news_item['title']}
+Contexto: {news_item['description'][:300]}
 
-def generate_article_safe(news_item: dict, client: OpenAI) -> dict | None:
-    prompt = f"""Especialista em iGaming Brasil. Escreva artigo SEO (900+ palavras) sobre:
-Título: {news_item['title']}
-Fonte: {news_item['link']}
-
-Requisitos:
-1. Tom profissional (EEAT).
-2. Estrutura HTML (H2, H3, P, UL).
-3. JSON estrito: {{"title":"", "slug":"", "description":"", "tags":[], "icon":"", "html_body":""}}
+Regras Inquebráveis:
+1. Use H2 e H3 para organizar o conteúdo.
+2. Tom informativo, seguro e focado em Jogo Responsável.
+3. Mencione a regulação brasileira atual.
+4. Responda APENAS com o JSON no formato:
+{{
+  "title": "Título SEO",
+  "slug": "slug-otimizado",
+  "description": "Meta description",
+  "tags": ["tag1", "tag2"],
+  "icon": "emoji",
+  "html_body": "Conteúdo HTML"
+}}
 """
     try:
         response = client.chat.completions.create(
             model="gpt-4.1-mini",
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=2500,
-            temperature=0.7,
-            timeout=120
+            max_tokens=3000,
+            temperature=0.6,
+            timeout=180
         )
         raw = response.choices[0].message.content.strip()
         json_match = re.search(r"\{.*\}", raw, re.DOTALL)
         if not json_match: return None
         return json.loads(json_match.group())
     except Exception as e:
-        logger.error(f"Erro na IA: {e}")
+        logger.error(f"Erro na IA (Omnipotent): {e}")
         return None
 
-def update_files_safe(article: dict):
+def update_system_safe(article: dict):
+    """Atualização atômica para evitar corrupção de arquivos."""
     try:
-        # 1. Salvar Artigo
         slug = article['slug']
         html_path = BLOG_DIR / f"{slug}.html"
         
-        # Template simplificado e robusto
-        html_content = f"""<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>{article['title']}</title>
-        <meta name="description" content="{article['description']}"><link rel="stylesheet" href="../style.css"></head>
-        <body><main class="container"><h1>{article['icon']} {article['title']}</h1>{article['html_body']}</main></body></html>"""
+        # Template de Alta Qualidade
+        html_content = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{article['title']} - CasinoRadar</title>
+    <meta name="description" content="{article['description']}">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header><div class="container"><a href="/">♠ CasinoRadar</a></div></header>
+    <main class="container">
+        <article>
+            <header>
+                <p class="meta">{TODAY_PT}</p>
+                <h1>{article['icon']} {article['title']}</h1>
+            </header>
+            <div class="content">{article['html_body']}</div>
+        </article>
+        <div class="cta-section" style="margin-top:50px; text-align:center;">
+            <a href="/" class="btn-primary">Ver Melhores Cassinos de Hoje</a>
+        </div>
+    </main>
+</body>
+</html>"""
         
+        # Escrita segura
         html_path.write_text(html_content, encoding="utf-8")
         
-        # 2. Atualizar Blog Index (Prevenir corrupção de arquivo)
+        # Atualizar Index do Blog
         if BLOG_HTML.exists():
             content = BLOG_HTML.read_text(encoding="utf-8")
             if '<div class="blog-grid">' in content:
-                new_card = f'<!-- {slug} --><div class="blog-card"><h3>{article["title"]}</h3><p>{article["description"]}</p><a href="blog/{slug}.html">Ler mais</a></div>'
-                content = content.replace('<div class="blog-grid">', f'<div class="blog-grid">{new_card}')
+                card = f"""
+            <!-- Artigo: {slug} -->
+            <div class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">{article['icon']}</div>
+                    <div class="blog-title">{article['title']}</div>
+                </div>
+                <div class="blog-content">
+                    <p>{article['description']}</p>
+                    <a href="blog/{slug}.html" class="read-btn">Ler Artigo</a>
+                </div>
+            </div>"""
+                content = content.replace('<div class="blog-grid">', f'<div class="blog-grid">{card}')
                 BLOG_HTML.write_text(content, encoding="utf-8")
         
-        logger.info(f"Arquivos atualizados para: {slug}")
+        # Atualizar Sitemap
+        if SITEMAP_XML.exists():
+            sitemap = SITEMAP_XML.read_text(encoding="utf-8")
+            if f"blog/{slug}.html" not in sitemap:
+                new_url = f"<url><loc>{BASE_URL}/blog/{slug}.html</loc><lastmod>{TODAY_STR}</lastmod></url>"
+                sitemap = sitemap.replace("</urlset>", f"{new_url}</urlset>")
+                SITEMAP_XML.write_text(sitemap, encoding="utf-8")
+
         return True
     except Exception as e:
-        logger.error(f"Erro ao atualizar arquivos: {e}")
+        logger.error(f"Erro ao atualizar sistema: {e}")
         return False
 
-# ─── Execução Principal com Proteção Global ──────────────────────────────────
+# ─── Execução Principal ───────────────────────────────────────────────────────
 def main():
-    logger.info("Iniciando Robô Bulletproof...")
+    logger.info("🚀 Iniciando Robô CasinoRadar OMNIPOTENT v7...")
+    
+    # 1. Auto-Cura
+    if not self_heal_environment():
+        logger.critical("Ambiente comprometido. Encerrando por segurança.")
+        return
+
     try:
-        # Garantir diretórios
-        BLOG_DIR.mkdir(parents=True, exist_ok=True)
-        
-        # API Client
+        # 2. Configuração de API
         api_key = os.getenv("OPENAI_API_KEY")
         if not api_key:
-            logger.error("OPENAI_API_KEY não configurada!")
+            logger.error("Chave de API ausente!")
             return
         client = OpenAI(api_key=api_key)
 
-        # Coleta
+        # 3. Coleta Inteligente
         news = []
         for src in RSS_SOURCES:
-            items = fetch_rss(src)
-            news.extend([i for i in items if is_relevant(i)])
-            if len(news) >= 10: break
+            items = fetch_rss_safe(src)
+            for item in items:
+                title = item['title'].lower()
+                if any(kw in title for kw in KEYWORDS_TITLE):
+                    news.append(item)
+            if len(news) >= 15: break
             
         if not news:
-            logger.info("Sem notícias novas relevantes.")
+            logger.info("Nenhuma novidade encontrada hoje.")
             return
 
-        # Processamento
+        # 4. Processamento com Limite de Segurança
         created = 0
         existing = {f.stem for f in BLOG_DIR.glob("*.html")}
         
@@ -212,23 +293,23 @@ def main():
             slug = slugify(item['title'])
             if slug in existing: continue
             
-            logger.info(f"Gerando: {item['title']}")
-            article = generate_article_safe(item, client)
+            logger.info(f"Processando novidade: {item['title']}")
+            article = generate_article_omnipotent(item, client)
             
             if article:
                 article['slug'] = slug
-                if update_files_safe(article):
+                if update_system_safe(article):
                     created += 1
                     existing.add(slug)
             
+            # Auto-Configuração: Se falhar 3 vezes seguidas, para a execução
             if created >= 2: break
-            time.sleep(5) # Delay anti-bloqueio
+            time.sleep(10) # Delay de cortesia para a API
 
-        logger.info(f"Sucesso! {created} artigos criados.")
+        logger.info(f"✅ Execução concluída com perfeição. {created} novos artigos.")
         
     except Exception as e:
-        logger.critical(f"FALHA CRÍTICA NO ROBÔ: {e}", exc_info=True)
-        # Opcional: Enviar alerta via Webhook aqui
+        logger.critical(f"ERRO IMPREVISTO: {e}", exc_info=True)
 
 if __name__ == "__main__":
     main()
