@@ -3,7 +3,7 @@ name: 🤖 CasinoRadar - Robô de Notícias (a cada 3h)
 on:
   schedule:
     # Roda a cada 3 horas (UTC): 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00
-    - cron: '33 15 * * *'
+    - cron: '0 0,3,6,9,12,15,18,21 * * *'
   workflow_dispatch:
     # Permite execução manual pelo painel do GitHub Actions
 
