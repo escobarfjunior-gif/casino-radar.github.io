@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ seo.title }}</title>
+    <meta name="description" content="{{ seo.meta_description }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ seo.canonical_url }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ seo.canonical_url }}">
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="og:description" content="{{ seo.meta_description }}">
+    
+    <!-- JSON-LD Guide Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Guide",
+      "headline": "{{ seo.title }}",
+      "description": "{{ seo.meta_description }}",
+      "author": {
+        "@type": "Organization",
+        "name": "CasinoRadar"
+      },
+      "datePublished": "{{ data_publicacao }}",
+      "dateModified": "{{ data_atualizacao }}"
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">♠ CasinoRadar</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="guide-article">
+            <h1>{{ seo.title }}</h1>
+            <div class="guide-meta">
+                <span class="date">{{ data_atualizacao }}</span>
+                <span class="category">Guia</span>
+            </div>
+            
+            <section class="guide-content">
+                {{ conteudo_completo }}
+            </section>
+
+            <section class="guide-cta">
+                <h2>Comece Agora</h2>
+                <p>Aplique os conhecimentos deste guia nos melhores cassinos online do Brasil.</p>
+                <a href="/cassinos/" class="btn-primary">Ver Cassinos Recomendados</a>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CasinoRadar. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

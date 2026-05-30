@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ seo.title }}</title>
+    <meta name="description" content="{{ seo.meta_description }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ seo.canonical_url }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ seo.canonical_url }}">
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="og:description" content="{{ seo.meta_description }}">
+    
+    <!-- JSON-LD Review Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "{{ casino.nome }}"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ casino.avaliacao }}",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "CasinoRadar"
+      },
+      "reviewBody": "{{ seo.meta_description }}"
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">♠ CasinoRadar</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="review-article">
+            <h1>{{ seo.title }}</h1>
+            <div class="review-meta">
+                <span class="rating">⭐ {{ casino.avaliacao }}/5</span>
+                <span class="date">{{ data_atualizacao }}</span>
+            </div>
+            
+            <section class="review-content">
+                {{ casino.conteudo_completo }}
+            </section>
+
+            <section class="review-rating">
+                <h2>Avaliação Geral: {{ casino.avaliacao }}/5</h2>
+                <p>{{ seo.meta_description }}</p>
+            </section>
+
+            <a href="{{ casino.link }}" class="btn-primary" target="_blank">Visitar {{ casino.nome }}</a>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CasinoRadar. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

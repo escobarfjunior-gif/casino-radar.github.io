@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ seo.title }}</title>
+    <meta name="description" content="{{ seo.meta_description }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ seo.canonical_url }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ seo.canonical_url }}">
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="og:description" content="{{ seo.meta_description }}">
+    
+    <!-- JSON-LD Comparison Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ComparisonChart",
+      "headline": "{{ seo.title }}",
+      "description": "{{ seo.meta_description }}",
+      "author": {
+        "@type": "Organization",
+        "name": "CasinoRadar"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">♠ CasinoRadar</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="comparison-article">
+            <h1>{{ seo.title }}</h1>
+            <div class="comparison-meta">
+                <span class="date">{{ data_atualizacao }}</span>
+                <span class="category">Comparativo</span>
+            </div>
+            
+            <section class="comparison-intro">
+                <p>{{ seo.meta_description }}</p>
+            </section>
+
+            <section class="comparison-table">
+                {{ tabela_comparativa }}
+            </section>
+
+            <section class="comparison-content">
+                {{ conteudo_completo }}
+            </section>
+
+            <section class="comparison-conclusion">
+                <h2>Conclusão</h2>
+                <p>Escolha o cassino que melhor se adapta ao seu estilo de jogo e preferências. Todos os cassinos listados aqui são seguros, licenciados e oferecem excelentes bônus.</p>
+                <a href="/cassinos/" class="btn-primary">Ver Todos os Cassinos</a>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CasinoRadar. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

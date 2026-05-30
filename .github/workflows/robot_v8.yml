@@ -1,0 +1,69 @@
+name: 🤖 CasinoRadar - Robô Automático Estável (v8)
+
+on:
+  schedule:
+    # Executa a cada 2 horas (UTC)
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+    # Permite execução manual
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robot-execution
+  cancel-in-progress: true
+
+jobs:
+  automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: 📥 Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 urllib3
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: 🔍 Coletar e Normalizar Dados
+        run: python scripts/fetch_data.py
+        continue-on-error: true
+
+      - name: 🧹 Deduplicar Conteúdo
+        run: python scripts/deduplicate.py
+        continue-on-error: true
+
+      - name: 🏗️ Gerar Páginas HTML
+        run: python scripts/generate_pages.py
+        continue-on-error: true
+
+      - name: 🗺️ Atualizar Sitemap
+        run: python scripts/build_sitemap.py
+        continue-on-error: true
+
+      - name: 🚀 Publicar Alterações
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/publish.py
+        continue-on-error: false
+
+      - name: ✅ Finalização
+        if: success()
+        run: echo "Robô executado com sucesso e alterações publicadas."
+
+      - name: ❌ Falha
+        if: failure()
+        run: echo "Ocorreu um erro crítico na execução do robô."

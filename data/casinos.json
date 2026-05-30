@@ -1,0 +1,41 @@
+[
+    {
+        "nome": "Betano",
+        "slug": "betano",
+        "bonus": "100% até R$500",
+        "avaliacao": 4.9,
+        "pagamentos": ["PIX", "Boleto", "Transferência Bancária"],
+        "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Betano_Logo.svg/2560px-Betano_Logo.svg.png",
+        "descricao": "A Betano é uma das casas de apostas e cassinos online mais populares no Brasil, oferecendo uma vasta gama de jogos e apostas esportivas.",
+        "categoria": "Cassino Online",
+        "link": "https://www.betano.com",
+        "pros": ["Interface intuitiva", "Excelente suporte ao cliente", "Saques rápidos via PIX"],
+        "cons": ["Requisitos de bônus podem ser altos"]
+    },
+    {
+        "nome": "Stake",
+        "slug": "stake",
+        "bonus": "Bônus de Boas-vindas Exclusivo",
+        "avaliacao": 4.8,
+        "pagamentos": ["Criptomoedas", "PIX", "Cartão de Crédito"],
+        "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Stake.com_logo.svg/2560px-Stake.com_logo.svg.png",
+        "descricao": "O Stake é o líder mundial em cassinos de criptomoedas, agora aceitando PIX para jogadores brasileiros.",
+        "categoria": "Cassino Cripto",
+        "link": "https://stake.com",
+        "pros": ["Privacidade e segurança", "Grande variedade de jogos originais", "Comunidade ativa"],
+        "cons": ["Foco principal em cripto"]
+    },
+    {
+        "nome": "KTO",
+        "slug": "kto",
+        "bonus": "R$200 em Apostas Grátis",
+        "avaliacao": 4.7,
+        "pagamentos": ["PIX", "Boleto", "Pay4Fun"],
+        "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/KTO_Logo.svg/2560px-KTO_Logo.svg.png",
+        "descricao": "A KTO é conhecida por sua transparência e promoções sem complicações, sendo uma favorita entre os brasileiros.",
+        "categoria": "Cassino Online",
+        "link": "https://www.kto.com",
+        "pros": ["Sem rollover em algumas promoções", "Fácil de usar", "Saques via PIX em minutos"],
+        "cons": ["Variedade de jogos de mesa limitada"]
+    }
+]
