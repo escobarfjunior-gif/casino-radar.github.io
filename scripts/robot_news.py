@@ -147,10 +147,13 @@ O texto deve orientar, comparar critérios e reforçar jogo responsável. Não i
                 timeout=120, # Aumenta o timeout para permitir respostas mais longas
             )
             content = response.choices[0].message.content or ""
+            print(f"DEBUG: Conteúdo bruto da IA (primeiros 100 chars): {content[:100]}...")
             # Validação adicional para garantir que o conteúdo não seja muito curto ou genérico
-            if len(content) < 500: # Exemplo: exigir um mínimo de 500 caracteres para o JSON completo
-                raise ValueError("Conteúdo gerado pela IA é muito curto ou de baixo valor.")
-            return extract_json(content)
+            if len(content) < 500:
+                raise ValueError(f"Conteúdo gerado pela IA é muito curto ({len(content)} chars).")
+            data = extract_json(content)
+            print(f"✅ JSON extraído com sucesso: {data.get('title')}")
+            return data
         except Exception as exc:
             last_error = exc
             wait = min(90, 2 ** attempt * 10) # Aumenta o tempo de espera
@@ -305,6 +308,12 @@ def main() -> None:
     article = generate_with_ai(topic) or fallback_article(topic)
     slug = slugify(article["title"])
     output = BLOG_DIR / f"{slug}.html"
+    
+    # Se o slug já existe no histórico ou como arquivo, tenta variar o título
+    if output.exists() or any(slugify(h) == slug for h in history):
+        print(f"⚠️ Slug '{slug}' já existe. Tentando variar...")
+        slug = f"{slug}-{random.randint(100, 999)}"
+        output = BLOG_DIR / f"{slug}.html"
 
     if output.exists():
         suffix = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")
