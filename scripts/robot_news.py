@@ -227,6 +227,9 @@ def render_article(article: dict, slug: str) -> str:
     </style>
 </head>
 <body>
+    <div style="background-color: #ffcc00; padding: 10px; text-align: center; font-size: 0.9em; color: #333;">
+        Este site contém links de afiliado. Ao clicar e fazer uma compra, podemos receber uma comissão sem custo adicional para você.
+    </div>
 <header><a href=\"../index.html\">♠ CasinoRadar</a> · <a href=\"../blog.html\">Blog</a></header>
 <main class=\"container\">
     <article>
