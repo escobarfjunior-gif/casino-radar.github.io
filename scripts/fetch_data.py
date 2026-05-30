@@ -123,11 +123,29 @@ def main():
             logger.info(f"Coletados {len(data)} itens de {source_url}")
         time.sleep(1) # Pequeno delay entre as requisições
 
-    # Salvar dados em JSON estruturado
+    # Salvar dados em JSON estruturado (apenas se coletar algo novo, para não limpar o arquivo)
     output_file = DATA_DIR / "casinos.json"
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(all_casinos_data, f, ensure_ascii=False, indent=4)
-    logger.info(f"Dados salvos em {output_file} com {len(all_casinos_data)} itens.")
+    if all_casinos_data:
+        # Carregar dados existentes para mesclar
+        existing_data = []
+        if output_file.exists():
+            try:
+                with open(output_file, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+            except: pass
+        
+        # Mesclar (evitando duplicatas pelo slug)
+        slugs = {c['slug'] for c in existing_data}
+        for new_item in all_casinos_data:
+            if new_item['slug'] not in slugs:
+                existing_data.append(new_item)
+                slugs.add(new_item['slug'])
+
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(existing_data, f, ensure_ascii=False, indent=4)
+        logger.info(f"Dados atualizados em {output_file}. Total: {len(existing_data)} itens.")
+    else:
+        logger.warning("Nenhum dado novo coletado. Mantendo arquivo original.")
 
     # Para o MVP, vamos criar um arquivo de promoções e reviews também, mesmo que vazios por enquanto
     with open(DATA_DIR / "promocoes.json", 'w', encoding='utf-8') as f:
