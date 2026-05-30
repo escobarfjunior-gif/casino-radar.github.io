@@ -1,26 +1,8 @@
-# CasinoRadar - Robots.txt
 User-agent: *
 Allow: /
-Allow: /index.html
-Allow: /analise.html
-Allow: /comparador.html
-Allow: /calculadora.html
-Allow: /cassinos.json
-Allow: /manifest.json
-Allow: /*.js
-Allow: /*.css
+Disallow: /logs/
+Disallow: /scripts/
+Disallow: /templates/
+Disallow: /data/
 
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-
-# Sitemap
 Sitemap: https://casino-radar.github.io/sitemap.xml
-
-# Crawl delay (em segundos)
-Crawl-delay: 1
-
-# User-agent específico para Googlebot
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
