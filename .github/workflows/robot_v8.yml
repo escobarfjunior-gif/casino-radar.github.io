@@ -50,6 +50,10 @@ jobs:
         run: python scripts/generate_pages.py
         continue-on-error: true
 
+      - name: 🤝 Gerar Páginas de Comparação
+        run: python scripts/generate_comparisons.py
+        continue-on-error: true
+
       - name: 🗺️ Atualizar Sitemap
         run: python scripts/build_sitemap.py
         continue-on-error: true

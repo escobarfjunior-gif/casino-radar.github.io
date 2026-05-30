@@ -7,66 +7,79 @@
     <meta name="description" content="{{ seo.meta_description }}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ seo.canonical_url }}">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="/style.css">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
     <meta property="og:url" content="{{ seo.canonical_url }}">
     <meta property="og:title" content="{{ seo.title }}">
     <meta property="og:description" content="{{ seo.meta_description }}">
-    
-    <!-- JSON-LD Comparison Schema -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ seo.canonical_url }}">
+    <meta property="twitter:title" content="{{ seo.title }}">
+    <meta property="twitter:description" content="{{ seo.meta_description }}">
+    <!-- JSON-LD para SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ComparisonChart",
-      "headline": "{{ seo.title }}",
+      "@type": "WebPage",
+      "name": "{{ seo.title }}",
       "description": "{{ seo.meta_description }}",
-      "author": {
-        "@type": "Organization",
-        "name": "CasinoRadar"
-      }
+      "url": "{{ seo.canonical_url }}"
     }
     </script>
-    
-    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <a href="/" class="logo">♠ CasinoRadar</a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/cassinos/">Cassinos</a></li>
+                    <li><a href="/comparativos/">Comparativos</a></li>
+                    <li><a href="/guias/">Guias</a></li>
+                    <li><a href="/reviews/">Reviews</a></li>
+                    <li><a href="/sobre.html">Sobre</a></li>
+                    <li><a href="/contato.html">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <article class="comparison-article">
-            <h1>{{ seo.title }}</h1>
-            <div class="comparison-meta">
-                <span class="date">{{ data_atualizacao }}</span>
-                <span class="category">Comparativo</span>
+    <main class="container comparison-detail">
+        <article>
+            <h1>Comparativo: {{ casino1.nome }} vs {{ casino2.nome }}</h1>
+            <div class="comparison-header">
+                <div class="casino-compare-card">
+                    <img src="{{ casino1.imagem }}" alt="Logo {{ casino1.nome }}">
+                    <h2>{{ casino1.nome }}</h2>
+                    <p>Bônus: {{ casino1.bonus }}</p>
+                    <a href="{{ casino1.link }}" target="_blank" rel="nofollow noopener" class="button">Visitar {{ casino1.nome }}</a>
+                </div>
+                <span class="vs">VS</span>
+                <div class="casino-compare-card">
+                    <img src="{{ casino2.imagem }}" alt="Logo {{ casino2.nome }}">
+                    <h2>{{ casino2.nome }}</h2>
+                    <p>Bônus: {{ casino2.bonus }}</p>
+                    <a href="{{ casino2.link }}" target="_blank" rel="nofollow noopener" class="button">Visitar {{ casino2.nome }}</a>
+                </div>
             </div>
             
-            <section class="comparison-intro">
-                <p>{{ seo.meta_description }}</p>
-            </section>
-
-            <section class="comparison-table">
-                {{ tabela_comparativa }}
-            </section>
-
-            <section class="comparison-content">
+            <section class="content-ia">
                 {{ conteudo_completo }}
-            </section>
-
-            <section class="comparison-conclusion">
-                <h2>Conclusão</h2>
-                <p>Escolha o cassino que melhor se adapta ao seu estilo de jogo e preferências. Todos os cassinos listados aqui são seguros, licenciados e oferecem excelentes bônus.</p>
-                <a href="/cassinos/" class="btn-primary">Ver Todos os Cassinos</a>
             </section>
         </article>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 CasinoRadar. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>&copy; 2026 CasinoRadar. Todos os direitos reservados.</p>
+            <p>
+                <a href="/privacidade.html">Política de Privacidade</a> |
+                <a href="/termos.html">Termos de Uso</a>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
