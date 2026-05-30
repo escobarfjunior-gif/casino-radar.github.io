@@ -139,18 +139,21 @@ O texto deve orientar, comparar critérios e reforçar jogo responsável. Não i
             response = client.chat.completions.create(
                 model="gpt-4.1-mini",
                 messages=[
-                    {"role": "system", "content": "Você escreve conteúdo educativo, responsável e otimizado para SEO sobre cassinos online."},
+                    {"role": "system", "content": "Você é um especialista em cassinos online e jogo responsável no Brasil. Sua tarefa é criar artigos educativos, aprofundados, otimizados para SEO e com alto valor para o usuário. O conteúdo deve ser objetivo, imparcial e focar em orientar o leitor sobre escolhas seguras e práticas de jogo consciente. Inclua exemplos práticos e, se possível, um pequeno FAQ no final do artigo."},
                     {"role": "user", "content": prompt},
                 ],
-                temperature=0.6,
-                max_tokens=2600,
-                timeout=90,
+                temperature=0.7, # Aumenta um pouco a criatividade para mais profundidade
+                max_tokens=3000, # Aumenta o limite para artigos mais longos
+                timeout=120, # Aumenta o timeout para permitir respostas mais longas
             )
             content = response.choices[0].message.content or ""
+            # Validação adicional para garantir que o conteúdo não seja muito curto ou genérico
+            if len(content) < 500: # Exemplo: exigir um mínimo de 500 caracteres para o JSON completo
+                raise ValueError("Conteúdo gerado pela IA é muito curto ou de baixo valor.")
             return extract_json(content)
         except Exception as exc:
             last_error = exc
-            wait = min(60, 2 ** attempt * 5)
+            wait = min(90, 2 ** attempt * 10) # Aumenta o tempo de espera
             print(f"⚠️ Falha na IA: {exc}. Aguardando {wait}s antes de tentar novamente.")
             time.sleep(wait)
     print(f"❌ IA indisponível após {MAX_ATTEMPTS} tentativas: {last_error}")
@@ -160,21 +163,34 @@ O texto deve orientar, comparar critérios e reforçar jogo responsável. Não i
 def fallback_article(topic: str) -> dict:
     safe_topic = html.escape(topic)
     title = topic
-    description = f"Guia educativo do CasinoRadar sobre {topic.lower()} com foco em segurança e jogo responsável."
+    description = f"Guia educativo do CasinoRadar sobre {topic.lower()} com foco em segurança e jogo responsável. Aprenda a escolher cassinos, entender bônus e jogar de forma consciente."
     body = f"""
-<h2>Visão geral</h2>
-<p>{safe_topic} é um tema importante para quem avalia plataformas de cassino online com mais segurança. Antes de qualquer cadastro, o jogador deve observar licença, reputação, termos de bônus, política de saque e ferramentas de controle.</p>
-<h2>Critérios práticos de análise</h2>
+<h2>Introdução: A Importância de Escolhas Conscientes</h2>
+<p>No universo dos cassinos online, a informação é a sua maior aliada. Este guia do CasinoRadar explora {safe_topic}, um tema crucial para garantir uma experiência de jogo segura, divertida e, acima de tudo, responsável. Entender os critérios de avaliação e as práticas recomendadas é fundamental para evitar armadilhas e maximizar sua diversão.</p>
+
+<h2>Critérios Essenciais para Avaliar um Cassino Online</h2>
 <ul>
-<li><strong>Licenciamento e transparência:</strong> verifique se a plataforma informa regras, operador responsável e canais de suporte.</li>
-<li><strong>Pagamentos:</strong> confirme prazos de saque, possíveis limites e exigências de verificação de identidade.</li>
-<li><strong>Bônus:</strong> leia rollover, validade, jogos elegíveis e limite máximo de conversão antes de aceitar promoções.</li>
-<li><strong>Jogo responsável:</strong> dê preferência a sites com limite de depósito, pausa temporária e autoexclusão.</li>
+<li><strong>Licenciamento e Regulamentação:</strong> Verifique sempre se o cassino possui licença de operação de autoridades reconhecidas (ex: MGA, Curaçao). Isso garante que a plataforma segue padrões rigorosos de segurança e justiça.</li>
+<li><strong>Reputação e Avaliações de Usuários:</strong> Pesquise a reputação do cassino em fóruns e sites especializados. A experiência de outros jogadores pode oferecer insights valiosos.</li>
+<li><strong>Segurança de Dados e Transações:</strong> Certifique-se de que o site utiliza criptografia SSL e outras tecnologias de proteção para seus dados pessoais e financeiros.</li>
+<li><strong>Variedade e Qualidade dos Jogos:</strong> Um bom cassino oferece uma vasta gama de jogos de provedores renomados, garantindo diversão e justiça nos resultados.</li>
+<li><strong>Bônus e Termos Transparentes:</strong> Bônus são atrativos, mas é vital ler os termos e condições (rollover, validade) para entender o que é exigido.</li>
+<li><strong>Métodos de Pagamento Eficientes:</strong> Opte por cassinos que ofereçam métodos de depósito e saque convenientes e rápidos, como PIX, boleto e transferência bancária.</li>
+<li><strong>Suporte ao Cliente:</strong> Um suporte eficiente e acessível (chat ao vivo, e-mail, telefone) é crucial para resolver dúvidas e problemas rapidamente.</li>
 </ul>
-<h2>Como evitar problemas</h2>
-<p>Não trate jogos de cassino como fonte de renda. Estabeleça orçamento, acompanhe perdas e interrompa a sessão quando houver pressão emocional. O CasinoRadar recomenda usar as informações do site apenas para educação e comparação.</p>
-<h2>Conclusão</h2>
-<p>Uma boa decisão depende de pesquisa, leitura cuidadosa dos termos e controle pessoal. Se a plataforma não for clara sobre segurança, saque ou suporte, o melhor caminho é procurar alternativas mais transparentes.</p>
+
+<h2>Jogo Responsável: Sua Prioridade Número Um</h2>
+<p>O CasinoRadar enfatiza a importância do jogo responsável. Cassinos online são formas de entretenimento, não fontes de renda. Defina limites de tempo e dinheiro, nunca jogue sob influência e procure ajuda se sentir que o jogo está se tornando um problema. Ferramentas como autoexclusão e limites de depósito são recursos valiosos oferecidos por plataformas sérias.</p>
+
+<h2>Conclusão: Faça Escolhas Informadas</h2>
+<p>A decisão de onde jogar online deve ser baseada em pesquisa e consciência. Utilize as análises e guias do CasinoRadar para fazer escolhas informadas, priorizando sempre sua segurança e bem-estar. Lembre-se: o objetivo é a diversão, com responsabilidade.</p>
+
+<h3>FAQ Rápido</h3>
+<ul>
+<li><strong>Como sei se um cassino é seguro?</strong> Verifique o licenciamento, reputação e tecnologias de segurança (SSL).</li>
+<li><strong>Devo aceitar todos os bônus?</strong> Leia sempre os termos e condições. Bônus podem ter requisitos de aposta altos.</li>
+<li><strong>O que é jogo responsável?</strong> É jogar de forma consciente, definindo limites e buscando ajuda se necessário.</li>
+</ul>
 """
     return {"title": title, "description": description[:155], "body_html": body}
 
@@ -202,6 +218,9 @@ def render_article(article: dict, slug: str) -> str:
         article {{ background: var(--card); border: 1px solid rgba(212,175,55,.18); border-radius: 24px; padding: 42px; }}
         h1 {{ color: #fff; font-size: 2.6rem; line-height: 1.15; }}
         h2 {{ color: var(--primary); margin-top: 2rem; }}
+        h3 {{ color: #fff; margin-top: 1.5rem; }}
+        ul {{ list-style-type: disc; margin-left: 20px; }}
+        li {{ margin-bottom: 8px; }}
         .meta {{ color: #9ca3af; margin-bottom: 28px; }}
         .responsavel {{ border-left: 4px solid var(--primary); padding: 16px; background: rgba(212,175,55,.08); margin: 24px 0; }}
         @media (max-width: 720px) {{ article {{ padding: 24px; }} h1 {{ font-size: 2rem; }} }}
