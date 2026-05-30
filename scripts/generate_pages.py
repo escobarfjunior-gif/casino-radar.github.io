@@ -7,6 +7,9 @@ import os
 from openai import OpenAI
 import time
 
+MAX_AI_ATTEMPTS = 3
+AI_TIMEOUT_SECONDS = 90
+
 logger = setup_logger("generate_pages", "generate_pages.log")
 
 BASE_DIR = Path(__file__).parent.parent
@@ -48,23 +51,37 @@ def generate_ai_content(casino_data, client):
     Formate o conteúdo usando tags HTML (h2, h3, p, ul, li, strong, em). Garanta que o texto seja otimizado para SEO, com palavras-chave relevantes distribuídas naturalmente. O tom deve ser profissional e informativo.
     """
 
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4.1-mini", # Ou gpt-4.1-nano, gemini-2.5-flash
-            messages=[
-                {"role": "system", "content": "Você é um assistente de escrita de conteúdo para SEO e cassinos online."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.7,
-            max_tokens=2000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        logger.error(f"Erro ao gerar conteúdo com IA para {casino_data['nome']}: {e}")
+    if client is None:
+        logger.warning(f"Cliente de IA indisponível para {casino_data['nome']}.")
         return None
+
+    last_error = None
+    for attempt in range(1, MAX_AI_ATTEMPTS + 1):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4.1-mini", # Ou gpt-4.1-nano, gemini-2.5-flash
+                messages=[
+                    {"role": "system", "content": "Você é um assistente de escrita de conteúdo para SEO e cassinos online."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7,
+                max_tokens=2000,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0,
+                timeout=AI_TIMEOUT_SECONDS,
+            )
+            content = (response.choices[0].message.content or "").strip()
+            if not content:
+                raise ValueError("Resposta vazia da IA")
+            return content
+        except Exception as e:
+            last_error = e
+            wait_seconds = min(60, 5 * (2 ** (attempt - 1)))
+            logger.warning(f"Tentativa {attempt}/{MAX_AI_ATTEMPTS} falhou para {casino_data['nome']}: {e}. Aguardando {wait_seconds}s.")
+            time.sleep(wait_seconds)
+    logger.error(f"Erro ao gerar conteúdo com IA para {casino_data['nome']} após {MAX_AI_ATTEMPTS} tentativas: {last_error}")
+    return None
 
 def generate_casino_page(casino_data, template, client):
     """Gera uma página HTML para um cassino específico."""
@@ -131,7 +148,7 @@ def main():
         logger.error("Variável de ambiente OPENAI_API_KEY não configurada. A geração de conteúdo IA será limitada.")
         client = None
     else:
-        client = OpenAI(api_key=api_key)
+        client = OpenAI(api_key=api_key, max_retries=2)
 
     # Carregar dados de cassinos
     casinos_file = DATA_DIR / "casinos.json"

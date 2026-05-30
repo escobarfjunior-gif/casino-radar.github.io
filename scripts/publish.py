@@ -39,7 +39,10 @@ def publish_to_github(commit_message="🤖 CasinoRadar: Refatoração completa e
         run_command(["git", "commit", "-m", commit_message])
         logger.info(f"Alterações commitadas com a mensagem: '{commit_message}'")
 
-        # 4. Fazer push para o repositório remoto
+        # 4. Sincronizar com o remoto antes do push para reduzir conflitos entre workflows
+        run_command(["git", "pull", "--rebase", "origin", "main"])
+
+        # 5. Fazer push para o repositório remoto
         run_command(["git", "push", "origin", "main"])
         logger.info("Alterações enviadas para o GitHub com sucesso!")
         return True
