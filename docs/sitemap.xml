@@ -361,4 +361,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
   </url>
+
+  <url>
+    <loc>https://casino-radar.github.io/blog/jogo-responsavel-sinais-de-alerta-e-limites-praticos.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
 </urlset>
