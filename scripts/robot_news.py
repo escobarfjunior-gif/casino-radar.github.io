@@ -248,7 +248,16 @@ def render_article(article: dict, slug: str) -> str:
         {body}
     </article>
 </main>
-<footer>© 2026 CasinoRadar. Informação educativa. Jogue com responsabilidade.</footer>
+<footer>
+    <div style="margin-bottom: 15px;">
+        <a href="index.html">Início</a> | 
+        <a href="sobre.html">Sobre Nós</a> | 
+        <a href="privacidade.html">Privacidade</a> | 
+        <a href="termos.html">Termos de Uso</a> | 
+        <a href="contato.html">Contato</a>
+    </div>
+    <p>© 2026 CasinoRadar. Conteúdo educativo sobre cassinos. Proibido para menores de 18 anos. Jogue com responsabilidade.</p>
+</footer>
 </body>
 </html>
 """
