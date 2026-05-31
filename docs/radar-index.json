@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-05-31T18:19:00.498373+00:00",
+  "count": 3,
+  "casinos": [
+    {
+      "id": "betano",
+      "slug": "betano",
+      "name": "Betano",
+      "nome": "Betano",
+      "rating": 4.9,
+      "avaliacao": 4.9,
+      "bonus": "100% até R$500",
+      "payments": [
+        "PIX",
+        "Boleto",
+        "Transferência Bancária"
+      ],
+      "pagamentos": [
+        "PIX",
+        "Boleto",
+        "Transferência Bancária"
+      ],
+      "category": "Cassino Online",
+      "categoria": "Cassino Online",
+      "description": "A Betano é uma das casas de apostas e cassinos online mais populares no Brasil, oferecendo uma vasta gama de jogos e apostas esportivas.",
+      "descricao": "A Betano é uma das casas de apostas e cassinos online mais populares no Brasil, oferecendo uma vasta gama de jogos e apostas esportivas.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Betano_Logo.svg/2560px-Betano_Logo.svg.png",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Betano_Logo.svg/2560px-Betano_Logo.svg.png",
+      "url": "https://casino-radar.github.io/cassinos/betano.html",
+      "link": "https://www.betano.com",
+      "domain": "www.betano.com",
+      "rank": 1,
+      "search_text": "betano 100% até r$500 cassino online pix boleto transferência bancária"
+    },
+    {
+      "id": "stake",
+      "slug": "stake",
+      "name": "Stake",
+      "nome": "Stake",
+      "rating": 4.8,
+      "avaliacao": 4.8,
+      "bonus": "Bônus de Boas-vindas Exclusivo",
+      "payments": [
+        "Criptomoedas",
+        "PIX",
+        "Cartão de Crédito"
+      ],
+      "pagamentos": [
+        "Criptomoedas",
+        "PIX",
+        "Cartão de Crédito"
+      ],
+      "category": "Cassino Cripto",
+      "categoria": "Cassino Cripto",
+      "description": "O Stake é o líder mundial em cassinos de criptomoedas, agora aceitando PIX para jogadores brasileiros.",
+      "descricao": "O Stake é o líder mundial em cassinos de criptomoedas, agora aceitando PIX para jogadores brasileiros.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Stake.com_logo.svg/2560px-Stake.com_logo.svg.png",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Stake.com_logo.svg/2560px-Stake.com_logo.svg.png",
+      "url": "https://casino-radar.github.io/cassinos/stake.html",
+      "link": "https://stake.com",
+      "domain": "stake.com",
+      "rank": 2,
+      "search_text": "stake bônus de boas-vindas exclusivo cassino cripto criptomoedas pix cartão de crédito"
+    },
+    {
+      "id": "kto",
+      "slug": "kto",
+      "name": "KTO",
+      "nome": "KTO",
+      "rating": 4.7,
+      "avaliacao": 4.7,
+      "bonus": "R$200 em Apostas Grátis",
+      "payments": [
+        "PIX",
+        "Boleto",
+        "Pay4Fun"
+      ],
+      "pagamentos": [
+        "PIX",
+        "Boleto",
+        "Pay4Fun"
+      ],
+      "category": "Cassino Online",
+      "categoria": "Cassino Online",
+      "description": "A KTO é conhecida por sua transparência e promoções sem complicações, sendo uma favorita entre os brasileiros.",
+      "descricao": "A KTO é conhecida por sua transparência e promoções sem complicações, sendo uma favorita entre os brasileiros.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/KTO_Logo.svg/2560px-KTO_Logo.svg.png",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/KTO_Logo.svg/2560px-KTO_Logo.svg.png",
+      "url": "https://casino-radar.github.io/cassinos/kto.html",
+      "link": "https://www.kto.com",
+      "domain": "www.kto.com",
+      "rank": 3,
+      "search_text": "kto r$200 em apostas grátis cassino online pix boleto pay4fun"
+    }
+  ],
+  "items": [
+    {
+      "id": "betano",
+      "slug": "betano",
+      "name": "Betano",
+      "nome": "Betano",
+      "rating": 4.9,
+      "avaliacao": 4.9,
+      "bonus": "100% até R$500",
+      "payments": [
+        "PIX",
+        "Boleto",
+        "Transferência Bancária"
+      ],
+      "pagamentos": [
+        "PIX",
+        "Boleto",
+        "Transferência Bancária"
+      ],
+      "category": "Cassino Online",
+      "categoria": "Cassino Online",
+      "description": "A Betano é uma das casas de apostas e cassinos online mais populares no Brasil, oferecendo uma vasta gama de jogos e apostas esportivas.",
+      "descricao": "A Betano é uma das casas de apostas e cassinos online mais populares no Brasil, oferecendo uma vasta gama de jogos e apostas esportivas.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Betano_Logo.svg/2560px-Betano_Logo.svg.png",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Betano_Logo.svg/2560px-Betano_Logo.svg.png",
+      "url": "https://casino-radar.github.io/cassinos/betano.html",
+      "link": "https://www.betano.com",
+      "domain": "www.betano.com",
+      "rank": 1,
+      "search_text": "betano 100% até r$500 cassino online pix boleto transferência bancária"
+    },
+    {
+      "id": "stake",
+      "slug": "stake",
+      "name": "Stake",
+      "nome": "Stake",
+      "rating": 4.8,
+      "avaliacao": 4.8,
+      "bonus": "Bônus de Boas-vindas Exclusivo",
+      "payments": [
+        "Criptomoedas",
+        "PIX",
+        "Cartão de Crédito"
+      ],
+      "pagamentos": [
+        "Criptomoedas",
+        "PIX",
+        "Cartão de Crédito"
+      ],
+      "category": "Cassino Cripto",
+      "categoria": "Cassino Cripto",
+      "description": "O Stake é o líder mundial em cassinos de criptomoedas, agora aceitando PIX para jogadores brasileiros.",
+      "descricao": "O Stake é o líder mundial em cassinos de criptomoedas, agora aceitando PIX para jogadores brasileiros.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Stake.com_logo.svg/2560px-Stake.com_logo.svg.png",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Stake.com_logo.svg/2560px-Stake.com_logo.svg.png",
+      "url": "https://casino-radar.github.io/cassinos/stake.html",
+      "link": "https://stake.com",
+      "domain": "stake.com",
+      "rank": 2,
+      "search_text": "stake bônus de boas-vindas exclusivo cassino cripto criptomoedas pix cartão de crédito"
+    },
+    {
+      "id": "kto",
+      "slug": "kto",
+      "name": "KTO",
+      "nome": "KTO",
+      "rating": 4.7,
+      "avaliacao": 4.7,
+      "bonus": "R$200 em Apostas Grátis",
+      "payments": [
+        "PIX",
+        "Boleto",
+        "Pay4Fun"
+      ],
+      "pagamentos": [
+        "PIX",
+        "Boleto",
+        "Pay4Fun"
+      ],
+      "category": "Cassino Online",
+      "categoria": "Cassino Online",
+      "description": "A KTO é conhecida por sua transparência e promoções sem complicações, sendo uma favorita entre os brasileiros.",
+      "descricao": "A KTO é conhecida por sua transparência e promoções sem complicações, sendo uma favorita entre os brasileiros.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/KTO_Logo.svg/2560px-KTO_Logo.svg.png",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/KTO_Logo.svg/2560px-KTO_Logo.svg.png",
+      "url": "https://casino-radar.github.io/cassinos/kto.html",
+      "link": "https://www.kto.com",
+      "domain": "www.kto.com",
+      "rank": 3,
+      "search_text": "kto r$200 em apostas grátis cassino online pix boleto pay4fun"
+    }
+  ]
+}

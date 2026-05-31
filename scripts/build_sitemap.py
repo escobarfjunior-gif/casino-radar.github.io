@@ -1,61 +1,85 @@
-
-import json
+from datetime import datetime, timezone
 from pathlib import Path
-from datetime import datetime
-from logger import setup_logger
 import xml.etree.ElementTree as ET
 
-logger = setup_logger("build_sitemap", "build_sitemap.log")
+from logger import setup_logger
 
+logger = setup_logger("build_sitemap", "build_sitemap.log")
 BASE_DIR = Path(__file__).parent.parent
 DOCS_DIR = BASE_DIR / "docs"
 SITEMAP_XML = DOCS_DIR / "sitemap.xml"
 BASE_URL = "https://casino-radar.github.io"
 
-def generate_sitemap():
-    """Gera e atualiza o sitemap.xml com as páginas HTML existentes."""
-    logger.info("Iniciando a geração do sitemap.xml...")
+STATIC_PAGES = [
+    "contato.html",
+    "privacidade.html",
+    "termos.html",
+    "metodologia.html",
+    "analise.html",
+    "calculadora.html",
+    "comparador.html",
+    "blog.html",
+]
 
+SECTIONS = [
+    ("cassinos", "0.90"),
+    ("comparativos", "0.82"),
+    ("reviews", "0.75"),
+    ("guias", "0.75"),
+    ("blog", "0.70"),
+]
+
+
+def today() -> str:
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def add_url(urlset: ET.Element, seen: set[str], loc: str, priority: str, changefreq: str = "weekly") -> None:
+    loc = loc.strip()
+    if not loc or loc in seen:
+        return
+    seen.add(loc)
+    node = ET.SubElement(urlset, "url")
+    ET.SubElement(node, "loc").text = loc
+    ET.SubElement(node, "lastmod").text = today()
+    ET.SubElement(node, "changefreq").text = changefreq
+    ET.SubElement(node, "priority").text = priority
+
+
+def generate_sitemap() -> None:
+    logger.info("Iniciando geração defensiva do sitemap.xml...")
+    DOCS_DIR.mkdir(parents=True, exist_ok=True)
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    seen: set[str] = set()
 
-    # Adicionar a homepage
-    home_url = ET.SubElement(urlset, "url")
-    ET.SubElement(home_url, "loc").text = BASE_URL
-    ET.SubElement(home_url, "lastmod").text = datetime.now().strftime("%Y-%m-%d")
-    ET.SubElement(home_url, "priority").text = "1.0"
+    add_url(urlset, seen, BASE_URL, "1.00", "daily")
 
-    # Adicionar páginas estáticas (ex: contato, privacidade, termos)
-    static_pages = ["contato.html", "privacidade.html", "termos.html", "metodologia.html", "analise.html", "calculadora.html", "comparador.html"]
-    for page in static_pages:
+    for page in STATIC_PAGES:
         if (DOCS_DIR / page).exists():
-            static_url = ET.SubElement(urlset, "url")
-            ET.SubElement(static_url, "loc").text = f"{BASE_URL}/{page}"
-            ET.SubElement(static_url, "lastmod").text = datetime.now().strftime("%Y-%m-%d")
-            ET.SubElement(static_url, "priority").text = "0.8"
+            add_url(urlset, seen, f"{BASE_URL}/{page}", "0.80", "weekly")
 
-    # Adicionar páginas de cassinos
-    for casino_page in (DOCS_DIR / "cassinos").glob("*.html"):
-        casino_url = ET.SubElement(urlset, "url")
-        ET.SubElement(casino_url, "loc").text = f"{BASE_URL}/cassinos/{casino_page.name}"
-        ET.SubElement(casino_url, "lastmod").text = datetime.now().strftime("%Y-%m-%d")
-        ET.SubElement(casino_url, "priority").text = "0.9"
+    for section, priority in SECTIONS:
+        section_dir = DOCS_DIR / section
+        if not section_dir.exists():
+            continue
+        for html_file in sorted(section_dir.glob("*.html")):
+            add_url(urlset, seen, f"{BASE_URL}/{section}/{html_file.name}", priority, "weekly")
 
-    # Adicionar páginas de blog (se existirem)
-    for blog_page in (DOCS_DIR / "blog").glob("*.html"):
-        blog_url = ET.SubElement(urlset, "url")
-        ET.SubElement(blog_url, "loc").text = f"{BASE_URL}/blog/{blog_page.name}"
-        ET.SubElement(blog_url, "lastmod").text = datetime.now().strftime("%Y-%m-%d")
-        ET.SubElement(blog_url, "priority").text = "0.7"
-
-    # Criar a árvore XML e salvar
     tree = ET.ElementTree(urlset)
-    ET.indent(tree, space="  ", level=0) # Formata o XML com indentação
+    ET.indent(tree, space="  ", level=0)
     tree.write(SITEMAP_XML, encoding="utf-8", xml_declaration=True)
+    logger.info(f"Sitemap gerado com {len(seen)} URL(s) única(s) em {SITEMAP_XML}.")
 
-    logger.info(f"Sitemap.xml gerado com sucesso em {SITEMAP_XML}")
 
-def main():
+def main() -> None:
+    try:
+        from generate_intelligence import main as generate_intelligence_main
+
+        generate_intelligence_main()
+    except Exception as exc:
+        logger.warning(f"Não foi possível gerar JSONs de inteligência antes do sitemap: {exc}")
     generate_sitemap()
+
 
 if __name__ == "__main__":
     main()

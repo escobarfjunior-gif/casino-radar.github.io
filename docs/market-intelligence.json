@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-05-31T18:19:00.498407+00:00",
+  "summary": {
+    "total_casinos": 3,
+    "average_rating": 4.8,
+    "best_rating": 4.9,
+    "categories": {
+      "Cassino Online": 2,
+      "Cassino Cripto": 1
+    },
+    "payment_methods": {
+      "PIX": 3,
+      "Boleto": 2,
+      "Transferência Bancária": 1,
+      "Criptomoedas": 1,
+      "Cartão de Crédito": 1,
+      "Pay4Fun": 1
+    }
+  },
+  "trends": [
+    "Cassinos com Pix e saques rápidos continuam sendo prioridade para usuários brasileiros.",
+    "Conteúdos educativos sobre rollover, KYC e jogo responsável têm alta relevância editorial.",
+    "Páginas comparativas tendem a melhorar descoberta orgânica e decisão do usuário."
+  ],
+  "top_ranked": [
+    {
+      "slug": "betano",
+      "name": "Betano",
+      "rating": 4.9
+    },
+    {
+      "slug": "stake",
+      "name": "Stake",
+      "rating": 4.8
+    },
+    {
+      "slug": "kto",
+      "name": "KTO",
+      "rating": 4.7
+    }
+  ]
+}
