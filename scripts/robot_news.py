@@ -204,12 +204,53 @@ def fallback_article(topic: str) -> dict:
     return {"title": title, "description": description[:155], "body_html": body}
 
 
+def get_random_links(current_slug: str, count: int = 3) -> str:
+    blog_dir = DOCS_DIR / "blog"
+    if not blog_dir.exists():
+        return ""
+    files = list(blog_dir.glob("*.html"))
+    links = []
+    for f in files:
+        if f.stem != current_slug:
+            title = f.stem.replace("-", " ").title()
+            links.append(f'<li><a href="{f.name}">{title}</a></li>')
+    if not links:
+        return ""
+    random.shuffle(links)
+    return f"""
+    <div class="internal-links" style="margin-top: 40px; padding: 20px; background: rgba(212,175,55,0.05); border-radius: 15px; border: 1px solid rgba(212,175,55,0.1);">
+        <h3 style="margin-top: 0; color: var(--primary);">Leia também:</h3>
+        <ul style="margin-bottom: 0;">
+            {"".join(links[:count])}
+        </ul>
+    </div>
+    """
+
 def render_article(article: dict, slug: str) -> str:
     now = datetime.now(timezone.utc)
     title = html.escape(article["title"])
     description = html.escape(article["description"][:155])
     body = article["body_html"]
     canonical = f"https://casino-radar.github.io/blog/{slug}.html"
+    
+    # Schema.org JSON-LD
+    schema_json = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": title,
+        "description": description,
+        "author": {"@type": "Organization", "name": "CasinoRadar"},
+        "datePublished": now.isoformat(),
+        "publisher": {
+            "@type": "Organization",
+            "name": "CasinoRadar",
+            "logo": {"@type": "ImageObject", "url": "https://casino-radar.github.io/logo.png"}
+        },
+        "mainEntityOfPage": {"@type": "WebPage", "@id": canonical}
+    }, ensure_ascii=False)
+
+    internal_links = get_random_links(slug)
+
     return f"""<!DOCTYPE html>
 <html lang=\"pt-BR\">
 <head>
@@ -218,6 +259,7 @@ def render_article(article: dict, slug: str) -> str:
     <title>{title} | CasinoRadar</title>
     <meta name=\"description\" content=\"{description}\">
     <link rel=\"canonical\" href=\"{canonical}\">
+    <script type="application/ld+json">{schema_json}</script>
     <style>
         :root {{ --primary: #d4af37; --bg: #05070a; --card: #0f121d; --text: #f3f4f6; }}
         body {{ background: var(--bg); color: var(--text); font-family: Arial, sans-serif; line-height: 1.8; margin: 0; }}
@@ -245,7 +287,53 @@ def render_article(article: dict, slug: str) -> str:
         <p class=\"meta\">Publicado em {now.strftime('%d/%m/%Y às %H:%M')} UTC · Conteúdo educativo · +18</p>
         <h1>{title}</h1>
         <div class=\"responsavel\"><strong>Jogue com responsabilidade:</strong> cassinos envolvem risco financeiro e não devem ser tratados como investimento ou renda garantida.</div>
-        {body}
+        
+        <div id="toc" style="margin: 30px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(212,175,55,0.15);">
+            <p style="margin-top:0; font-weight:bold; color:var(--primary); font-size:1.2rem;">Conteúdo deste artigo:</p>
+            <div id="toc-list"></div>
+        </div>
+
+        <div class="article-body">
+            {body}
+        </div>
+
+        {internal_links}
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {{
+                const body = document.querySelector('.article-body');
+                const tocList = document.getElementById('toc-list');
+                const headings = body.querySelectorAll('h2, h3');
+                
+                if (headings.length === 0) {{
+                    document.getElementById('toc').style.display = 'none';
+                    return;
+                }}
+
+                const ul = document.createElement('ul');
+                ul.style.listStyle = 'none';
+                ul.style.paddingLeft = '0';
+
+                headings.forEach((heading, index) => {{
+                    const id = 'section-' + index;
+                    heading.id = id;
+                    
+                    const li = document.createElement('li');
+                    li.style.marginBottom = '8px';
+                    li.style.paddingLeft = heading.tagName === 'H3' ? '20px' : '0';
+                    
+                    const a = document.createElement('a');
+                    a.href = '#' + id;
+                    a.textContent = heading.textContent;
+                    a.style.textDecoration = 'none';
+                    a.style.color = heading.tagName === 'H2' ? '#fff' : '#9ca3af';
+                    
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                }});
+                tocList.appendChild(ul);
+            }});
+        </script>
     </article>
 </main>
 <footer>
