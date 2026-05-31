@@ -123,27 +123,33 @@ def generate_with_ai(topic: str) -> dict | None:
 
     client = OpenAI(api_key=api_key)
     prompt = f"""
-Crie um artigo educativo em português do Brasil para o site CasinoRadar sobre: {topic}.
-Responda SOMENTE com JSON válido, sem markdown, no formato:
+Crie um artigo educativo EXTREMAMENTE LONGO e aprofundado em português do Brasil para o site CasinoRadar sobre: {topic}.
+
+REQUISITOS OBRIGATÓRIOS PARA ADSENSE (CONTEÚDO RICO):
+1. EXTENSÃO: O artigo deve ter no mínimo 1500 palavras de texto útil. Seja muito detalhista em cada seção.
+2. ESTRUTURA: Use pelo menos 8 subtítulos (h2) e várias subseções (h3).
+3. ELEMENTOS: Inclua uma introdução longa, análise técnica de segurança, exemplos de casos reais, uma tabela HTML comparativa, um guia passo a passo e um FAQ com 6 perguntas detalhadas.
+4. QUALIDADE: O texto deve ser digno de um portal de notícias de autoridade.
+
+Responda SOMENTE com JSON válido no formato:
 {{
-  "title": "título SEO claro",
-  "description": "meta descrição com até 155 caracteres",
-  "body_html": "HTML com h2, h3, p, ul e li, com tom responsável, sem prometer ganhos"
+  "title": "Título SEO de Autoridade",
+  "description": "Meta descrição de alto clique (max 155 chars)",
+  "body_html": "Conteúdo HTML vasto e rico (h2, h3, p, ul, li, table, strong)"
 }}
-O texto deve orientar, comparar critérios e reforçar jogo responsável. Não incentive apostas impulsivas.
 """
     last_error = None
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
             print(f"🤖 Gerando artigo via IA, tentativa {attempt}/{MAX_ATTEMPTS}...")
             response = client.chat.completions.create(
-                model="gpt-4.1-mini",
+                model="gpt-4.1-nano",
                 messages=[
                     {"role": "system", "content": "Você é um especialista em cassinos online e jogo responsável no Brasil. Sua tarefa é criar artigos educativos, aprofundados, otimizados para SEO e com alto valor para o usuário. O conteúdo deve ser objetivo, imparcial e focar em orientar o leitor sobre escolhas seguras e práticas de jogo consciente. Inclua exemplos práticos e, se possível, um pequeno FAQ no final do artigo."},
                     {"role": "user", "content": prompt},
                 ],
-                temperature=0.7, # Aumenta um pouco a criatividade para mais profundidade
-                max_tokens=3000, # Aumenta o limite para artigos mais longos
+                temperature=0.6, # Equilíbrio entre criatividade e precisão para textos longos
+                max_tokens=4500, # Limite alto para garantir que o artigo não seja cortado
                 timeout=120, # Aumenta o timeout para permitir respostas mais longas
             )
             content = response.choices[0].message.content or ""
