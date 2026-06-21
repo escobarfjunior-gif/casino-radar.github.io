@@ -32,6 +32,18 @@ TOPICS = [
     "Regulamentação de apostas no Brasil: impactos para jogadores de cassino",
     "Criptografia e proteção de dados em plataformas de cassino",
     "Autoexclusão e ferramentas de controle para jogadores brasileiros",
+    "A ascensão dos crash games: como funcionam Aviator e Spaceman",
+    "Estratégias para roleta online: mito ou realidade?",
+    "Blackjack ao vivo: diferenças entre as versões europeia e americana",
+    "O futuro dos cassinos cripto no Brasil: vantagens do Bitcoin e Ethereum",
+    "Como funcionam os programas VIP e de fidelidade em cassinos",
+    "Megaways vs Linhas de Pagamento Tradicionais: qual escolher?",
+    "Impostos sobre ganhos em cassinos online no Brasil: o que você precisa saber",
+    "Como identificar cassinos não licenciados e evitar golpes",
+    "O papel dos provedores de software (Pragmatic Play, Evolution, NetEnt) na qualidade dos jogos",
+    "Cassinos móveis: a experiência de jogar no smartphone vs desktop",
+    "E-sports e esportes virtuais em plataformas de cassino",
+    "Dicas de segurança para proteger sua conta de cassino online"
 ]
 
 
@@ -87,13 +99,10 @@ def save_history(history: list[str]) -> None:
 
 
 def choose_topic(history: list[str]) -> str | None:
-    recent = set(history[-len(TOPICS):])
-    available = [topic for topic in TOPICS if topic not in recent]
+    # Pegar apenas tópicos que ainda não foram publicados
+    available = [topic for topic in TOPICS if topic not in history]
     if not available:
-        # Mantém o histórico rotativo, sem gravar sentinelas do tipo RESTART.
-        del history[: max(0, len(history) - MAX_HISTORY // 2)]
-        available = [topic for topic in TOPICS if topic not in set(history[-len(TOPICS)//2:])]
-    if not available:
+        print("Todos os tópicos já foram publicados. O robô precisa de novos tópicos.")
         return None
     random.seed(datetime.now(timezone.utc).strftime("%Y-%m-%d-%H"))
     return random.choice(available)
